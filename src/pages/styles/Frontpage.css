@@ -24,7 +24,6 @@
   }
 }
 
-/* Hero Content (Left) */
 .front-content h1 {
   font-size: 3.5rem;
   line-height: 1.1;
@@ -62,7 +61,6 @@
   color: #fff;
 }
 
-/* Illustration (Right) */
 .front-graphic {
   position: relative;
   display: flex;
@@ -71,17 +69,17 @@
   height: 100%;
 }
 
-.wireframe-svg {
+.circles-svg {
   width: 100%;
   max-width: 500px;
   height: auto;
   opacity: 0.9;
 }
 
-.wireframe-svg circle {
+.circles-svg circle {
   fill: none;
   stroke: black;
-  stroke-width: 0.8px;
+  stroke-width: 1.5px;
 }
 
 .front-scroll {

@@ -26,10 +26,10 @@ const Frontpage = () => {
 
                     {/* Page graphics */}
                     <div className="front-graphic">
-                    <svg viewBox="0 0 500 500" className="wireframe-svg">
-                        <circle cx="240" cy="160" r="180" />
-                        <circle cx="200" cy="200" r="180" />
-                        <circle cx="160" cy="240" r="180" />
+                    <svg viewBox="0 0 800 800" className="circles-svg">
+                        <circle cx="450" cy="305" r="300" />
+                        <circle cx="410" cy="355" r="300" />
+                        <circle cx="370" cy="405" r="300" />
                     </svg>
                     </div>
                 </main>

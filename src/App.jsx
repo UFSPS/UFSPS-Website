@@ -1,10 +1,10 @@
 import './App.css'; // Make sure to import the CSS file
 import Frontpage from './pages/Frontpage';
 
-const SignalProcessingSociety = () => {
+const App = () => {
   return (
       <Frontpage />
   );
 };
 
-export default SignalProcessingSociety;
+export default App;
