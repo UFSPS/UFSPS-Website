@@ -5,6 +5,6 @@ import SignalProcessingSociety from './App.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <SignalProcessingSociety/>
+    <SignalProcessingSociety />
   </React.StrictMode>,
 );

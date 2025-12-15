@@ -1,0 +1,7 @@
+.page-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #E6F0DB 0%, #ffffff 50%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 50px;
+}
