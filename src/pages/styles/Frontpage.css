@@ -1,0 +1,107 @@
+.page-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #E6F0DB 0%, #ffffff 50%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 50px;
+}
+
+.front-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+  min-height: 70vh;
+}
+
+@media (min-width: 768px) {
+  .front-container {
+    grid-template-columns: 1fr 1fr;
+    padding-top: 96px;
+  }
+}
+
+.front-content h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .front-content h1 {
+    font-size: 4.5rem;
+  }
+}
+
+.front-content p {
+  font-size: 1.125rem;
+  color: #374151;
+  line-height: 1.6;
+  max-width: 450px;
+  margin-bottom: 32px;
+}
+
+.front-button {
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.front-button:hover {
+  background: #000;
+  color: #fff;
+}
+
+.front-graphic {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.circles-svg {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  opacity: 0.9;
+}
+
+.circles-svg circle {
+  fill: none;
+  stroke: black;
+  stroke-width: 1.50px;
+}
+
+.front-scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: bounce 2s infinite;
+}
+
+.front-scroll span {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
