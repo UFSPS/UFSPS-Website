@@ -13,16 +13,24 @@
   gap: 12px;
 }
 
-.logo-circle {
-  width: 32px;
-  height: 32px;
-  background-color: #d1d5db;
-  border-radius: 50%;
+.logo {
+  width: 140px;
+  height: 85px;
+}
+
+.logo-div {
+  position: absolute;
+  margin: 145px;
+  width: 1.125px;
+  height: 80px;
+  background-color: black;
 }
 
 .logo-text {
   font-weight: 500;
   font-size: 1.125rem;
+  padding: 10px;
+  color: var(--logo-blue);
 }
 
 .nav-pill {
@@ -32,7 +40,7 @@
   border: 1px solid #1f2937;
   border-radius: 9999px;
   padding: 8px 32px;
-  gap: 32px;
+  gap: 50px;
 }
 
 @media (min-width: 768px) {
@@ -44,7 +52,7 @@
 .nav-pill a {
   text-decoration: none;
   color: #1f2937;
-  font-size: 0.875rem;
+  font-size: 1 rem;
   font-weight: 500;
   transition: color 0.2s;
 }
