@@ -57,17 +57,3 @@
 .nav-pill a:hover {
   color: #666;
 }
-
-.search-icon button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  margin-right: 50px;
-  border-radius: 50%;
-  transition: background-color 0.2s;
-}
-
-.search-icon button:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}

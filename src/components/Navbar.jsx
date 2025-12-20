@@ -21,12 +21,6 @@ const Navbar = () => {
           <a href="#journals">Journals</a>
           <a href="#workshops">Workshops</a>
         </div>
-
-        <div className="search-icon">
-          <button>
-            <Search size={22} color="#4b5563" />
-          </button>
-        </div>
       </div>
     );
 };
