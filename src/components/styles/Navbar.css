@@ -9,7 +9,7 @@
 .logo-section {
   display: flex;
   align-items: center;
-  margin-left: 70px;
+  margin-left: 88px;
   gap: 12px;
 }
 
@@ -21,14 +21,14 @@
 .logo-div {
   width: 1.125px;
   height: 80px;
-  background-color: black;
+  background-color: var(--black);
 }
 
 .logo-text {
   font-weight: 500;
   font-size: 1.125rem;
   padding: 10px;
-  color: var(--logo-blue);
+  color: var(--green);
 }
 
 .nav-pill {
@@ -36,7 +36,8 @@
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  padding: 8px 32px;
+  margin-right: 75px;
+  padding: 8px 20px;
   gap: 40px;
 }
 

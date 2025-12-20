@@ -1,6 +1,5 @@
 import './styles/Navbar.css';
-import { Search } from 'lucide-react';
-import Logo from '../assets/SPS_Logo.png';
+import Logo from '../assets/SPS_Logo_Black_Green.png';
 
 const Navbar = () => {
     return (
@@ -9,7 +8,7 @@ const Navbar = () => {
           <img src={Logo} className="logo"/>
           <div className="logo-div"></div>
           <p className="logo-text">
-            <span style={{ fontWeight: 700 }}>University of Florida</span>
+            <span style={{ color: "var(--black)", fontWeight: 700 }}>University of Florida</span>
             <br/>
             IEEE Student Branch
           </p>

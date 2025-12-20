@@ -1,7 +1,8 @@
 
 :root {
-  --logo-blue: #00629B;
-  --black: #1f2937;
+  --black: #222;
+  --green: #279358;
+  --off-white: #e4e2dd;
 }
 
 * {
@@ -12,5 +13,5 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: #111;
+  color: var(--black);
 }
