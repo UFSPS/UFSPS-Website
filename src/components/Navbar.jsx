@@ -4,7 +4,7 @@ import Logo from '../assets/SPS_Logo.png';
 
 const Navbar = () => {
     return (
-        <header className="navbar">
+      <div className="navbar">
         <div className="logo-section">
           <img src={Logo} className="logo"/>
           <div className="logo-div"></div>
@@ -15,19 +15,19 @@ const Navbar = () => {
           </p>
         </div>
 
-        <nav className="nav-pill">
+        <div className="nav-pill">
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#journals">Journals</a>
           <a href="#workshops">Workshops</a>
-        </nav>
+        </div>
 
         <div className="search-icon">
           <button>
             <Search size={22} color="#4b5563" />
           </button>
         </div>
-      </header>
+      </div>
     );
 };
 export default Navbar;

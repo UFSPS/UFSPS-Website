@@ -3,24 +3,22 @@
   justify-content: space-between;
   align-items: center;
   padding: 24px 32px;
-  max-width: 1280px;
   margin: 0 auto;
 }
 
 .logo-section {
   display: flex;
   align-items: center;
+  margin-left: 70px;
   gap: 12px;
 }
 
 .logo {
-  width: 140px;
-  height: 85px;
+  width: 120px;
+  height: 77px;
 }
 
 .logo-div {
-  position: absolute;
-  margin: 145px;
   width: 1.125px;
   height: 80px;
   background-color: black;
@@ -37,10 +35,9 @@
   display: none;
   align-items: center;
   justify-content: center;
-  border: 1px solid #1f2937;
-  border-radius: 9999px;
+  margin-left: auto;
   padding: 8px 32px;
-  gap: 50px;
+  gap: 40px;
 }
 
 @media (min-width: 768px) {
@@ -51,7 +48,7 @@
 
 .nav-pill a {
   text-decoration: none;
-  color: #1f2937;
+  color: var(--black);
   font-size: 1 rem;
   font-weight: 500;
   transition: color 0.2s;
@@ -65,7 +62,8 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 10px;
+  margin-right: 50px;
   border-radius: 50%;
   transition: background-color 0.2s;
 }
