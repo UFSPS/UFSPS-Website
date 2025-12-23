@@ -19,9 +19,11 @@ const Frontpage = () => {
                     </p>
 
                     {/* Discord button */}
-                    <button className="front-button">
-                        Join Discord
-                    </button>
+                    <a href="https://discord.gg/6GRymPjgKc">
+                        <button className="front-button">
+                            Join Discord
+                        </button>
+                    </a>
                     </div>
 
                     {/* Page graphics */}
