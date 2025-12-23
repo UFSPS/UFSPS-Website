@@ -31,30 +31,54 @@
   color: var(--green);
 }
 
-.nav-pill {
+.nav-bar {
   display: none;
   align-items: center;
   justify-content: center;
   margin-left: auto;
   margin-right: 75px;
+
   padding: 8px 20px;
   gap: 40px;
 }
 
 @media (min-width: 768px) {
-  .nav-pill {
+  .nav-bar {
     display: flex;
   }
 }
 
-.nav-pill a {
+.nav-bar a {
   text-decoration: none;
   color: var(--black);
-  font-size: 1 rem;
+  font-size: 1rem;
   font-weight: 500;
   transition: color 0.2s;
+
+  padding: 8px 0;
+  position: relative;
+  
 }
 
-.nav-pill a:hover {
-  color: #666;
+.nav-bar a:hover {
+  color: var(--gray);
+}
+
+.nav-bar a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1.15px;
+
+  background-color: var(--gray);
+  opacity: 75%;
+
+  border-radius: 25%;
+  transition: width 0.3s ease;
+}
+
+.nav-bar a:hover::after {
+  width: 100%;
 }

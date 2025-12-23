@@ -14,7 +14,7 @@ const Navbar = () => {
           </p>
         </div>
 
-        <div className="nav-pill">
+        <div className="nav-bar">
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#journals">Journals</a>
