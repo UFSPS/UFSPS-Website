@@ -14,7 +14,7 @@ const Navbar = () => {
           </p>
         </div>
 
-        <div className="nav-bar">
+        <div className="nav-links">
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#journals">Journals</a>
