@@ -1,5 +1,5 @@
 import './styles/Navbar.css';
-import Logo from '../assets/SPS_Logo_Black_Green.png';
+import Logo from '../assets/SPS_Logo.png';
 
 const Navbar = () => {
     return (
