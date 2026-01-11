@@ -1,8 +1,8 @@
 import './styles/PageContainer.css';
 
-function PageContainer({ children, className = '' }) {
+function PageContainer({ children, className = '', style }) {
   return (
-    <div className={`page-container ${className}`}>
+    <div className={`page-container ${className}`} style={style}>
       {children}
     </div>
   );

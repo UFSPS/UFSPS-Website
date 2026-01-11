@@ -2,11 +2,23 @@ import { ChevronsDown } from 'lucide-react';
 import './styles/Frontpage.css';
 import Navbar from '../components/Navbar';
 import PageContainer from '../components/PageContainer';
+import Image from '../assets/background.png';
 
 const Frontpage = () => {
     return (
         <>
-            <PageContainer className="front-theme">
+            <PageContainer 
+                // 2. Add inline style for multiple backgrounds
+                // The Gradient comes FIRST (Top Layer), the URL comes SECOND (Bottom Layer)
+                style={{
+                    backgroundImage: `
+                        url("${Image}")
+                    `,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                }}
+            >
                 <Navbar />
                 <main className="front-container">
                     <div className="front-content">
@@ -25,15 +37,6 @@ const Frontpage = () => {
                             Join Discord
                         </button>
                     </a>
-                    </div>
-
-                    {/* Page graphics */}
-                    <div className="front-graphic">
-                    <svg viewBox="0 0 800 800" className="circles-svg">
-                        <circle cx="450" cy="305" r="300" />
-                        <circle cx="410" cy="355" r="300" />
-                        <circle cx="370" cy="405" r="300" />
-                    </svg>
                     </div>
                 </main>
             

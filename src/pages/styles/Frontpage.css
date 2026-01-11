@@ -1,15 +1,11 @@
-.front-theme {
-  background: linear-gradient(to bottom, #E6F0DB 0%, #ffffff 50%, #ffffff 100%);
-}
 .front-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 48px 32px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 48px;
+  padding: 32px;
+  display: flex;
+  gap: 250px;
   align-items: center;
-  min-height: 70vh;
+  height: 75vh;
 }
 
 @media (min-width: 768px) {
@@ -61,20 +57,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-}
-
-.circles-svg {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  opacity: 0.9;
-}
-
-.circles-svg circle {
-  fill: none;
-  stroke: black;
-  stroke-width: 1.50px;
+  flex: 1;
+  padding: 0;
 }
 
 .front-scroll {
