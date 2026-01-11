@@ -1,11 +1,12 @@
 import { ChevronsDown } from 'lucide-react';
 import './styles/Frontpage.css';
 import Navbar from '../components/Navbar';
+import PageContainer from '../components/PageContainer';
 
 const Frontpage = () => {
     return (
         <>
-            <div className='page-container'>
+            <PageContainer className="front-theme">
                 <Navbar />
                 <main className="front-container">
                     <div className="front-content">
@@ -40,7 +41,7 @@ const Frontpage = () => {
                     <ChevronsDown size={32} color="#9ca3af" strokeWidth={1} />
                     <span>scroll down for calendar</span>
                 </div>
-            </div>
+            </PageContainer>
         </>
     );
 };

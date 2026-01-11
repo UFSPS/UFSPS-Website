@@ -1,11 +1,6 @@
-.page-container {
-  min-height: 100vh;
+.front-theme {
   background: linear-gradient(to bottom, #E6F0DB 0%, #ffffff 50%, #ffffff 100%);
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 50px;
 }
-
 .front-container {
   max-width: 1280px;
   margin: 0 auto;
