@@ -1,23 +1,14 @@
 import { ChevronsDown } from 'lucide-react';
 import './styles/Frontpage.css';
 import Navbar from '../components/Navbar';
-import PageContainer from '../components/PageContainer';
-import Calendar from '../components/Calendar';
+import Footer from '../components/Footer';
 import Image from '../assets/background.png';
 
 const Frontpage = () => {
     return (
         <>
-            <PageContainer 
-                style={{
-                    backgroundImage: `
-                        url("${Image}")
-                    `,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                }}
-            >
+            <div className="page-container">
+                <img className="front-image" src={Image} alt="background image"/>
                 <Navbar />
                 <main className="front-container">
                     <div className="front-content">
@@ -50,8 +41,8 @@ const Frontpage = () => {
                     <span>scroll down for calendar</span>
                 </div>
                 */}
-            </PageContainer>
-            <Calendar />
+            </div>
+            <Footer />
         </>
     );
 };

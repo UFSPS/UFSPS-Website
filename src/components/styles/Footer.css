@@ -1,0 +1,28 @@
+.footer-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 355px;
+    min-height: 50px;
+    width: 100%;
+    background-color: var(--off-white);
+}
+
+.footer-content-container {
+    display: flex;
+    justify-content: space-between;
+    height: 240px;
+    width: 1370px;
+}
+
+.footer-graphic {
+    height: 100%;
+    width: 385px;
+    object-fit: contain;
+}
+
+.footer-link-container {
+    height: 220px;
+    width: 555px;;
+}
