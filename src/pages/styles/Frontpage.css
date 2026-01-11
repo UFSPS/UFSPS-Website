@@ -33,7 +33,7 @@
   color: #374151;
   line-height: 1.6;
   max-width: 450px;
-  margin-bottom: 32px;
+  margin-bottom: 1rem;
 }
 
 .front-button {
@@ -43,6 +43,7 @@
   padding: 12px 24px;
   font-size: 1rem;
   font-weight: 500;
+  margin-top: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }

@@ -28,7 +28,12 @@ const Frontpage = () => {
                         Society
                     </h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempus purus et nulla facilisis, eu fringilla leo sagittis. Nam quis.
+                        For engineers, mathematicians, and scientists. We receive, analyze, process,
+                        and transmit signals. Everything in life can be represented by a signal, explore
+                        reality through the digital interface.
+                    </p>
+                    <p>
+                        Welcome to the Signal Processing Society.
                     </p>
 
                     {/* Discord button */}
