@@ -11,8 +11,8 @@ const Footer = () => {
                 <img className="footer-graphic" src={Logo} alt="black sps logo" />
                 <div className="footer-link-container">
                     <div className="social-links">
-                        <SiInstagram />
-                        <SiDiscord />
+                        <a href="https://www.instagram.com/uf.sps/"><SiInstagram /></a>
+                        <a href="https://discord.gg/6GRymPjgKc"><SiDiscord /></a>
                         <SiLinkedin />
                         <SiX />
                         <SiLinktree />
