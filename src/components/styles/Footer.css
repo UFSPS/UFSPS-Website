@@ -11,6 +11,7 @@
 
 .footer-content-container {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     height: 240px;
     width: 1370px;
@@ -23,17 +24,39 @@
 }
 
 .footer-link-container {
-    height: 220px;
-    width: 555px;;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 170px;
+    width: 555px;
+}
+
+.footer-link-container a {
+    color: var(--black);
+    text-decoration: none;
 }
 
 .social-links {
     display: flex;
-    gap: 16px;
+    gap: 1rem;
 }
 
 .social-links svg {
     width: 40px;
     height: 40px;
-    fill: var(--black);
+    color: var(--black);
+}
+
+.email-link {
+    display: flex;
+    align-items: end;
+    gap: 8px;
+
+    font-size: 1rem;
+}
+
+.email-link svg {
+    width: 16px;
+    height: 16px;
+    color: var(--black);
 }
