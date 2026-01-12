@@ -1,9 +1,14 @@
 import './App.css'; // Make sure to import the CSS file
 import Frontpage from './pages/Frontpage';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 const App = () => {
   return (
-      <Frontpage />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Frontpage />} />
+        </Routes>
+      </BrowserRouter>
   );
 };
 
