@@ -19,7 +19,7 @@
 
 .footer-graphic {
     height: 100%;
-    width: 385px;
+    width: 400px;
     object-fit: contain;
 }
 
@@ -28,7 +28,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 170px;
-    width: 555px;
+    width: 400px;
 }
 
 .footer-link-container a {
