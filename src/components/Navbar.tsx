@@ -1,17 +1,17 @@
 import './styles/Navbar.css';
 import Logo from '../assets/SPS_Logo.png';
-import { useEffect } from 'react';
+import WhiteLogo from '../assets/SPS_Logo_White.png';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
-
+    const [isScrolled, setIsScrolled] = useState(false);
     useEffect(() => {
-      const navbar = document.querySelector('.navbar') as HTMLElement;
-
+      
       const handleScroll = () => {
       if (window.scrollY > 50) {
-          navbar.classList.add('scrolled');
+          setIsScrolled(true);
         } else {
-          navbar.classList.remove('scrolled');
+          setIsScrolled(false);
         }
       };
 
@@ -23,12 +23,12 @@ const Navbar = () => {
   
 
     return (
-      <div className="navbar">
+      <div className={ `navbar ${isScrolled ? 'scrolled' : ''}` }>
         <div className="logo-section">
-          <img src={Logo} className="logo"/>
+          <img src={isScrolled ? WhiteLogo : Logo} className="logo"/>
           <div className="logo-div"></div>
           <p className="logo-text">
-            <span style={{ color: "var(--black)", fontWeight: 700 }}>University of Florida</span>
+            <span>University of Florida</span>
             <br/>
             IEEE Student Branch
           </p>

@@ -12,7 +12,8 @@
 }
 
 .navbar.scrolled {
-  background: var(--green);
+  background: var(--black);
+  padding: 5px;
   z-index: 1;
 }
 
@@ -29,9 +30,13 @@
 }
 
 .logo-div {
-  height: 80px;
+  height: 60px;
   width: 1.5px;
   background-color: var(--black);
+}
+
+.navbar.scrolled .logo-div {
+  background-color: white;
 }
 
 .logo-text {
@@ -39,6 +44,16 @@
   font-size: 1.125rem;
   padding: 10px;
   color: var(--logo-blue);
+}
+
+.logo-text span {
+  color: var(--black);
+  font-weight: 700;
+}
+
+.navbar.scrolled .logo-text,
+.navbar.scrolled span {
+  color: white;
 }
 
 .nav-links {
@@ -62,16 +77,20 @@
   text-decoration: none;
   color: var(--black);
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.2s;
 
   padding: 8px 0;
   position: relative;
-  
 }
 
-.nav-links a:hover {
-  color: var(--gray);
+.navbar.scrolled .nav-links a {
+  color: white;
+}
+
+.nav-links a:hover,
+.navbar.scrolled .nav-links a:hover {
+  color: var(--green);
 }
 
 .nav-links a::after {
@@ -82,7 +101,7 @@
   width: 0%;
   height: 1.5px;
 
-  background-color: var(--gray);
+  background-color: var(--green);
   opacity: 75%;
 
   transition: width 0.3s ease;
@@ -90,6 +109,10 @@
 
 .nav-links a:hover::after {
   width: 100%;
+}
+
+.navbar.scrolled .nav-links a::after {
+  background-color: var(--green);
 }
 
 .nav-links a:not(:last-child)::before {
@@ -103,4 +126,8 @@
   width: 1.5px;
   background-color: var(--black);
   pointer-events: none;
+}
+
+.navbar.scrolled .nav-links a::before {
+  background-color: white;
 }
