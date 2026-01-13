@@ -1,9 +1,19 @@
 .navbar {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
   padding: 24px 32px;
   margin: 0 auto;
+  background: transparent;
+  transition: 0.2s ease;
+}
+
+.navbar.scrolled {
+  background: var(--green);
+  z-index: 1;
 }
 
 .logo-section {
@@ -19,8 +29,8 @@
 }
 
 .logo-div {
-  width: 1.125px;
   height: 80px;
+  width: 1.5px;
   background-color: var(--black);
 }
 
@@ -91,6 +101,6 @@
 
   height: 25px;
   width: 1.5px;
-  background-color: var(--gray);
+  background-color: var(--black);
   pointer-events: none;
 }

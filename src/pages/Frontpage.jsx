@@ -6,10 +6,10 @@ import Image from '../assets/background.png';
 
 const Frontpage = () => {
     return (
-        <>
+        <>  
+            <Navbar />
+            <img className="front-image" src={Image} alt="background image"/>
             <div className="page-container">
-                <img className="front-image" src={Image} alt="background image"/>
-                <Navbar />
                 <main className="front-container">
                     <div className="front-content">
                     <h1>
