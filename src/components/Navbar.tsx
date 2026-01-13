@@ -1,6 +1,5 @@
 import './styles/Navbar.css';
 import Logo from '../assets/SPS_Logo.png';
-import WhiteLogo from '../assets/SPS_Logo_White.png';
 import { useState, useEffect } from 'react';
 
 const Navbar = () => {
@@ -25,7 +24,7 @@ const Navbar = () => {
     return (
       <div className={ `navbar ${isScrolled ? 'scrolled' : ''}` }>
         <div className="logo-section">
-          <img src={isScrolled ? WhiteLogo : Logo} className="logo"/>
+          <img src={Logo} className="logo"/>
           <div className="logo-div"></div>
           <p className="logo-text">
             <span>University of Florida</span>
