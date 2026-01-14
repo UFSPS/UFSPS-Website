@@ -19,7 +19,7 @@ const Profile = ({name}: ProfileProps) => {
                             <p>President</p>
                         </div>
                     </div>
-                    <div className="social-links">
+                    <div className="profile-social-links">
                         <FaGithub />
                         <FaLinkedin />
                     </div>

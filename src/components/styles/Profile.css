@@ -46,12 +46,13 @@
     padding-block: 0.625rem;
 }
 
-.social-links {
+.profile-social-links {
     display: flex;
     justify-content: center;
+    gap: 1rem;
 }
 
-.social-links svg {
+.profile-social-links svg {
     height: 1.875rem;
     width: 1.875rem;
 }

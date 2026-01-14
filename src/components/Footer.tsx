@@ -23,13 +23,6 @@ const Footer = () => {
                 
                 <img className="footer-graphic" src={Logo} alt="black sps logo" />
                 <div className="footer-link-container">
-                    <div className="social-links">
-                        <NewTab href="https://www.instagram.com/uf.sps/"><SiInstagram /></NewTab>
-                        <NewTab href="https://discord.gg/6GRymPjgKc"><SiDiscord /></NewTab>
-                        <NewTab href="https://www.linkedin.com/company/ieee-signal-processing-society-uf/"><SiLinkedin /></NewTab>
-                        <NewTab href="https://x.com/uf_sps"><SiX /></NewTab>
-                        <NewTab href="https://https://linktr.ee/uf.sps"><SiLinktree /></NewTab>
-                    </div>
 
                     <a href="mailto:ieee.sps.uf@gmail.com">
                         <div className="email-link">
@@ -42,6 +35,13 @@ const Footer = () => {
                         432 Newell Drive, CISE Bldg E251 <br/>
                         Gainesville, Florida 32611-5585
                     </p>
+                    <div className="footer-social-links">
+                        <NewTab href="https://www.instagram.com/uf.sps/"><SiInstagram /></NewTab>
+                        <NewTab href="https://discord.gg/6GRymPjgKc"><SiDiscord /></NewTab>
+                        <NewTab href="https://www.linkedin.com/company/ieee-signal-processing-society-uf/"><SiLinkedin /></NewTab>
+                        <NewTab href="https://x.com/uf_sps"><SiX /></NewTab>
+                        <NewTab href="https://https://linktr.ee/uf.sps"><SiLinktree /></NewTab>
+                    </div>
                 </div>
             
             </div>

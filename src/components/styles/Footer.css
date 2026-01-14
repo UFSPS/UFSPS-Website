@@ -28,7 +28,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 170px;
-    width: 400px;
+    width: 420px;
 }
 
 .footer-link-container a {
@@ -36,19 +36,19 @@
     text-decoration: none;
 }
 
-.social-links {
+.footer-social-links {
     display: flex;
     gap: 1rem;
 }
 
-.social-links svg {
-    width: 40px;
-    height: 40px;
+.footer-social-links svg {
+    width: 2rem;
+    height: 2rem;
     color: var(--black);
     transition: 0.2s ease;
 }
 
-.social-links svg:hover {
+.footer-social-links svg:hover {
     color: var(--green);
 }
 
