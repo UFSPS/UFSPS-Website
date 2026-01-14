@@ -3,7 +3,11 @@ import Logo from '../assets/SPS_Logo.png';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+interface NavbarProps {
+    style?: React.CSSProperties
+};
+
+const Navbar = ({style}: NavbarProps) => {
     const [isScrolled, setIsScrolled] = useState(false);
     useEffect(() => {
       
@@ -23,7 +27,7 @@ const Navbar = () => {
   
 
     return (
-      <div className={ `navbar ${isScrolled ? 'scrolled' : ''}` }>
+      <div className={ `navbar ${isScrolled ? 'scrolled' : ''}` } style={style}>
         
         <Link to="/">
           <div className="logo-section">

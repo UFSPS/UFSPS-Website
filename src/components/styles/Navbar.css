@@ -5,22 +5,20 @@
   justify-content: space-between;
   align-items: center;
   
-  padding: 24px 32px;
-  margin: 0 auto;
-  background: transparent;
+  padding: 24px 150px;
+  background: white;
   transition: 0.2s ease;
 }
 
 .navbar.scrolled {
-  background: var(--black);
-  padding: 5px;
+  background: var(--black) !important;
+  padding: 5px 150px;
   z-index: 1;
 }
 
 .logo-section {
   display: flex;
   align-items: center;
-  margin-left: 88px;
   gap: 12px;
 }
 
@@ -66,7 +64,6 @@
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  margin-right: 75px;
 
   padding: 8px 20px;
   gap: 40px;
