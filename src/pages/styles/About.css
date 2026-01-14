@@ -1,0 +1,40 @@
+h1 {
+    font-size: 3rem;
+    line-height: 2.25rem;
+}
+.wrapper {
+    gap: 100px;
+}
+
+.about-section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    padding-inline: 10rem;
+}
+.about-image-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    height: auto;
+    width: 550px;
+    padding: 0.625rem;
+
+    font-size: 1.125rem;
+
+}
+
+.about-image {
+    height: 356px;
+    width: 720px;
+
+    background: gray;
+    border-radius: 50px;
+}
