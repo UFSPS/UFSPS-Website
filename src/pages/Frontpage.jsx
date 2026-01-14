@@ -8,7 +8,7 @@ const Frontpage = () => {
     return (
         <>  
     
-            <Navbar />
+            <Navbar style={{background: 'transparent'}}/>
             <img className="front-image" src={Image} alt="background image"/>
             <div className="section-container">
                 <main className="front-container">

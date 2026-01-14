@@ -1,7 +1,7 @@
 import './styles/Navbar.css';
 import Logo from '../assets/SPS_Logo.png';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 interface NavbarProps {
     style?: React.CSSProperties
@@ -43,7 +43,7 @@ const Navbar = ({style}: NavbarProps) => {
         
         <div className="nav-links">
           <Link to="/">HOME</Link>
-          <Link to="/about">ABOUT</Link>
+          <NavLink to="/about">ABOUT</NavLink>
           <a href="#research">RESEARCH</a>
           <a href="#people">PEOPLE</a>
           <a href="#contact">CONTACT</a>

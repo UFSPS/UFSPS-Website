@@ -133,3 +133,11 @@
 .navbar.scrolled .nav-links a::before {
   background-color: white;
 }
+
+a.active {
+  color: var(--green);
+}
+
+a.active::after {
+  width: 100%;
+}
