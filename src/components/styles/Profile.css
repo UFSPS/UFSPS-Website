@@ -6,6 +6,7 @@
     padding: 3rem;
     border: 1px solid black;
     border-radius: 50px;
+    background-color: #fbfbfb;
 }
 
 .profile-content-container {
@@ -44,6 +45,7 @@
     border: 1px solid var(--gray);
     border-radius: 50px;
     padding-block: 0.625rem;
+    background-color: #fbfbfb;
 }
 
 .profile-social-links {
@@ -55,4 +57,10 @@
 .profile-social-links svg {
     height: 1.875rem;
     width: 1.875rem;
+    color: var(--black);
+    transition: 0.2s ease;
+}
+
+.profile-social-links svg:hover {
+    color: var(--green);
 }

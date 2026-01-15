@@ -36,16 +36,16 @@ const About = () => {
                     <div className="board-section-container">
                         <h1>Executive Board</h1>
                         <div className="profiles-container">
-                            <Profile />
-                            <Profile />
-                            <Profile />
-                            <Profile />
-                            <Profile />
-                            <Profile />
-                            <Profile />
-                            <Profile />
-                            <Profile />
-                            <Profile />
+                            <Profile name="Raule Valle" position="President" githubLink="https://github.com/Jibby2k1" linkedinLink="https://www.linkedin.com/in/raul-valle1/"/>
+                            <Profile name="Matheus Maldaner" position="Vice President"/>
+                            <Profile name="" position=""/>
+                            <Profile name="" position=""/>
+                            <Profile name="" position=""/>
+                            <Profile name="Tiffany Huang" position="Chief of Operations" githubLink="https://github.com/narcistiq" linkedinLink="https://www.linkedin.com/in/tiffanyhuang1010/"/>
+                            <Profile name="" position=""/>
+                            <Profile name="" position=""/>
+                            <Profile name="" position=""/>
+                            <Profile name="" position=""/>
                         </div>
                     </div>
                 </div>

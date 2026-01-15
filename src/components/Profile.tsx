@@ -2,10 +2,13 @@ import './styles/Profile.css';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 interface ProfileProps {
-    name?: React.ReactNode
+    name?: string
+    position?: string
+    githubLink?: string
+    linkedinLink?: string
 }
 
-const Profile = ({name}: ProfileProps) => {
+const Profile = ({name, position, githubLink, linkedinLink}: ProfileProps) => {
     return (
         <div className="exec-profile-container">
             <div className="profile-content-container">
@@ -14,14 +17,14 @@ const Profile = ({name}: ProfileProps) => {
                 </div>
                 <div className="profile-info">
                     <div className="name-pos">
-                        <h3>Raul Valle</h3>
+                        <h3>{name}</h3>
                         <div className="pos">
-                            <p>President</p>
+                            <p>{position}</p>
                         </div>
                     </div>
                     <div className="profile-social-links">
-                        <FaGithub />
-                        <FaLinkedin />
+                        {githubLink && <a href={githubLink} target="_blank"><FaGithub /></a>}
+                        {linkedinLink && <a href={linkedinLink} target="_blank"><FaLinkedin /></a>}
                     </div>
                 </div>
             </div>
