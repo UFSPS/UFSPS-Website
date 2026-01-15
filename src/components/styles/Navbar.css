@@ -135,7 +135,7 @@
 }
 
 a.active {
-  color: var(--green);
+  color: var(--green) !important ;
 }
 
 a.active::after {
