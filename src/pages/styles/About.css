@@ -10,20 +10,21 @@ h1 {
 .main-content-container {
     display: flex;
     flex-direction: column;
-    gap: 10rem;
+    gap: 6rem;
 }
 
 .about-section-container {
     display: flex;
     flex-direction: column;
     gap: 0.625rem;
-    padding-inline: 10rem;
+    margin-inline: 2.375rem;
 }
 
 .about-image-text-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-inline: 7.125rem;
 }
 
 .about-text {
