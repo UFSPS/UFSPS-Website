@@ -44,9 +44,8 @@ const Navbar = ({style}: NavbarProps) => {
         <div className="nav-links">
           <Link to="/">HOME</Link>
           <NavLink to="/about">ABOUT</NavLink>
-          <a href="#research">RESEARCH</a>
-          <a href="#people">PEOPLE</a>
-          <a href="#contact">CONTACT</a>
+          <NavLink to="/research">RESEARCH</NavLink>
+          <NavLink to="/resources">RESOURCES</NavLink>
         </div>
       </div>
     );
