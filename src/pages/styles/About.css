@@ -7,7 +7,7 @@ h1 {
     gap: 6.25rem;
 }
 
-.main-content-container {
+.about-main-content-container {
     display: flex;
     flex-direction: column;
     gap: 6rem;
@@ -59,12 +59,13 @@ h1 {
     position: relative;
     display: inline-block;
 }
+
 .board-section-container h1::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -2.625rem;
-    height: 10px;
+    bottom: -2.25rem;
+    height: 5px;
     width: 100%;
 
     background: linear-gradient(90deg, #D0EBF2 0%, #DCEEC8 100%);

@@ -1,4 +1,5 @@
 import './styles/About.css';
+import { eboardProfiles } from '../data/eboard.js';
 import Navbar from '../components/Navbar.js';
 import PageContainer from '../components/PageContainer.js';
 import Profile from '../components/Profile.js';
@@ -9,7 +10,7 @@ const About = () => {
         <>
             <PageContainer className="wrapper">
                 <Navbar />
-                <div className="main-content-container">
+                <div className="about-main-content-container">
 
                     <div className="about-section-container">
                         <h1>Who we are</h1>
@@ -36,16 +37,13 @@ const About = () => {
                     <div className="board-section-container">
                         <h1>Executive Board</h1>
                         <div className="profiles-container">
-                            <Profile name="Raule Valle" position="President" githubLink="https://github.com/Jibby2k1" linkedinLink="https://www.linkedin.com/in/raul-valle1/"/>
-                            <Profile name="Matheus Maldaner" position="Vice President"/>
-                            <Profile name="" position=""/>
-                            <Profile name="" position=""/>
-                            <Profile name="" position=""/>
-                            <Profile name="Tiffany Huang" position="Chief of Operations" githubLink="https://github.com/narcistiq" linkedinLink="https://www.linkedin.com/in/tiffanyhuang1010/"/>
-                            <Profile name="" position=""/>
-                            <Profile name="" position=""/>
-                            <Profile name="" position=""/>
-                            <Profile name="" position=""/>
+                            {Object.entries(eboardProfiles).map(([position, profile]) => (
+                                <Profile 
+                                name={profile.name} 
+                                position={position} 
+                                githubLink={profile.githubLink}
+                                linkedinLink={profile.linkedinLink} />
+                            ))}
                         </div>
                     </div>
                 </div>

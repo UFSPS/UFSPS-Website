@@ -4,8 +4,8 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 interface ProfileProps {
     name?: string
     position?: string
-    githubLink?: string
-    linkedinLink?: string
+    githubLink?: string | undefined
+    linkedinLink?: string |undefined
 }
 
 const Profile = ({name, position, githubLink, linkedinLink}: ProfileProps) => {
