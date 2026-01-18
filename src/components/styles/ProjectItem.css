@@ -1,0 +1,142 @@
+.proj-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 1rem;
+    background: white;
+
+    border: solid 1px black;
+    border-radius: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.proj-img-container {
+    height: 230px;
+    width: 535px;
+    background-color: gray;
+    overflow: hidden;
+    border-radius: 19px 19px 0 0;
+    box-shadow: inset 0px -4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.proj-img-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.proj-title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding-inline: 1rem;
+}
+
+.proj-title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    
+}
+
+.proj-title h3 {
+    font-size: 1.25rem;
+}
+
+.proj-title p {
+    font-weight: 300;
+    color: var(--gray);
+}
+
+.proj-title::after {
+    content: '';
+    position: absolute;
+    height: 0.5px;
+    width: 100%;
+    bottom: -1rem;
+    background: var(--gray);
+}
+
+.proj-rdmore {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 1rem;
+
+    padding: 0.75em 0 1em 0;
+    color: var(--dark-green);
+    cursor: pointer;
+    
+    transition: 0.2s ease;
+}
+
+.proj-rdmore:hover {
+    color: var(--green);
+}
+
+.proj-rdmore p {
+    font-weight: 700;
+}
+
+.proj-rdmore svg {
+    height:1.5em;
+    width: 1.5em;
+}
+
+.dlg {
+    position: relative;
+    inset: 0;
+    z-index: 10;
+}
+
+.proj-dlg-container {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    inset: 0;
+
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.proj-dlg-panel {
+    position: relative;
+
+    border-radius: 20px;
+    max-width: 54vw;
+    height: 80vh;
+    width: 100%;
+
+    border: 1px solid var(--gray);
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.dlg-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem 1rem 1.25rem;
+    
+    font-size: 1.25rem;
+    border-bottom: 1px solid var(--gray);
+}
+
+.dlg-title-container svg {
+    height: 2.25rem;
+    width: 2.25rem;
+    cursor: pointer;
+}
+
+.dlg-title-container svg:hover {
+    opacity: 75%;
+}
+
+.dlg-desc {
+    padding: 1rem;
+}

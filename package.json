@@ -6,6 +6,7 @@
         "build": "vite build"
     },
     "dependencies": {
+        "@headlessui/react": "^2.2.9",
         "lucide-react": "^0.560.0",
         "react": "^19.2.3",
         "react-dom": "^19.2.3",

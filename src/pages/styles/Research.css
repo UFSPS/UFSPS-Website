@@ -3,11 +3,14 @@
 }
 
 .research-main-content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6.75rem;
     margin-inline: 2.375rem;
 }
 
 .research-main-content-container h1 {
-    display: inline-block;
+    width: fit-content;
     position: relative;
 }
 
@@ -15,8 +18,8 @@
     content: '';
     position: absolute;
     left: 0;
-    bottom: -2.625rem;
-    height: 10px;
+    bottom: -2.25rem;
+    height: 5px;
     width: 100%;
 
     background: linear-gradient(90deg, #D0EBF2 0%, #DCEEC8 100%);
