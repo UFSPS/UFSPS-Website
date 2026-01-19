@@ -11,11 +11,11 @@ const Research = () => {
             <Navbar/>
             <div className="research-main-content-container">
                 <h1>Our Research</h1>
-                {Object.entries(projects).map(([id, item]) => (
-                    <ProjectItem 
-                    key={id}
-                    project={item} />
-                ))}
+                <div className="research-proj-container">
+                    {Object.entries(projects).map(([id, item]) => (
+                        <ProjectItem project={item} />
+                    ))}
+                </div>
             </div>
         </PageContainer>
     );

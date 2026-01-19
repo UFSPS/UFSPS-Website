@@ -26,3 +26,9 @@
     border-radius: 10px;
     pointer-events: none;
 }
+
+.research-proj-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}

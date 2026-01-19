@@ -4,13 +4,7 @@ import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 import { BiSolidXSquare } from "react-icons/bi";
 import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
 import { useState } from 'react';
-import platosCaveImg from '../assets/projects/Plato\'s Cave.png';
 
-// interface ProjectItemProps {
-//     title: string
-//     meta?: string
-//     description?: string
-// }
 
 const ProjectItem = ({project}: {project: Project}) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -37,7 +31,39 @@ const ProjectItem = ({project}: {project: Project}) => {
                                 {project.title}
                                 <BiSolidXSquare onClick={() => setIsOpen(false)} />
                             </DialogTitle>
-                            <Description className="dlg-desc">{project.description}</Description>
+                            <Description className="dlg-desc">
+                                {project.description}
+                                 <div className="dlg-ov">
+                                <h3>Overview</h3>
+                                {project.details.overview}
+                            </div>
+                            <div className="dlg-whatblt">
+                                <h3>What we built</h3>
+                                <ul>
+                                    {project.details.what_we_built.map((item) => (
+                                        <li>{item}</li>
+                                    ))}
+                                </ul>
+                            </div> 
+                            <div className="dlg-stack">
+                                <h3>Stack</h3>
+                                <ul>
+                                    {project.details.stack.map((item) => (
+                                        <li>{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                            {project.links && project.links.length > 0 && (<div className="dlg-links">
+                                <h3>Links</h3>
+                                <ul>
+                                    {project.links?.map((link) => (
+                                        <li>
+                                            <a href={link}>{link}</a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>)}
+                            </Description>          
                         </DialogPanel>
                     </div>
                 </Dialog>

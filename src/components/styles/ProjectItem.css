@@ -1,7 +1,7 @@
 .proj-wrapper {
     display: flex;
     flex-direction: column;
-    width: fit-content;
+    width: 535px;
     gap: 1rem;
     background: white;
 
@@ -12,8 +12,8 @@
 
 .proj-img-container {
     height: 230px;
-    width: 535px;
-    background-color: gray;
+    width: 100%;
+    background-color: var(--gray);
     overflow: hidden;
     border-radius: 19px 19px 0 0;
     box-shadow: inset 0px -4px 4px rgba(0, 0, 0, 0.25);
@@ -28,6 +28,7 @@
 .proj-title-container {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 1.25rem;
     padding-inline: 1rem;
 }
@@ -104,6 +105,10 @@
     backdrop-filter: blur(5px);
 }
 
+.proj-dlg-container h3 {
+    font-size: 1rem;
+}
+
 .proj-dlg-panel {
     position: relative;
 
@@ -112,6 +117,7 @@
     height: 80vh;
     width: 100%;
 
+    overflow: hidden;
     border: 1px solid var(--gray);
     background: rgba(255, 255, 255, 0.85);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
@@ -138,5 +144,48 @@
 }
 
 .dlg-desc {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    gap: 1rem;
     padding: 1rem;
+
+    overflow-y: auto;
+    height: calc(80vh - 5.75rem);
+    line-height: 1.4;
+}
+
+.dlg-ov {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.dlg-whatblt,
+.dlg-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.dlg-whatblt ul,
+.dlg-desc ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+    padding-left: 4rem;
+    padding-bottom: 0.5em;
+}
+
+.dlg-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+    margin-top: 1em;
+}
+
+.dlg-links ul {
+    padding: 0;
+    list-style: none;
+    color: var(--dark-green);
 }
