@@ -4,7 +4,6 @@
 
 .research-main-content-container {
     display: flex;
-    flex-direction: column;
     gap: 6.75rem;
     margin-inline: 2.375rem;
 }
@@ -22,9 +21,33 @@
     height: 5px;
     width: 100%;
 
-    background: linear-gradient(90deg, #D0EBF2 0%, #DCEEC8 100%);
+    background: linear-gradient(90deg, var(--logo-blue) 0%, #DCEEC8 100%);
     border-radius: 10px;
     pointer-events: none;
+}
+
+.research-main-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+
+    width: 25vw;
+}
+
+.research-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    color: var(--gray);
+}
+
+.research-desc a {
+    color: var(--green);
+}
+
+.research-desc a:hover {
+    color: var(--black);
 }
 
 .research-proj-container {
