@@ -37,6 +37,7 @@ h1 {
     padding: 0.625rem;
 
     font-size: 1.125rem;
+    color: var(--gray);
 }
 
 .about-image {
@@ -68,7 +69,7 @@ h1 {
     height: 5px;
     width: 100%;
 
-    background: linear-gradient(90deg, #D0EBF2 0%, #DCEEC8 100%);
+    background: linear-gradient(90deg, var(--logo-blue) 0%, #DCEEC8 100%);
     border-radius: 10px;
     pointer-events: none;
 }
