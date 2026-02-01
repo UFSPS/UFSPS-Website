@@ -1,0 +1,12 @@
+.resources-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3.375rem;
+}
+
+.workshop-title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-inline: 4em;
+}
