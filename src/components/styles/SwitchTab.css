@@ -1,4 +1,74 @@
 .switch-wrapper {
+    height: 45px;
+    width: 205px;
+    position: relative;
     display: flex;
-    gap: 2.5em;
+    align-items: center;
+    padding: 0.125em;
+
+    border: 1px solid var(--black);
+    border-radius: 50px;
+    background: transparent;
 }
+
+.switch-btn {
+    flex: 1;
+    z-index: 2;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    font-size: 1rem;
+    color: var(--black);
+    transition: 0.3s ease;
+}
+
+.switch-btn.active {
+    color: white;
+    font-weight: 600;
+}
+
+.selection-pill {
+    width: calc(50% - 2px);
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+
+    background: var(--green);
+    border-radius: 50px;
+    z-index: 1;
+    transition: 0.3s cucub-bezier(0.4, 0, 0.2, 1);
+}
+
+.selection-pill.upcoming {
+    transform: translateX(0);
+}
+
+.selection-pill.past {
+    transform: translateX(100%);
+}
+
+.switch-btn:hover:not(.active) {
+    opacity: 0.7;
+}
+
+/* .switch-wrapper button {
+    padding-inline: 1.25em;
+    border: none;
+    border-radius: 50px;
+    background: transparent;
+    font-size: 1rem;
+
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.switch-wrapper button.active {
+    background: var(--green);
+    color: white;
+    font-weight: 600;
+}
+
+.switch-wrapper:hover:not(.active) {
+  background:rgba(34, 34, 34, 0.05);
+} */
