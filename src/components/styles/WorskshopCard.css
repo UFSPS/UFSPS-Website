@@ -1,0 +1,78 @@
+.workshop-card:nth-child(1){
+  margin: 0;
+  background: #fff;
+  flex: 2 0 0;
+}
+
+.workshop-card {
+  position: relative;
+  flex: 1 0 0;
+  min-width: 300px;
+  background: #c5bebe;
+  border-top-right-radius: 3rem;
+  border: 1px solid #000;
+  padding: 2rem;
+  margin-left: -10em;
+  transition: 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.workshop-card:hover{
+  transform: translateY(-0.3em);
+  z-index: 999 !important;
+  background-color: #fff;
+  flex: 2 0 0;
+}
+
+.workshop-card:hover ~ .workshop-card{
+  transform: translateX(5.5em);
+}
+
+.workshop-card:nth-child(1) .index-number,
+.workshop-card:hover .index-number{
+  background: #D9D9D9;
+  color: #000000;
+}
+
+.index-number {
+  align-self: flex-end;
+  border-radius: 50%;
+  color: #FFFFFF;
+  background: #000000;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.workshop-card h3 {
+  margin-top: 10rem;
+}
+
+.workshop-date {
+  margin-top: 2.5rem;
+}
+
+.workshop-location {
+  margin-top: 0.5rem;
+}
+
+.workshop-description {
+  margin-top: 0.5rem;
+}
+
+/* Blur content on non-first, non-hovered cards */
+.workshop-card:not(:first-child):not(:hover) h3,
+.workshop-card:not(:first-child):not(:hover) .workshop-date,
+.workshop-card:not(:first-child):not(:hover) .workshop-location,
+.workshop-card:not(:first-child):not(:hover) .workshop-description {
+  filter: blur(3px);
+  transition: filter 0.2s ease-in-out;
+}
+
+
+
