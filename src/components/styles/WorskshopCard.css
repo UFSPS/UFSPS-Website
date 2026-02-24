@@ -121,8 +121,7 @@
 /* Hide text on the first card when it becomes compacted */
 .workshop-card:nth-child(1):has(~ .workshop-card:hover) h3,
 .workshop-card:nth-child(1):has(~ .workshop-card:hover) .workshop-info,
-.workshop-card:nth-child(1):has(~ .workshop-card:hover) .workshop-description,
-.workshop-card:nth-child(1):has(~ .workshop-card:hover) .index-number {
+.workshop-card:nth-child(1):has(~ .workshop-card:hover) .workshop-description {
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
