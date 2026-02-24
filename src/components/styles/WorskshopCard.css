@@ -4,11 +4,14 @@
   flex: 2 0 0;
 }
 
+.workshop-card:nth-child(1)::before {
+  display: none;
+}
+
 .workshop-card {
   position: relative;
   flex: 1 0 0;
   min-width: 300px;
-  background: #c5bebe;
   border-top-right-radius: 3rem;
   border: 1px solid #000;
   padding: 2rem;
@@ -17,13 +20,35 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.workshop-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), no-repeat var(--card-bg-image);
+  background-size: cover;
+  filter: blur(2px);
+  z-index: 0;
+  border-top-right-radius: 3rem;
+}
+
+.workshop-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .workshop-card:hover{
-  transform: translateY(-0.3em);
+  transform: translateY(-1em);
   z-index: 999 !important;
-  background-color: #fff;
+  background: #fff;
   flex: 2 0 0;
+}
+
+.workshop-card:hover::before {
+  display: none;
 }
 
 .workshop-card:hover ~ .workshop-card{
@@ -51,28 +76,40 @@
 
 .workshop-card h3 {
   margin-top: 10rem;
+  font-size: 1.75rem;
+}
+
+.workshop-date-time {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.2rem;
+  align-items: center;
 }
 
 .workshop-date {
-  margin-top: 2.5rem;
+  font-size: 1.15rem;
 }
 
-.workshop-location {
-  margin-top: 0.5rem;
+.workshop-time {
+  font-size: 1.15rem;
 }
+
 
 .workshop-description {
   margin-top: 0.5rem;
+  font-size: 1.1rem;
 }
 
-/* Blur content on non-first, non-hovered cards */
+/* Hide text on non-first, non-hovered cards (background image visible) */
 .workshop-card:not(:first-child):not(:hover) h3,
-.workshop-card:not(:first-child):not(:hover) .workshop-date,
-.workshop-card:not(:first-child):not(:hover) .workshop-location,
+.workshop-card:not(:first-child):not(:hover) .workshop-info,
 .workshop-card:not(:first-child):not(:hover) .workshop-description {
-  filter: blur(3px);
-  transition: filter 0.2s ease-in-out;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
 }
 
+.workshop-info{
+  margin-top: 2rem;
+}
 
 
