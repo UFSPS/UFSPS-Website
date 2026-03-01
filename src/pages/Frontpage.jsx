@@ -2,6 +2,7 @@ import { ChevronsDown } from 'lucide-react';
 import './styles/Frontpage.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Model from '../components/Model';
 import Image from '../assets/background.png';
 
 const Frontpage = () => {
@@ -9,7 +10,9 @@ const Frontpage = () => {
         <>  
     
             <Navbar style={{background: 'transparent'}}/>
-            <img className="front-image" src={Image} alt="background image"/>
+            <div className="model">
+                <Model />
+            </div>
             <div className="section-container">
                 <main className="front-container">
                     <div className="front-content">
