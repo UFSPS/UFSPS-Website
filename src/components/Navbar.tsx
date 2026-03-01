@@ -1,5 +1,5 @@
 import './styles/Navbar.css';
-import Logo from '../assets/SPS_Logo.png';
+import Logo from '../assets/logo/SPS_Logo.png';
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
