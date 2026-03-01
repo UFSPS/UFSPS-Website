@@ -8,6 +8,7 @@
     "dependencies": {
         "@headlessui/react": "^2.2.9",
         "@types/three": "^0.183.1",
+        "framer-motion": "^12.34.3",
         "lucide-react": "^0.560.0",
         "react": "^19.2.3",
         "react-dom": "^19.2.3",
