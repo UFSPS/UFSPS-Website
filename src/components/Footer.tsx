@@ -1,5 +1,5 @@
 import './styles/Footer.css';
-import Logo from '../assets/SPS_Logo_Black.png';
+import Logo from '../assets/logo/SPS_Logo_Black.png';
 import { SiInstagram, SiDiscord, SiLinkedin, SiLinktree, SiX } from 'react-icons/si';
 import { FiMail } from 'react-icons/fi';
 
