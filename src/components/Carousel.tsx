@@ -21,14 +21,14 @@ const Carousel = ({ images }: ImageList) => {
             prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
         );
     };
-    // const handleDotClick = (index: number) => {
-    //     setCurrentIndex(index);
-    // };
+    const handleDotClick = (index: number) => {
+        setCurrentIndex(index);
+    };
 
     return (
     <>
       <div className="carousel-images">
-        <img key={currentIndex} src={images[currentIndex]}/>
+        <img key={currentIndex} loading="lazy" src={images[currentIndex]}/>
         <div className="slide_direction">
           <div className="left" onClick={handlePrevious}>
             <IoIosArrowBack />
@@ -38,7 +38,7 @@ const Carousel = ({ images }: ImageList) => {
           </div>
         </div>
       </div>
-      {/* <div className="carousel-indicator">
+      <div className="carousel-indicator">
           {images.map((_, index) => (
             <div
               key={index}
@@ -46,7 +46,7 @@ const Carousel = ({ images }: ImageList) => {
               onClick={() => handleDotClick(index)}
             />
           ))}
-      </div> */}
+      </div>
     </>
   );
 };

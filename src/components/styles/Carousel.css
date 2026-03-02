@@ -43,18 +43,18 @@
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.5); 
 }
-/* .carousel-indicator {
+.carousel-indicator {
   margin-top: 20px;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 0.25em;
 }
 .dot {
   background-color: #333;
-  width: 15px;
-  height: 15px;
+  width: 0.5em;
+  height: 0.5em;
   border-radius: 50%;
 }
 .active-image {
-  background-color: #fa2020;
-} */
+  background-color: var(--green);
+}
