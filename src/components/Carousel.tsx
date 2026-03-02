@@ -1,6 +1,7 @@
 import './styles/Carousel.css';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 
 interface ImageList {
@@ -20,9 +21,9 @@ const Carousel = ({ images }: ImageList) => {
             prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
         );
     };
-    const handleDotClick = (index: number) => {
-        setCurrentIndex(index);
-    };
+    // const handleDotClick = (index: number) => {
+    //     setCurrentIndex(index);
+    // };
 
     return (
     <>
@@ -30,24 +31,10 @@ const Carousel = ({ images }: ImageList) => {
         <img key={currentIndex} src={images[currentIndex]}/>
         <div className="slide_direction">
           <div className="left" onClick={handlePrevious}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="20"
-              viewBox="0 96 960 960"
-              width="20"
-            >
-              <path d="M400 976 0 576l400-400 56 57-343 343 343 343-56 57Z" />
-            </svg>
+            <IoIosArrowBack />
           </div>
           <div className="right" onClick={handleNext}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="20"
-              viewBox="0 96 960 960"
-              width="20"
-            >
-              <path d="m304 974-56-57 343-343-343-343 56-57 400 400-400 400Z" />
-            </svg>
+            <IoIosArrowForward />
           </div>
         </div>
       </div>

@@ -17,9 +17,7 @@
 }
 .left,
 .right {
-  background-color: #fb666675;
   color: #fff;
-  padding: 10px 8px 8px 13px;
   margin: 0 20px;
   border-radius: 50%;
   position: absolute;
@@ -28,12 +26,22 @@
   margin: auto 10px;
   height: 25px;
   width: 25px;
+
+    display: flex;          
+    align-items: center;    
+    justify-content: center; 
 }
 .left {
   left: 0;
 }
 .right {
   right: 0;
+}
+
+.left:hover,
+.right:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5); 
 }
 /* .carousel-indicator {
   margin-top: 20px;
