@@ -1,6 +1,5 @@
 import './styles/Carousel.css';
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 
