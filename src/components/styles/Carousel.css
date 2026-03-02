@@ -35,7 +35,7 @@
 .right {
   right: 0;
 }
-.carousel-indicator {
+/* .carousel-indicator {
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -49,4 +49,4 @@
 }
 .active-image {
   background-color: #fa2020;
-}
+} */
