@@ -17,19 +17,20 @@
 }
 .left,
 .right {
-  color: #fff;
+  color: transparent;
   margin: 0 20px;
   border-radius: 50%;
   position: absolute;
   top: 0;
   bottom: 0;
   margin: auto 10px;
-  height: 25px;
-  width: 25px;
+  height: 2em;
+  width: 2em;
 
     display: flex;          
     align-items: center;    
     justify-content: center; 
+    transition: 0.215s ease;
 }
 .left {
   left: 0;
@@ -43,6 +44,12 @@
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.5); 
 }
+
+.carousel-images:hover .left,
+.carousel-images:hover .right {
+  color: white;
+}
+
 .carousel-indicator {
   margin-top: 20px;
   display: flex;
