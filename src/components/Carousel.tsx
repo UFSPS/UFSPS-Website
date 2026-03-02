@@ -24,7 +24,7 @@ const Carousel = ({ images }: ImageList) => {
     };
 
     return (
-    <div className="carousel">
+    <div className="carousel-images">
         <img
           key={currentIndex}
           src={images[currentIndex]}
@@ -50,11 +50,11 @@ const Carousel = ({ images }: ImageList) => {
           </svg>
         </div>
       </div>
-      <div className="indicator">
+      <div className="carousel-indicator">
         {images.map((_, index) => (
           <div
             key={index}
-            className={`dot ${currentIndex === index ? "active" : ""}`}
+            className={`dot ${currentIndex === index ? "active-image" : ""}`}
             onClick={() => handleDotClick(index)}
           ></div>
         ))}

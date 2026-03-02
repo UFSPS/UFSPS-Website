@@ -3,7 +3,11 @@ import { eboardProfiles } from '../data/eboard.js';
 import Navbar from '../components/Navbar.js';
 import PageContainer from '../components/PageContainer.js';
 import Profile from '../components/Profile.js';
+import Carousel from '../components/Carousel.js';
 import Footer from '../components/Footer.js';
+
+const imageModules = import.meta.glob("../assets/research_teams/*.png", { eager: true });
+const images = Object.values(imageModules).map((mod: any) => mod.default);
 
 const About = () => {
     return (
@@ -29,7 +33,7 @@ const About = () => {
                                 </p>
                             </div>
                             <div className="about-image">
-
+                                <Carousel images={images} />
                             </div>
                         </div>
                     </div>
