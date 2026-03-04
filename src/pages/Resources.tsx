@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './styles/Resources.css';
 
 import PageContainer from '../components/PageContainer.js';
@@ -8,15 +9,23 @@ import WorkshopCard from '../components/Workshopcard.js';
 import { workshops } from '../data/workshops.js';
 
 const Resources = () => {
+    const [selected, setSelected] = useState<'upcoming' | 'past'>('upcoming');
+
+    const filteredWorkshops = workshops.filter((workshop) => {
+        const workshopDate = new Date(workshop.date);
+        const now = new Date();
+        return selected === 'past' ? workshopDate < now : workshopDate >= now;
+    });
+
     return (
         <PageContainer className="resources-wrapper">
             <Navbar />
             <div className="workshop-title-container">
                 <h1>Workshops</h1>
-                <SwitchTab />
+                <SwitchTab selected={selected} onSelect={setSelected} />
             </div>
             <div className="workshop-cards-container">
-                {workshops.map((workshop, index) => (
+                {filteredWorkshops.map((workshop, index) => (
                     <WorkshopCard
                         key={index}
                         index={index}
