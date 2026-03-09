@@ -1,23 +1,24 @@
+/* First card takes up more space in the horizontal layout */
 .workshop-card:nth-child(1){
   margin: 0;
   flex: 2 0 0;
-}
+} 
 
 .workshop-card {
   position: relative;
   flex: 1 0 0;
-  min-width: 300px;
-  border-top-right-radius: 3rem;
+  min-width: clamp(200px, 15vw + 50px, 300px);
+  border-top-right-radius: 1rem;
   border: 1px solid #000;
-  padding: 2rem;
-  padding-left: 3rem;
+  padding: clamp(1rem, 0.5rem + 1.5vh, 2rem);
+  padding-left: clamp(1.5rem, 1rem + 1vw, 3rem);
   margin-left: -10rem;
   transition: 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   overflow: hidden;
-  color: #FFFFFF;
+  color: #FFF;
   background: #000;
 }
 
@@ -53,9 +54,27 @@
   z-index: 1;
 }
 
+/* When hovering allow workshop card to expand */
 .workshop-card:hover{
   flex: 2 0 0;
   margin-left: -1rem;
+  /* z-index: 200 !important; */
+}
+
+.workshop-card .workshop-description,
+.workshop-card .workshop-info {
+  padding: clamp(0.75rem, 0.5rem + 0.75vh, 1.5rem);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.workshop-card:hover .workshop-description {
+  opacity: 1;
+  flex: 1 1 0;
+  overflow-y: auto;
+}
+
+.workshop-card:hover .workshop-info {
+  opacity: 1;
 }
 
 /* Compact all cards to the LEFT of the hovered card */
@@ -75,10 +94,6 @@
   transform: scale(1.1);
 }
 
-.workshop-card:not(:first-child):hover ~ .workshop-card{
-  transform: translateX(5.5em);
-}
-
 .workshop-card:nth-child(1) .index-number,
 .workshop-card:hover .index-number{
   background: #D9D9D9;
@@ -87,33 +102,38 @@
 
 .index-number {
   align-self: flex-end;
+  width: clamp(2rem, 1.5rem + 1vh, 3rem);
+  height: clamp(2rem, 1.5rem + 1vh, 3rem);
   border-radius: 50%;
+  flex-shrink: 0;
   color: #FFFFFF;
   background: #000000;
-  width: 3rem;
-  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .workshop-card h3 {
-  margin-top: 10rem;
-  font-size: 2.5rem;
-  padding: 1rem 0;
+  margin-top: auto;
+  font-size: clamp(0.875rem, 0.5rem + 0.8vw, 1.25rem);
+  padding: clamp(0.25rem, 0.5vh, 1rem) 0;
   position: relative;
   display: inline-block;
   align-self: flex-start;
+  flex-shrink: 0;
 }
+
+/* Expanding underline animation */
 
 .workshop-card h3::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0.5rem;
+  bottom: -0.3rem;
   width: 0;
   height: 4px;
   background: rgba(255, 255, 255, 0.5);
+  border-radius: 0.8rem;
   opacity: 0;
   transition: width 0.8s ease-in-out, opacity 0.4s ease-in-out;
 }
@@ -130,21 +150,29 @@
   align-items: center;
 }
 
-.workshop-date {
-  font-size: 1.15rem;
-}
-
+.workshop-date, 
 .workshop-time {
-  font-size: 1.15rem;
+  font-size: clamp(0.75rem, 0.5rem + 0.6vw, 1rem);
 }
 
 .workshop-description {
-  margin-top: 1.5rem;
-  font-size: 1.1rem;
-  line-height: 1.8;
+  margin-top: clamp(0.5rem, 0.25rem + 1vh, 1.5rem);
+  font-size: clamp(0.75rem, 0.5rem + 0.6vw, 1rem);
+  line-height: clamp(1.4, 1.2 + 0.4vh, 1.8);
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 0.5rem;
-  padding: 1.5rem;
+  padding: clamp(0.75rem, 0.5rem + 0.75vh, 1.5rem);
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.workshop-info{
+  margin-top: clamp(0.75rem, 0.5rem + 1vh, 2rem);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.5rem;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 /* Hide info/description on non-first, non-hovered cards */
@@ -161,7 +189,7 @@
   writing-mode: vertical-rl;
   white-space: nowrap;
   margin-top: 2rem;
-  font-size: 1.5rem;
+  font-size: clamp(0.75rem, 0.5rem + 0.6vw, 1rem);
   border: none;
   padding: 0;
   transition: margin 0.2s ease-in-out;
@@ -181,7 +209,7 @@
   writing-mode: vertical-rl;
   white-space: nowrap;
   margin-top: 2rem;
-  font-size: 1.5rem;
+  font-size: clamp(0.75rem, 0.5rem + 0.6vw, 1rem);
   border: none;
   padding: 0;
   transition: margin 0.2s ease-in-out;
@@ -189,13 +217,6 @@
 
 .workshop-card:nth-child(1):has(~ .workshop-card:hover) h3::after {
   display: none;
-}
-
-.workshop-info{
-  margin-top: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 0.5rem;
-  padding: 1.5rem;
 }
 
 
