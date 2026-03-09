@@ -25,5 +25,9 @@ export const eboardProfiles: Record<string, Profile> =
         name: "Awwab Azam",
         githubLink: "https://github.com/kaddu341",
         linkedinLink: "https://www.linkedin.com/in/awwab-ali-azam-101a4b257"
+    },
+    "Chief of Networking": {
+        name: "Luke Slaughter",
+        linkedinLink: "http://linkedin.com/in/luke-slaughter"
     }
 }
