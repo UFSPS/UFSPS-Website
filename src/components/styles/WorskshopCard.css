@@ -2,7 +2,7 @@
 .workshop-card:nth-child(1){
   margin: 0;
   flex: 2 0 0;
-} 
+}
 
 .workshop-card {
   position: relative;
@@ -17,9 +17,11 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  overflow: hidden;
+  overflow-y: scroll;
+  scrollbar-width: thin;
   color: #FFF;
   background: #000;
+  cursor: pointer;
 }
 
 /* Default background for non-first, non-hovered cards */
@@ -67,6 +69,10 @@
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
+.workshop-card .workshop-description{
+  max-height: 350px;
+}
+
 .workshop-card:hover .workshop-description {
   opacity: 1;
   flex: 1 1 0;
@@ -79,8 +85,8 @@
 
 /* Compact all cards to the LEFT of the hovered card */
 .workshop-card:has(~ .workshop-card:hover) {
-  min-width: 100px;
-  flex: 0 0 100px;
+  min-width: clamp(80px, 4rem + 3vw, 7rem);
+  flex: 0 0 clamp(80px, 4rem + 3vw, 7rem);
   margin-left: 0;
   transform: translateX(-1rem);
   border-top-right-radius: 0;
@@ -92,6 +98,15 @@
   background-size: cover;
   filter: blur(2px);
   transform: scale(1.1);
+}
+/* Show GitHub link only for first card when no other card is hovered */
+.workshop-card:nth-child(1) .github-link {
+  display: block;
+}
+
+/* Hide GitHub link for first card when another card is hovered */
+.workshop-card:nth-child(1):has(~ .workshop-card:hover) .github-link {
+  display: none;
 }
 
 .workshop-card:nth-child(1) .index-number,
@@ -175,6 +190,18 @@
   flex-shrink: 0;
 }
 
+/* Github link */
+.github-link {
+  text-decoration: none;
+  color: rgb(221, 182, 75);
+  align-self: flex-start;
+  margin-top: 0.3rem;
+}
+
+.github-link:hover{
+  color: rgb(239, 192, 61); 
+}
+
 /* Hide info/description on non-first, non-hovered cards */
 .workshop-card:not(:first-child):not(:hover) .workshop-info,
 .workshop-card:not(:first-child):not(:hover) .workshop-description {
@@ -189,19 +216,28 @@
   writing-mode: vertical-rl;
   white-space: nowrap;
   margin-top: 2rem;
-  font-size: clamp(0.75rem, 0.5rem + 0.6vw, 1rem);
+  font-size: clamp(0.75rem, 0.5rem + 0.6vw, 1.25rem);
   border: none;
   padding: 0;
   transition: margin 0.2s ease-in-out;
+  align-self: center;
 }
+
+
 
 /* Hide info/description on the first card when it becomes compacted */
 .workshop-card:nth-child(1):has(~ .workshop-card:hover) .workshop-info,
-.workshop-card:nth-child(1):has(~ .workshop-card:hover) .workshop-description {
+.workshop-card:nth-child(1):has(~ .workshop-card:hover) .workshop-description
+{
   opacity: 0;
   border: none;
   padding: 0;
   transition: opacity 0.2s ease-in-out;
+}
+
+.workshop-card:not(:first-child):not(:hover) .github-link {
+  /* styles */
+  display: none;
 }
 
 /* Show title vertically on the first card when compacted */
@@ -218,5 +254,7 @@
 .workshop-card:nth-child(1):has(~ .workshop-card:hover) h3::after {
   display: none;
 }
+
+
 
 

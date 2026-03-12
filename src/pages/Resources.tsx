@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles/Resources.css';
 
 import PageContainer from '../components/PageContainer.js';
@@ -10,12 +10,29 @@ import { workshops } from '../data/workshops.js';
 
 const Resources = () => {
     const [selected, setSelected] = useState<'upcoming' | 'past'>('upcoming');
+    const [cardCount, setCardCount] = useState(10);
+
+    useEffect(() => {
+        const updateCardCount = () => {
+        const width = window.innerWidth;
+
+        if (width < 640) setCardCount(3);
+        else if (width < 1024) setCardCount(5);
+        else setCardCount(10);
+        };
+
+        updateCardCount();
+        window.addEventListener('resize', updateCardCount);
+
+        return () => window.removeEventListener('resize', updateCardCount);
+    }, []);
+
 
     const filteredWorkshops = workshops.filter((workshop) => {
         const workshopDate = new Date(workshop.date);
         const now = new Date();
         return selected === 'past' ? workshopDate < now : workshopDate >= now;
-    }).slice(0, 10);
+    }).slice(0, cardCount);
 
     return (
         <PageContainer className="resources-wrapper">
