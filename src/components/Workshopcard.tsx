@@ -23,6 +23,7 @@ const WorkshopCard = ({ title, date, time, description, location, index = 0, ima
             <p className="workshop-time">{time}</p>
           </div>
         </div>
+        <a href="https://github.com/Jibby2k1/SPS_Curriculum?tab=readme-ov-file" target="_blank" className="github-link">View Details Here</a>
       </div>
 	);
 };
