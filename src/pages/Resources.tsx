@@ -15,7 +15,7 @@ const Resources = () => {
         const workshopDate = new Date(workshop.date);
         const now = new Date();
         return selected === 'past' ? workshopDate < now : workshopDate >= now;
-    });
+    }).slice(0, 10);
 
     return (
         <PageContainer className="resources-wrapper">
