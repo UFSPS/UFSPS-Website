@@ -1,7 +1,7 @@
 .resources-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 3.375rem;
+    gap: clamp(1.5rem, 1rem + 2vh, 3.375rem);
     height: 100vh;
     overflow: hidden;
 }
@@ -9,7 +9,7 @@
 .workshop-title-container {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: clamp(1rem, 0.5rem + 1.5vh, 2.5rem);
     margin-inline: 4em;
 }
 
