@@ -2,8 +2,6 @@ const images: string[] = Array.from({ length: 11 }, (_, i) =>
   new URL(`../assets/past/img${i + 1}.png`, import.meta.url).href
 );
 
-console.log(images);
-
 export interface Workshop {
   title: string;
   location: string;
@@ -65,7 +63,7 @@ export const workshops: Workshop[] = [
   {
     title: "Professional Development Workshop",
     location: "UF Artificial Intelligence and Informatics Research Institute",
-    date: "Today",
+    date: "November 22, 2025",
     time: "6:00 PM",
     description: "Exploring randomness, probability, and stochastic processes. Dive into Monte Carlo methods, Markov chains, and how randomness underpins modern physics simulations. We'll code up random walk simulations and compare computational results with analytical predictions. This workshop bridges the gap between abstract probability theory and practical computational tools.",
     image: images[6]!,

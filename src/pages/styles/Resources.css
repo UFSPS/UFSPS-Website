@@ -2,8 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: clamp(1.5rem, 1rem + 2vh, 3.375rem);
-    height: 100vh;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .workshop-title-container {
@@ -13,8 +12,40 @@
     margin-inline: 4em;
 }
 
-.workshop-cards-container {
+.workshop-body-container{
     display: flex;
-    width: 100%;
     flex: 1;
 }
+
+/* Allow container to grow vertically as needed */
+.workshop-cards-container {
+    width: 100%;
+    display: flex;
+    background: rgb(96, 93, 93);
+    overflow: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.prev-button,
+.next-button{
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    padding: 10px 15px;
+    opacity: 0.5;
+    border: none;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.prev-button { left: 10px; }
+.next-button { right: 10px; }
+
+.prev-button:hover,
+.next-button:hover {
+ opacity: 0.8;
+}
+
