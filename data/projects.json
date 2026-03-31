@@ -1,0 +1,88 @@
+{
+  "items": [
+    {
+      "title": "Curriculum and Workshops",
+      "meta": "Education · onboarding · community",
+      "summary": "A reusable chapter workshop track that ties analysis, probability, and machine learning to applied signal-processing examples with concrete notebooks and demos.",
+      "image": "assets/img/projects/sps-icon.png",
+      "image_alt": "IEEE SPS icon.",
+      "tags": [
+        "Workshops",
+        "Jupyter",
+        "Teaching"
+      ],
+      "links": [
+        {
+          "label": "Open GitHub",
+          "href": "https://github.com/Jibby2k1/SPS_Curriculum",
+          "kind": "primary"
+        },
+        {
+          "label": "Watch the talk",
+          "href": "https://www.youtube.com/watch?v=yuJaMaA18js"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "title": "Aude",
+      "meta": "Audio ML · sensing · experimentation",
+      "summary": "A chapter-affiliated research track on machine listening, source separation, and localization using hardware-informed data collection and evaluation workflows.",
+      "image": "assets/img/projects/aude-icon.png",
+      "image_alt": "Aude project icon.",
+      "tags": [
+        "Audio ML",
+        "Research",
+        "Hardware"
+      ],
+      "links": [
+        {
+          "label": "Open GitHub",
+          "href": "https://github.com/Jibby2k1/Aude",
+          "kind": "primary"
+        }
+      ],
+      "featured": false
+    },
+    {
+      "title": "Ergo",
+      "meta": "Neuroengineering · systems · biosignals",
+      "summary": "A neuroengineering platform for EMG and EEG acquisition, feature extraction, and dynamical-systems experiments connected to human-in-the-loop control.",
+      "image": "assets/img/projects/ergo-icon.png",
+      "image_alt": "Ergo project icon.",
+      "tags": [
+        "EEG",
+        "EMG",
+        "Systems"
+      ],
+      "links": [
+        {
+          "label": "Open GitHub",
+          "href": "https://github.com/Jibby2k1/Ergo",
+          "kind": "primary"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "title": "Plato's Cave",
+      "meta": "Research tooling · language + structure",
+      "summary": "Tooling for literature review that turns papers into structured claims-and-evidence graphs so teams can read faster and compare work more systematically.",
+      "image": "assets/img/projects/plato-cave.png",
+      "image_alt": "Plato's Cave project graphic.",
+      "tags": [
+        "Tooling",
+        "LLMs",
+        "Reproducibility"
+      ],
+      "links": [
+        {
+          "label": "Open GitHub",
+          "href": "https://github.com/matheusmaldaner/PlatosCave",
+          "kind": "primary"
+        }
+      ],
+      "featured": true
+    }
+  ]
+}

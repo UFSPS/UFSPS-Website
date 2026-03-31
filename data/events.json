@@ -1,0 +1,65 @@
+{
+  "items": [
+    {
+      "title": "Spring Workshop: Signals, Probability, and Jupyter",
+      "category": "Workshop",
+      "summary": "A hands-on session that connects core signal concepts to notebook-based experiments and practical modeling choices for new members.",
+      "location": "Malachowsky Hall, Room TBD · Gainesville, FL",
+      "start_iso": "2026-04-16T18:30:00-04:00",
+      "end_iso": "2026-04-16T20:00:00-04:00",
+      "tags": [
+        "Beginner-friendly",
+        "Jupyter",
+        "Hands-on"
+      ],
+      "action_label": "Get updates on Discord",
+      "action_url": "https://discord.gg/6GRymPjgKc",
+      "featured": true
+    },
+    {
+      "title": "Project Night: Audio ML and Edge Sensing",
+      "category": "Project showcase",
+      "summary": "An evening centered on chapter-built systems in audio machine learning, biosignal sensing, and deployable experiment workflows.",
+      "location": "AIIRI / CISE E251 · Gainesville, FL",
+      "start_iso": "2026-04-30T18:00:00-04:00",
+      "end_iso": "2026-04-30T19:30:00-04:00",
+      "tags": [
+        "Projects",
+        "Research",
+        "Community"
+      ],
+      "action_label": "Follow announcements",
+      "action_url": "https://www.instagram.com/uf.sps/"
+    },
+    {
+      "title": "Teaching Analysis and ML with Jupyter at UF",
+      "category": "Past workshop",
+      "summary": "A chapter-facing talk and workshop format focused on making analysis, probability, and machine learning more concrete for newcomers.",
+      "location": "UF Data Science Symposium",
+      "start_iso": "2025-10-25T13:00:00-04:00",
+      "end_iso": "2025-10-25T14:00:00-04:00",
+      "tags": [
+        "Workshop",
+        "Curriculum",
+        "Talk"
+      ],
+      "action_label": "Watch the talk",
+      "action_url": "https://www.youtube.com/watch?v=yuJaMaA18js"
+    },
+    {
+      "title": "UF Data Science Symposium Showcase",
+      "category": "Past event",
+      "summary": "A public-facing showcase connecting chapter work to broader UF data science programming and technical community activity.",
+      "location": "University of Florida",
+      "start_iso": "2025-10-25T09:00:00-04:00",
+      "end_iso": "2025-10-25T17:00:00-04:00",
+      "tags": [
+        "Symposium",
+        "Outreach",
+        "UF"
+      ],
+      "action_label": "See event details",
+      "action_url": "https://www.ufdsi.com/symposium"
+    }
+  ]
+}

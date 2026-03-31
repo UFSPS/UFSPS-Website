@@ -1,0 +1,67 @@
+{
+  "name": "IEEE Signal Processing Society at the University of Florida",
+  "short_name": "IEEE SPS @ UF",
+  "tagline": "Workshops, projects, and community for signal processing at UF.",
+  "mission": "IEEE SPS @ UF creates approachable paths into signal processing through workshops, project-based learning, and a technical community that welcomes students from engineering, math, data science, and adjacent fields.",
+  "base_url": "https://ieee-sps-uf.raulv.dev",
+  "email": "ieee.sps.uf@gmail.com",
+  "location": "Gainesville, Florida",
+  "address_lines": [
+    "Artificial Intelligence and Informatics Research Institute",
+    "432 Newell Drive, CISE Bldg E251",
+    "Gainesville, Florida 32611-5585"
+  ],
+  "social_links": [
+    {
+      "label": "Instagram",
+      "href": "https://www.instagram.com/uf.sps/"
+    },
+    {
+      "label": "Discord",
+      "href": "https://discord.gg/6GRymPjgKc"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/company/ieee-signal-processing-society-uf/"
+    },
+    {
+      "label": "X",
+      "href": "https://x.com/uf_sps"
+    },
+    {
+      "label": "Linktree",
+      "href": "https://linktr.ee/uf.sps"
+    }
+  ],
+  "join_links": [
+    {
+      "label": "Join the Discord",
+      "href": "https://discord.gg/6GRymPjgKc",
+      "kind": "primary"
+    },
+    {
+      "label": "Follow on Instagram",
+      "href": "https://www.instagram.com/uf.sps/",
+      "kind": "secondary"
+    },
+    {
+      "label": "Email the chapter",
+      "href": "mailto:ieee.sps.uf@gmail.com",
+      "kind": "secondary"
+    }
+  ],
+  "partner_links": [
+    {
+      "label": "IEEE Signal Processing Society",
+      "href": "https://signalprocessingsociety.org/"
+    },
+    {
+      "label": "University of Florida ECE",
+      "href": "https://www.ece.ufl.edu/"
+    },
+    {
+      "label": "UF Student Organizations",
+      "href": "https://orgs.studentinvolvement.ufl.edu/"
+    }
+  ]
+}

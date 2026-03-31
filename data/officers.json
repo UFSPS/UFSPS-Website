@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "name": "Raul Valle",
+      "role": "President",
+      "term": "2025–2026",
+      "bio": "Leads chapter direction across workshops, research-facing programming, and community building for students who want a rigorous but approachable way into signal processing.",
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/Jibby2k1"
+        },
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/in/raul-valle1/"
+        }
+      ],
+      "display_order": 1
+    },
+    {
+      "name": "Matheus Maldaner",
+      "role": "Vice President",
+      "term": "2025–2026",
+      "bio": "Supports chapter strategy and technical programming, with a focus on keeping research-minded projects connected to accessible student-facing events.",
+      "links": [],
+      "display_order": 2
+    },
+    {
+      "name": "Tiffany Huang",
+      "role": "Chief of Operations",
+      "term": "2025–2026",
+      "bio": "Coordinates logistics and chapter operations so workshops, announcements, and community touchpoints stay consistent throughout the semester.",
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/narcistiq"
+        },
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/in/tiffanyhuang1010/"
+        }
+      ],
+      "display_order": 3
+    }
+  ]
+}

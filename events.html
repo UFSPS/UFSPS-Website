@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Events | IEEE SPS @ UF</title>
+    <meta name="description" content="Upcoming and past events for IEEE Signal Processing Society at the University of Florida." />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Events | IEEE SPS @ UF" />
+    <meta property="og:description" content="Upcoming workshops, showcases, and chapter programming from IEEE SPS at UF." />
+    <meta property="og:url" content="https://ieee-sps-uf.raulv.dev/events.html" />
+    <meta property="og:image" content="https://ieee-sps-uf.raulv.dev/assets/img/sps-logo-lockup.png" />
+    <link rel="canonical" href="https://ieee-sps-uf.raulv.dev/events.html" />
+    <link rel="icon" href="assets/img/sps-favi.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/site.css" />
+    <script type="module" src="assets/js/render.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell topbar">
+        <a class="brand" href="index.html">
+          <div class="brand-mark"><img src="assets/img/sps-logo-lockup.png" alt="IEEE SPS at UF logo" /></div>
+          <div class="brand-copy">
+            <span class="brand-kicker">University of Florida chapter</span>
+            <span class="brand-name">IEEE SPS @ UF</span>
+          </div>
+        </a>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-controls="site-nav" aria-expanded="false">Menu</button>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a class="nav-link" href="index.html" data-route="index.html">Home</a>
+          <a class="nav-link" href="about.html" data-route="about.html">About</a>
+          <a class="nav-link" href="events.html" data-route="events.html">Events</a>
+          <a class="nav-link" href="projects.html" data-route="projects.html">Projects</a>
+          <a class="nav-link" href="resources.html" data-route="resources.html">Resources</a>
+          <a class="nav-link" href="join.html" data-route="join.html">Join</a>
+        </nav>
+        <div class="nav-actions" id="nav-actions">
+          <a class="mini-link" href="join.html">Join</a>
+          <a class="mini-link" href="https://www.instagram.com/uf.sps/" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-main" id="main">
+      <div class="shell">
+        <section class="page-hero reveal">
+          <div class="eyebrow">Events and programming</div>
+          <h1 class="page-title">Workshops, showcases, and chapter touchpoints.</h1>
+          <p class="lede">
+            This is the public calendar for chapter-facing programming. Use it to find the next event, review recent
+            chapter activity, and decide where to jump in.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="join.html">Join the chapter channels</a>
+            <a class="btn secondary" href="https://www.instagram.com/uf.sps/" target="_blank" rel="noreferrer">Follow updates</a>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker">Upcoming</div>
+              <h2 class="section-title">Next public programming</h2>
+            </div>
+            <p class="section-subtitle">If a date is not final yet, chapter channels are the fastest place for updates.</p>
+          </div>
+          <div class="grid two" data-render="events-upcoming"></div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker">Archive</div>
+              <h2 class="section-title">Recent chapter activity</h2>
+            </div>
+          </div>
+          <div class="grid two" data-render="events-past"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer-panel">
+      <div class="shell footer-grid">
+        <div>
+          <img class="footer-mark" src="assets/img/sps-logo-white.png" alt="IEEE SPS at UF logo in white" />
+          <p class="footer-copy">The chapter uses events to turn interest into practice, not just to announce itself.</p>
+        </div>
+        <div class="stack">
+          <div class="footer-label">Contact</div>
+          <a data-site-email-link data-site-email-text></a>
+          <div data-address-lines></div>
+        </div>
+        <div class="stack">
+          <div class="footer-label">Community</div>
+          <div class="footer-links" data-social-links></div>
+        </div>
+      </div>
+      <div class="shell footer-meta-row">
+        <span>© <span data-year></span> IEEE Signal Processing Society at the University of Florida</span>
+        <span>Use the chapter channels for the latest scheduling changes.</span>
+      </div>
+    </footer>
+  </body>
+</html>

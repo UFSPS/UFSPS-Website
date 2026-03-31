@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "label": "Curriculum",
+      "title": "SPS Workshop Repository",
+      "summary": "Notebook-based workshop material connecting fundamentals to concrete signal-processing tasks and demos.",
+      "type": "GitHub",
+      "audience": "Members",
+      "href": "https://github.com/Jibby2k1/SPS_Curriculum",
+      "cta_label": "Open repository",
+      "sort_order": 1
+    },
+    {
+      "label": "Community",
+      "title": "Chapter Discord",
+      "summary": "The fastest way to track new events, ask questions, and hear about chapter programming between meetings.",
+      "type": "Community",
+      "audience": "Prospective and current members",
+      "href": "https://discord.gg/6GRymPjgKc",
+      "cta_label": "Join Discord",
+      "sort_order": 2
+    },
+    {
+      "label": "Video",
+      "title": "Teaching Analysis and ML with Jupyter at UF",
+      "summary": "A public talk that shows how the chapter approaches technical teaching and workshop design.",
+      "type": "YouTube",
+      "audience": "Visitors",
+      "href": "https://www.youtube.com/watch?v=yuJaMaA18js",
+      "cta_label": "Watch the talk",
+      "sort_order": 3
+    },
+    {
+      "label": "Social",
+      "title": "Chapter Linktree",
+      "summary": "A quick directory of chapter social channels and public links for easier outreach.",
+      "type": "Links",
+      "audience": "Visitors",
+      "href": "https://linktr.ee/uf.sps",
+      "cta_label": "Open links",
+      "sort_order": 4
+    },
+    {
+      "label": "Reference",
+      "title": "IEEE Signal Processing Society",
+      "summary": "The global society site for members who want broader technical, conference, and society-level context.",
+      "type": "External",
+      "audience": "Members",
+      "href": "https://signalprocessingsociety.org/",
+      "cta_label": "Open IEEE SPS",
+      "sort_order": 5
+    }
+  ]
+}

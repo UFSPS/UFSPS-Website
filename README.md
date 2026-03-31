@@ -1,29 +1,25 @@
-# UFSPS-Website
-This repository is for the website of the UF IEEE Signal Processing Society. 
-## Getting Started
+# IEEE SPS @ UF Site
 
-### Prerequesits
-- **[Node.js](https://nodejs.org/en/download)** (v14 or higher) and **npm**, which comes with Node.
+Static multi-page site for the IEEE Signal Processing Society chapter at the University of Florida.
 
-### Cloning the Repository
+## Structure
 
-```bash
-git clone https://github.com/UFSPS/UFSPS-Website
-cd UFSPS-Website
-```
+- `index.html`, `about.html`, `events.html`, `projects.html`, `resources.html`, `join.html`: public pages
+- `assets/css/site.css`: shared visual system and layout
+- `assets/js/site.js`: shared navigation, reveal, and utility logic
+- `assets/js/render.js`: JSON-driven rendering for officers, events, projects, resources, and footer content
+- `data/*.json`: structured chapter content that officers can update without changing layout code
+- `assets/img/`: logos and project images
 
-### Installing Dependencies
+## Officer Update Workflow
 
-After cloning the repository, install the required dependencies:
+1. Edit `data/officers.json` to change leadership information.
+2. Edit `data/events.json` for upcoming and past chapter programming.
+3. Edit `data/projects.json` and `data/resources.json` as the chapter's public-facing work evolves.
+4. Keep the copy on the page files concise and organization-facing.
 
-```bash
-npm install
-```
+## Deployment
 
-### Running the Application
-
-Start the app locally in your project root
-```bash
-npm start
-```
-The app should be running at `http://localhost:5173`. If it is not available at port 5173, the port is already being used and Vite will automatically choose the next available port.
+- Publish the repository root with GitHub Pages.
+- Keep `CNAME` set to `ieee-sps-uf.raulv.dev`.
+- Add a DNS `CNAME` record from `ieee-sps-uf.raulv.dev` to `jibby2k1.github.io`.
