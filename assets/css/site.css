@@ -297,6 +297,18 @@ select {
   color: rgba(255, 255, 255, 0.72);
 }
 
+.hero-panel .body-copy,
+.hero-panel .card-text,
+.hero-panel .event-meta {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.hero-panel .chip {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
 .hero-panel .btn {
   align-self: start;
 }
@@ -510,8 +522,17 @@ h3 {
 
 .section-panel.dark .body-copy,
 .section-panel.dark .meta,
-.section-panel.dark .section-subtitle {
-  color: rgba(255, 255, 255, 0.74);
+.section-panel.dark .section-subtitle,
+.section-panel.dark .list {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.section-panel.dark .section-kicker {
+  color: var(--blue-400);
+}
+
+.section-panel.dark .list li::marker {
+  color: var(--green-400);
 }
 
 .list {
