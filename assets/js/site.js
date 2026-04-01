@@ -1,7 +1,7 @@
 const DATA_CACHE = new Map();
 
 function initActiveNav() {
-  const path = location.pathname.split('/').pop() || 'index.html';
+  const path = document.body?.dataset?.navRoute || location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link[data-route]').forEach((link) => {
     const isActive = link.getAttribute('data-route') === path;
     link.classList.toggle('active', isActive);

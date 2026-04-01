@@ -59,13 +59,21 @@ function officerMarkup(officer) {
     .map((link) => linkMarkup(link.label, link.href))
     .join('');
   const linksBlock = links ? `<div class="link-row">${links}</div>` : '';
+  const imagePath = typeof officer.image === 'string' && officer.image.trim() ? escapeHTML(encodeURI(officer.image)) : '';
+  const profileHref = typeof officer.profile_href === 'string' && officer.profile_href.trim() ? escapeHTML(encodeURI(officer.profile_href)) : '';
+  const avatarMarkup = imagePath
+    ? `<img class="avatar avatar-photo" src="${imagePath}" alt="${escapeHTML(officer.name)} portrait" loading="lazy" decoding="async" />`
+    : `<div class="avatar" aria-hidden="true">${escapeHTML(initials(officer.name))}</div>`;
+  const titleMarkup = profileHref
+    ? `<a class="officer-title-link" href="${profileHref}">${escapeHTML(officer.name)}</a>`
+    : escapeHTML(officer.name);
 
   return `
     <article class="card officer-card reveal">
       <div class="officer-head">
-        <div class="avatar" aria-hidden="true">${escapeHTML(initials(officer.name))}</div>
+        ${avatarMarkup}
         <div>
-          <div class="officer-title">${escapeHTML(officer.name)}</div>
+          <div class="officer-title">${titleMarkup}</div>
           <div class="officer-role meta">${escapeHTML(officer.role)}</div>
         </div>
       </div>

@@ -5,6 +5,8 @@
       "role": "President",
       "term": "2025–2026",
       "bio": "Leads chapter direction across workshops, research-facing programming, and community building for students who want a rigorous but approachable way into signal processing.",
+      "image": "public/profiles/Raul Valle.jpg",
+      "profile_href": "raul-valle.html",
       "links": [
         {
           "label": "GitHub",
@@ -22,6 +24,7 @@
       "role": "Vice President",
       "term": "2025–2026",
       "bio": "Supports chapter strategy and technical programming, with a focus on keeping research-minded projects connected to accessible student-facing events.",
+      "image": "public/profiles/Matheus Kunzler Maldaner.jpeg",
       "links": [],
       "display_order": 2
     },
@@ -30,6 +33,7 @@
       "role": "Chief of Operations",
       "term": "2025–2026",
       "bio": "Coordinates logistics and chapter operations so workshops, announcements, and community touchpoints stay consistent throughout the semester.",
+      "image": "public/profiles/Tiffany Huang.jpeg",
       "links": [
         {
           "label": "GitHub",
@@ -41,6 +45,42 @@
         }
       ],
       "display_order": 3
+    },
+    {
+      "name": "Awwab Azam",
+      "role": "Chief of Education",
+      "term": "2025–2026",
+      "bio": "Develops educational programming and learning pathways that help members build signal-processing fluency through approachable, technically serious workshops.",
+      "image": "public/profiles/Awwab Azam.jpeg",
+      "links": [],
+      "display_order": 4
+    },
+    {
+      "name": "Jack Payne",
+      "role": "Chief of Research",
+      "term": "2025–2026",
+      "bio": "Connects chapter activity to research-facing projects and helps shape opportunities for members who want to explore deeper technical work.",
+      "image": "public/profiles/Jack Payne.jpeg",
+      "links": [],
+      "display_order": 5
+    },
+    {
+      "name": "Luke Slaughter",
+      "role": "Chief of Networking",
+      "term": "2025–2026",
+      "bio": "Builds relationships across the chapter community and supports programming that helps members meet collaborators, mentors, and peers across disciplines.",
+      "image": "public/profiles/Luke Slaughter.jpeg",
+      "links": [],
+      "display_order": 6
+    },
+    {
+      "name": "Divij Goyal",
+      "role": "Treasurer",
+      "term": "2025–2026",
+      "bio": "Manages chapter finances and operational planning so events, resources, and chapter initiatives stay organized and sustainable.",
+      "image": "public/profiles/Divij Goyal.jpeg",
+      "links": [],
+      "display_order": 7
     }
   ]
 }

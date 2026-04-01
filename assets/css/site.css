@@ -576,9 +576,27 @@ h3 {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
+.avatar-photo {
+  display: block;
+  object-fit: cover;
+  background: rgba(13, 31, 54, 0.08);
+  box-shadow:
+    0 10px 24px rgba(8, 15, 28, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
 .officer-title {
   font-size: 1.15rem;
   font-weight: 700;
+}
+
+.officer-title-link {
+  color: inherit;
+  transition: color 180ms ease;
+}
+
+.officer-title-link:hover {
+  color: var(--blue-500);
 }
 
 .officer-role {
@@ -755,6 +773,34 @@ h3 {
   border: 1px solid rgba(10, 112, 183, 0.12);
   color: var(--navy-900);
   font-weight: 700;
+}
+
+.profile-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: calc(var(--radius-lg) - 6px);
+  box-shadow: var(--shadow-card);
+  background: linear-gradient(180deg, rgba(15, 31, 54, 0.08), rgba(15, 31, 54, 0.14));
+}
+
+.profile-facts {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.profile-facts li {
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.profile-facts strong {
+  color: var(--navy-900);
 }
 
 .notice {
