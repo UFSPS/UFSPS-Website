@@ -1,7 +1,17 @@
 const DATA_CACHE = new Map();
 
+function currentRoute() {
+  return document.body?.dataset?.navRoute || location.pathname.split('/').pop() || 'index.html';
+}
+
+function initPageKind() {
+  const route = currentRoute();
+  document.body.classList.toggle('home-page', route === 'index.html');
+  document.body.classList.toggle('inner-page', route !== 'index.html');
+}
+
 function initActiveNav() {
-  const path = document.body?.dataset?.navRoute || location.pathname.split('/').pop() || 'index.html';
+  const path = currentRoute();
   document.querySelectorAll('.nav-link[data-route]').forEach((link) => {
     const isActive = link.getAttribute('data-route') === path;
     link.classList.toggle('active', isActive);
@@ -11,6 +21,18 @@ function initActiveNav() {
       link.removeAttribute('aria-current');
     }
   });
+}
+
+function initHeaderState() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  const sync = () => {
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  };
+
+  sync();
+  window.addEventListener('scroll', sync, { passive: true });
 }
 
 function initMenu() {
@@ -151,12 +173,20 @@ function isPastEvent(event) {
   return date.getTime() < Date.now();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function initSite() {
+  initPageKind();
   initActiveNav();
+  initHeaderState();
   initMenu();
   initReveal();
   initYear();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initSite);
+} else {
+  initSite();
+}
 
 export {
   escapeHTML,
