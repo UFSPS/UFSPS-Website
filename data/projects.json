@@ -65,6 +65,46 @@
       "featured": true
     },
     {
+      "title": "Ora",
+      "meta": "Flutter · fitness · local-first",
+      "summary": "A local-first fitness companion built with Flutter around training, diet logging, progress check-ins, voice-first input, and optional cloud-assisted parsing.",
+      "image": "assets/img/projects/Ora_Icon_nobg.png",
+      "image_alt": "Ora project icon.",
+      "tags": [
+        "Flutter",
+        "Local-first",
+        "Health"
+      ],
+      "links": [
+        {
+          "label": "Open GitHub",
+          "href": "https://github.com/Ora-SPS/Ora",
+          "kind": "primary"
+        }
+      ],
+      "featured": false
+    },
+    {
+      "title": "Vie",
+      "meta": "Computer vision · scene analysis · research",
+      "summary": "A chapter-affiliated effort on biologically plausible video scene analysis systems that learn and reason from real-world dynamics, with experiment, dataset, and hardware documentation.",
+      "image": "assets/img/projects/Vie_Icon_nobg.png",
+      "image_alt": "Vie project icon.",
+      "tags": [
+        "Vision",
+        "Research",
+        "Dynamics"
+      ],
+      "links": [
+        {
+          "label": "Open GitHub",
+          "href": "https://github.com/Vie-SPS/Vie",
+          "kind": "primary"
+        }
+      ],
+      "featured": false
+    },
+    {
       "title": "Plato's Cave",
       "meta": "Research tooling · language + structure",
       "summary": "Tooling for literature review that turns papers into structured claims-and-evidence graphs so teams can read faster and compare work more systematically.",
