@@ -25,7 +25,16 @@
       "term": "2025–2026",
       "bio": "Supports chapter strategy and technical programming, with a focus on keeping research-minded projects connected to accessible student-facing events.",
       "image": "public/profiles/Matheus Kunzler Maldaner.jpeg",
-      "links": [],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/matheusmaldaner"
+        },
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/in/matheusmaldaner/"
+        }
+      ],
       "display_order": 2
     },
     {
@@ -52,7 +61,12 @@
       "term": "2025–2026",
       "bio": "Develops educational programming and learning pathways that help members build signal-processing fluency through approachable, technically serious workshops.",
       "image": "public/profiles/Awwab Azam.jpeg",
-      "links": [],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/kaddu341"
+        }
+      ],
       "display_order": 4
     },
     {
@@ -61,7 +75,16 @@
       "term": "2025–2026",
       "bio": "Connects chapter activity to research-facing projects and helps shape opportunities for members who want to explore deeper technical work.",
       "image": "public/profiles/Jack Payne.jpeg",
-      "links": [],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/JackPayne123"
+        },
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/in/jack-payne-5968b41a5/"
+        }
+      ],
       "display_order": 5
     },
     {
@@ -70,7 +93,12 @@
       "term": "2025–2026",
       "bio": "Builds relationships across the chapter community and supports programming that helps members meet collaborators, mentors, and peers across disciplines.",
       "image": "public/profiles/Luke Slaughter.jpeg",
-      "links": [],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/LukeSlaughter"
+        }
+      ],
       "display_order": 6
     },
     {
@@ -79,7 +107,16 @@
       "term": "2025–2026",
       "bio": "Manages chapter finances and operational planning so events, resources, and chapter initiatives stay organized and sustainable.",
       "image": "public/profiles/Divij Goyal.jpeg",
-      "links": [],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/DIVIJGOYAL7080"
+        },
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/in/divijgoyal/"
+        }
+      ],
       "display_order": 7
     }
   ]
