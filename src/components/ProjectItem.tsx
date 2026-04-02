@@ -19,6 +19,12 @@ const ProjectItem = ({project}: {project: Project}) => {
                     <h3>{project.title}</h3>
                     <p>{project.meta}</p>
                 </div>
+                <p className="proj-summary">{project.summary}</p>
+                <div className="proj-tags">
+                    {project.tags.map((tag) => (
+                        <span key={tag} className="proj-tag">{tag}</span>
+                    ))}
+                </div>
                 <div onClick={() => setIsOpen(true)} className="proj-rdmore">
                     <p>Read More</p>
                     <BsFillArrowRightCircleFill/>
@@ -32,8 +38,8 @@ const ProjectItem = ({project}: {project: Project}) => {
                                 <BiSolidXSquare onClick={() => setIsOpen(false)} />
                             </DialogTitle>
                             <Description className="dlg-desc">
-                                {project.description}
-                                 <div className="dlg-ov">
+                                <p className="dlg-summary">{project.summary}</p>
+                                <div className="dlg-ov">
                                 <h3>Overview</h3>
                                 {project.details.overview}
                             </div>
@@ -41,7 +47,7 @@ const ProjectItem = ({project}: {project: Project}) => {
                                 <h3>What we built</h3>
                                 <ul>
                                     {project.details.what_we_built.map((item) => (
-                                        <li>{item}</li>
+                                        <li key={item}>{item}</li>
                                     ))}
                                 </ul>
                             </div> 
@@ -49,7 +55,7 @@ const ProjectItem = ({project}: {project: Project}) => {
                                 <h3>Stack</h3>
                                 <ul>
                                     {project.details.stack.map((item) => (
-                                        <li>{item}</li>
+                                        <li key={item}>{item}</li>
                                     ))}
                                 </ul>
                             </div>
@@ -57,8 +63,8 @@ const ProjectItem = ({project}: {project: Project}) => {
                                 <h3>Links</h3>
                                 <ul>
                                     {project.links?.map((link) => (
-                                        <li>
-                                            <a href={link}>{link}</a>
+                                        <li key={link.href}>
+                                            <a href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
                                         </li>
                                     ))}
                                 </ul>
