@@ -57,38 +57,44 @@ function chipMarkup(value) {
 function officerMarkup(officer) {
   const imagePath = typeof officer.image === 'string' && officer.image.trim() ? escapeHTML(encodeURI(officer.image)) : '';
   const profileHref = typeof officer.profile_href === 'string' && officer.profile_href.trim() ? escapeHTML(encodeURI(officer.profile_href)) : '';
-  const buttons = [];
+  const links = [];
   if (profileHref) {
-    buttons.push(buttonMarkup('Profile', profileHref, 'secondary'));
+    links.push(`<a class="profile-social-link" href="${profileHref}">Profile</a>`);
   }
   (officer.links || []).forEach((link) => {
-    buttons.push(buttonMarkup(link.label, link.href, 'secondary'));
+    links.push(`<a class="profile-social-link" href="${escapeHTML(link.href)}"${linkAttrs(link.href)}>${escapeHTML(link.label)}</a>`);
   });
-  const linksBlock = buttons.length ? `<div class="cta-row officer-actions">${buttons.join('')}</div>` : '';
+  const linksBlock = links.length ? `<div class="profile-social-links">${links.join('')}</div>` : '';
   const mediaMarkup = imagePath
-    ? `<img class="officer-card-media" src="${imagePath}" alt="${escapeHTML(officer.name)} portrait" loading="lazy" decoding="async" />`
+    ? `<img class="profile-img" src="${imagePath}" alt="${escapeHTML(officer.name)} portrait" loading="lazy" decoding="async" />`
     : `
-      <div class="officer-card-media officer-card-fallback" aria-hidden="true">
+      <div class="profile-img officer-card-fallback" aria-hidden="true">
         <div class="avatar">${escapeHTML(initials(officer.name))}</div>
       </div>
     `;
-  const titleMarkup = profileHref
-    ? `<a class="officer-title-link" href="${profileHref}">${escapeHTML(officer.name)}</a>`
-    : escapeHTML(officer.name);
+  const titleMarkup = profileHref ? `<a class="officer-title-link" href="${profileHref}">${escapeHTML(officer.name)}</a>` : escapeHTML(officer.name);
+  const bioMarkup = typeof officer.bio === 'string' && officer.bio.trim() ? `<p class="profile-bio">${escapeHTML(officer.bio)}</p>` : '';
+  const termMarkup = typeof officer.term === 'string' && officer.term.trim() ? `<div class="profile-term">${escapeHTML(officer.term)}</div>` : '';
 
   return `
-    <article class="card media-card officer-card reveal">
-      ${mediaMarkup}
-      <div class="card-body officer-card-body">
-        <div class="officer-head">
-          <div class="officer-title">${titleMarkup}</div>
-          <div class="officer-role meta">${escapeHTML(officer.role)}</div>
+    <article class="officer-card reveal">
+      <div class="profile-content-container">
+        <div class="profile-img-container">
+          ${mediaMarkup}
         </div>
-        <div class="chip-row">
-          <span class="chip">${escapeHTML(officer.term)}</span>
+        <div class="profile-info">
+          <div class="name-pos">
+            <div class="officer-title">${titleMarkup}</div>
+            <div class="pos">
+              <p>${escapeHTML(officer.role)}</p>
+            </div>
+            ${termMarkup}
+          </div>
+          ${bioMarkup}
+          <div class="officer-actions">
+            ${linksBlock}
+          </div>
         </div>
-        <p class="body-copy">${escapeHTML(officer.bio)}</p>
-        ${linksBlock}
       </div>
     </article>
   `;
