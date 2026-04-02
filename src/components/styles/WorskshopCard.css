@@ -1,89 +1,60 @@
-/* First card takes up more space in the horizontal layout */
-.workshop-card:nth-child(1){
-  margin: 0;
-  flex: 2 0 0;
-} 
-
 .workshop-card {
+  /* spacing + layout */
   position: relative;
-  flex: 1 0 0;
-  min-width: clamp(200px, 15vw + 50px, 300px);
-  border-top-right-radius: 1rem;
-  border: 1px solid #000;
-  padding: clamp(1rem, 0.5rem + 1.5vh, 2rem);
+  min-width: clamp(300px, 25vw, 500px);
+  height: clamp(800px, 80vh + 5rem, 1300px);
+  padding: clamp(1rem, 0.5rem + 3vh, 2.5rem);
   padding-left: clamp(1.5rem, 1rem + 1vw, 3rem);
-  margin-left: -10rem;
-  transition: 0.3s ease-in-out;
+  overflow: hidden;
+  z-index: 1000;
+  transition: 0.4s ease-in-out;
+
+  /* colors, fonts, borders, etc.*/
+  border-top-right-radius: 1.2rem;
+  color: #FFF;
+  background: #000;
+  border: 3px solid rgb(74, 115, 74);
+  cursor: pointer;
+
+  /* flex */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  overflow: hidden;
-  color: #FFF;
-  background: #000;
+}
+
+.workshop-card:first-child {
+  min-width: clamp(300px, 35vw, 500px);
+}
+
+/* Slide and expand behavior */
+
+.workshop-card:not(:first-child){
+  margin-left: -30px;
+}
+
+.workshop-card:not(:first-child):hover{
+  transform: translateX(5%);
+  min-width: clamp(300px, 35vw, 500px);
 }
 
 /* Default background for non-first, non-hovered cards */
-.workshop-card::before {
+.workshop-card::before,
+.workshop-card:first-child:has(~ .workshop-card:hover)::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)), no-repeat var(--card-bg-image);
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), no-repeat var(--card-bg-image);
   background-size: cover;
   filter: blur(4px);
   transform: scale(1.5);
   z-index: 0;
 }
 
-.workshop-card:nth-child(1)::before {
+.workshop-card:first-child::before {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.92) 50%, rgba(20, 70, 20, 0.9) 100%), no-repeat var(--card-bg-image);
   background-size: cover;
   filter: blur(2px);
   transform: scale(1.1);
-}
-
-/* Revert first card to dark overlay when another card is hovered */
-.workshop-card:nth-child(1):has(~ .workshop-card:hover)::before {
-  background: linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)), no-repeat var(--card-bg-image);
-  background-size: cover;
-  filter: blur(4px);
-  transform: scale(1.1);
-}
-
-.workshop-card > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* When hovering allow workshop card to expand */
-.workshop-card:hover{
-  flex: 2 0 0;
-  margin-left: -1rem;
-  /* z-index: 200 !important; */
-}
-
-.workshop-card .workshop-description,
-.workshop-card .workshop-info {
-  padding: clamp(0.75rem, 0.5rem + 0.75vh, 1.5rem);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.workshop-card:hover .workshop-description {
-  opacity: 1;
-  flex: 1 1 0;
-  overflow-y: auto;
-}
-
-.workshop-card:hover .workshop-info {
-  opacity: 1;
-}
-
-/* Compact all cards to the LEFT of the hovered card */
-.workshop-card:has(~ .workshop-card:hover) {
-  min-width: 100px;
-  flex: 0 0 100px;
-  margin-left: 0;
-  transform: translateX(-1rem);
-  border-top-right-radius: 0;
 }
 
 .workshop-card:hover::before {
@@ -94,7 +65,56 @@
   transform: scale(1.1);
 }
 
-.workshop-card:nth-child(1) .index-number,
+.workshop-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.workshop-card .workshop-description,
+.workshop-card .workshop-info {
+  padding: clamp(0.75rem, 0.5rem + 0.75vh, 1.5rem);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.workshop-card .workshop-description{
+  max-height: 350px;
+}
+
+.workshop-card:hover .workshop-description {
+  opacity: 1;
+  flex: 1 1 0;
+  /* overflow-y: auto; */
+}
+
+.workshop-card:hover .workshop-info {
+  opacity: 1;
+}
+
+/* Show GitHub link only for first card when no other card is hovered */
+.workshop-card:first-child .github-link {
+  display: block;
+}
+
+/* Hide GitHub link for first card when another card is hovered */
+.workshop-card:first-child:has(~ .workshop-card:hover) .github-link,
+.workshop-card:first-child:has(~ .workshop-card:hover) .workshop-description,
+.workshop-card:first-child:has(~ .workshop-card:hover) .workshop-info
+{
+  display: none;
+}
+
+.workshop-card:first-child:has(~ .workshop-card:hover) h3{
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+  margin-top: 2rem;
+  font-size: clamp(0.75rem, 0.7rem + 0.6vw, 1.5rem);
+  border: none;
+  padding: 0;
+  transition: margin 0.2s ease-in-out;
+  align-self: center;
+}
+
+.workshop-card:first-child .index-number,
 .workshop-card:hover .index-number{
   background: #D9D9D9;
   color: #000000;
@@ -104,23 +124,24 @@
   align-self: flex-end;
   width: clamp(2rem, 1.5rem + 1vh, 3rem);
   height: clamp(2rem, 1.5rem + 1vh, 3rem);
-  border-radius: 50%;
   flex-shrink: 0;
   color: #FFFFFF;
   background: #000000;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .workshop-card h3 {
-  margin-top: auto;
-  font-size: clamp(0.875rem, 0.5rem + 0.8vw, 1.25rem);
-  padding: clamp(0.25rem, 0.5vh, 1rem) 0;
   position: relative;
   display: inline-block;
+  margin-top: auto;
+  padding: clamp(0.25rem, 0.5vh, 1rem) 0;
+  font-size: clamp(0.875rem, 0.7rem + 1.2vw, 1.5rem);
   align-self: flex-start;
   flex-shrink: 0;
+  transition: 0.2s ease-in-out;
 }
 
 /* Expanding underline animation */
@@ -157,14 +178,14 @@
 
 .workshop-description {
   margin-top: clamp(0.5rem, 0.25rem + 1vh, 1.5rem);
+  padding: clamp(0.75rem, 0.5rem + 0.75vh, 1.5rem);
   font-size: clamp(0.75rem, 0.5rem + 0.6vw, 1rem);
   line-height: clamp(1.4, 1.2 + 0.4vh, 1.8);
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 0.5rem;
-  padding: clamp(0.75rem, 0.5rem + 0.75vh, 1.5rem);
   flex: 1 1 0;
   min-height: 0;
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 
 .workshop-info{
@@ -175,13 +196,25 @@
   flex-shrink: 0;
 }
 
+/* Github link */
+.github-link {
+  text-decoration: none;
+  color: rgb(221, 182, 75);
+  align-self: flex-start;
+  margin-top: 0.3rem;
+}
+
+.github-link:hover{
+  color: rgb(239, 192, 61); 
+}
+
 /* Hide info/description on non-first, non-hovered cards */
+/* Reserve space but hide visually */
 .workshop-card:not(:first-child):not(:hover) .workshop-info,
 .workshop-card:not(:first-child):not(:hover) .workshop-description {
+  visibility: hidden;
   opacity: 0;
-  border: none;
-  padding: 0;
-  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
 }
 
 /* Show title vertically on non-first, non-hovered cards */
@@ -189,34 +222,18 @@
   writing-mode: vertical-rl;
   white-space: nowrap;
   margin-top: 2rem;
-  font-size: clamp(0.75rem, 0.5rem + 0.6vw, 1rem);
+  font-size: clamp(0.75rem, 0.7rem + 1vw, 1.5rem);
   border: none;
   padding: 0;
   transition: margin 0.2s ease-in-out;
+  align-self: center;
 }
 
-/* Hide info/description on the first card when it becomes compacted */
-.workshop-card:nth-child(1):has(~ .workshop-card:hover) .workshop-info,
-.workshop-card:nth-child(1):has(~ .workshop-card:hover) .workshop-description {
-  opacity: 0;
-  border: none;
-  padding: 0;
-  transition: opacity 0.2s ease-in-out;
-}
-
-/* Show title vertically on the first card when compacted */
-.workshop-card:nth-child(1):has(~ .workshop-card:hover) h3 {
-  writing-mode: vertical-rl;
-  white-space: nowrap;
-  margin-top: 2rem;
-  font-size: clamp(0.75rem, 0.5rem + 0.6vw, 1rem);
-  border: none;
-  padding: 0;
-  transition: margin 0.2s ease-in-out;
-}
-
-.workshop-card:nth-child(1):has(~ .workshop-card:hover) h3::after {
+.workshop-card:not(:first-child):not(:hover) .github-link {
+  /* styles */
   display: none;
 }
+
+
 
 
