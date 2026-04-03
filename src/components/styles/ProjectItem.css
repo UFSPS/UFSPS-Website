@@ -1,7 +1,7 @@
 .proj-wrapper {
     display: flex;
     flex-direction: column;
-    width: 26rem;
+    width: min(26rem, 100%);
     gap: 1rem;
     background: white;
 
@@ -29,6 +29,7 @@
     flex-direction: column;
     gap: 1.25rem;
     padding-inline: 1rem;
+    padding-bottom: 1rem;
 }
 
 .proj-title {
@@ -55,6 +56,25 @@
     width: 100%;
     bottom: -1rem;
     background: var(--gray);
+}
+
+.proj-summary {
+    color: var(--gray);
+    line-height: 1.5;
+}
+
+.proj-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.proj-tag {
+    border: 1px solid var(--gray);
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.82rem;
+    color: var(--black);
 }
 
 .proj-rdmore {
@@ -153,6 +173,10 @@
     line-height: 1.4;
 }
 
+.dlg-summary {
+    color: var(--gray);
+}
+
 .dlg-ov {
     display: flex;
     flex-direction: column;
@@ -186,4 +210,13 @@
     padding: 0;
     list-style: none;
     color: var(--dark-green);
+}
+
+.dlg-links a {
+    color: var(--dark-green);
+    font-weight: 600;
+}
+
+.dlg-links a:hover {
+    color: var(--green);
 }

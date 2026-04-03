@@ -1,10 +1,23 @@
+import spsIcon from '../assets/project_icons/sps-icon.png';
+import audeIcon from '../assets/project_icons/aude-icon.png';
+import ergoIcon from '../assets/project_icons/ergo-icon.png';
+import oraIcon from '../assets/project_icons/Ora_Icon_nobg.png';
+import vieIcon from '../assets/project_icons/Vie_Icon_nobg.png';
+import platoCaveImage from '../assets/project_icons/plato-cave.png';
+
+export interface ProjectLink {
+    label: string
+    href: string
+}
+
 export interface Project {
     title: string
-    description : string
+    summary: string
     img: string
     imgAlt: string
     meta: string
-    links?: Array<string>
+    tags: Array<string>
+    links?: Array<ProjectLink>
     details: ProjectDetails
 }
 
@@ -14,140 +27,195 @@ interface ProjectDetails {
     stack: Array<string>
 }
 
-export const projects: Record<string, Project> = 
+export const projects: Record<string, Project> =
 {
-    "platos-cave": {
-      "title": "Plato's Cave",
-      "description": `
-            Tooling which helps reviewers read faster by turning papers into 
-            structured ‘claims and evidence’ graphs with audit-friendly outputs. 
-            Extracts structured nodes (claims, evidence, limitations, etc.) 
-            from papers and scores them to support literature review and comparison 
-            across a collection.`,
-      "img": "/research/PlatoCave.png",
-      "imgAlt": "Plato's Cave project logo.",
-      "meta": "Tools · language + structure · reproducibility",
+    "curriculum-and-workshops": {
+      "title": "Curriculum and Workshops",
+      "summary": "A reusable chapter workshop track that ties analysis, probability, and machine learning to applied signal-processing examples with concrete notebooks and demos.",
+      "img": spsIcon,
+      "imgAlt": "IEEE SPS icon.",
+      "meta": "Education · onboarding · community",
+      "tags": [
+        "Workshops",
+        "Jupyter",
+        "Teaching"
+      ],
       "links": [
-        "https://github.com/matheusmaldaner/PlatosCave",
+        {
+          "label": "Open GitHub",
+          "href": "https://github.com/Jibby2k1/SPS_Curriculum"
+        },
+        {
+          "label": "Watch the talk",
+          "href": "https://www.youtube.com/watch?v=yuJaMaA18js"
+        }
       ],
       "details": {
-        "overview": "Reading dozens of papers is slow, partly because the structure is inconsistent. Plato’s Cave uses modern language models to extract a consistent structure (e.g., claims, evidence, limitations) and then runs a scoring pipeline so papers can be compared more systematically.",
+        "overview": "This project is the chapter's reusable teaching track: the goal is to turn workshop preparation into a durable curriculum that new members can learn from before, during, and after events.",
         "what_we_built": [
-          "A batch pipeline that processes PDFs, extracts structured ‘nodes’ (e.g., claims/evidence), and stores results in machine-readable formats.",
-          "Scoring and normalization routines so outputs are comparable across papers.",
-          "Run outputs designed for auditing (logs, summaries, and artifacts)."
+          "A signals-first workshop sequence spanning analysis, probability, and machine learning topics.",
+          "Concrete notebooks, demos, and references that can be reused across chapter events.",
+          "A public teaching asset that helps students onboard into chapter programming more quickly."
         ],
         "stack": [
           "Python",
-          "Large language model APIs",
-          "Experiment logging"
+          "Jupyter",
+          "Signal processing curriculum design"
         ],
       }
     },
-
-    "gh05t": {
-      "title": "GH05T — EEG hardware-to-software pipeline",
-      "description": `
-            A modular EEG stack (hardware + software) designed for rapid research iteration and a 
-            path toward product-grade reliability. End-to-end EEG stack (acquisition → streaming → preprocessing → modeling) 
-            is designed so experiments can be run quickly, repeated reliably, and extended over time.`,
-      "img": "/research/GH05T.png",
-      "imgAlt": "GH05T project logo.",
-      "meta": "IEEE SPS @ UF · hardware · neurotech",
+    "aude": {
+      "title": "Aude",
+      "summary": "A chapter-affiliated research track on machine listening, source separation, and localization using hardware-informed data collection and evaluation workflows.",
+      "img": audeIcon,
+      "imgAlt": "Aude project icon.",
+      "meta": "Audio ML · sensing · experimentation",
+      "tags": [
+        "Audio ML",
+        "Research",
+        "Hardware"
+      ],
       "links": [
-        "https://github.com/Keith-Khadar/Gh05t",
+        {
+          "label": "Open GitHub",
+          "href": "https://github.com/Jibby2k1/Aude"
+        }
       ],
       "details": {
-        "overview": "GH05T is a practical research platform: the goal is to reduce friction between an idea (‘can we measure X?’) and an experiment (‘here’s the data and a baseline model’). The project spans hardware, firmware, and software so the full system can be iterated.",
+        "overview": "Aude focuses on machine listening systems that connect model design to real recording and evaluation workflows, instead of treating data collection as an afterthought.",
         "what_we_built": [
-          "System design for an EEG acquisition-to-analysis workflow.",
-          "Software-side ingestion and preprocessing concepts that support multiple experimental protocols.",
-          "A roadmap for separating concerns (hardware, firmware, data, modeling) so the project can scale."
+          "A research direction around source separation, localization, and machine listening workflows.",
+          "Hardware-informed data collection and evaluation ideas for testing models in more realistic settings.",
+          "A chapter-facing project that gives members a concrete entry point into audio ML experimentation."
         ],
         "stack": [
-          "Embedded electronics",
-          "Streaming/data pipelines",
-          "Python ML tooling"
+          "Python",
+          "Audio ML",
+          "Data collection and evaluation tooling"
         ],
       }
     },
-    
-    "nano-robotics": {
-      "title": "Nano — robotics stack (GH05T interface)",
-      "description": `
-            A robotics and systems engineering focused on reliable real-time interfaces: 
-            sensing, control, and data paths that can connect to GH05T. Building a reliable hardware-to-software 
-            interface layer (instrumentation, control, and real-time data paths), 
-            with planned integration points for GH05T.`,
-      "img": "/research/Nano.png",
-      "imgAlt": "Nano project logo.",
-      "meta": "IEEE SPS @ UF · robotics · systems",
+    "ergo": {
+      "title": "Ergo",
+      "summary": "A neuroengineering platform for EMG and EEG acquisition, feature extraction, and dynamical-systems experiments connected to human-in-the-loop control.",
+      "img": ergoIcon,
+      "imgAlt": "Ergo project icon.",
+      "meta": "Neuroengineering · systems · biosignals",
+      "tags": [
+        "EEG",
+        "EMG",
+        "Systems"
+      ],
       "links": [
+        {
+          "label": "Open GitHub",
+          "href": "https://github.com/Jibby2k1/Ergo"
+        }
       ],
       "details": {
-        "overview": "Nano is a systems project: the emphasis is on the ‘boring’ parts that make robotics usable in practice—reliable interfaces, timing, and data integrity. It is intentionally designed to connect with biosignal research workflows when appropriate.",
+        "overview": "Ergo is a biosignals and systems project built around human-in-the-loop control, with an emphasis on usable acquisition, signal features, and experimental workflows.",
         "what_we_built": [
-          "Interface and timing design principles for sensor and actuator loops.",
-          "Instrumented data paths so experiments can be logged and analyzed.",
-          "Integration planning so robotics components can share infrastructure with other projects."
+          "A project direction spanning EMG and EEG acquisition, analysis, and experimentation.",
+          "A technical framing for connecting biosignals to dynamical-systems ideas and control workflows.",
+          "A research-facing platform that helps make neuroengineering work visible to the chapter."
         ],
         "stack": [
-          "Embedded systems",
-          "Control + sensing",
-          "Data logging"
+          "Python",
+          "Biosignals",
+          "Signal processing and systems experiments"
         ],
       }
     },
-
-    "ares-fitness": {
-      "title": "Ares — minimal fitness tracker (speech + recommendations)",
-      "description": `
-          An intentionally simple workout + nutrition tracker that captures intent 
-          via speech and provides lightweight coaching recommendations. "A minimal UI that reduces friction: 
-          capture what a user did (often via speech), keep logging consistent, 
-          and generate small recommendations that improve adherence over time.`,
-      "img": "/research/Ares.png",
-      "imgAlt": "Ares project logo.",
-      "meta": "IEEE SPS @ UF · app · personalization",
+    "ora": {
+      "title": "Ora",
+      "summary": "A local-first fitness companion built with Flutter around training, diet logging, progress check-ins, voice-first input, and optional cloud-assisted parsing.",
+      "img": oraIcon,
+      "imgAlt": "Ora project icon.",
+      "meta": "Flutter · fitness · local-first",
+      "tags": [
+        "Flutter",
+        "Local-first",
+        "Health"
+      ],
       "links": [
+        {
+          "label": "Open GitHub",
+          "href": "https://github.com/Ora-SPS/Ora"
+        }
       ],
       "details": {
-        "overview": "Most fitness apps fail for simple reasons: too much friction and too much complexity. Ares is an experiment in the opposite direction—capture intent quickly, store the essentials, and provide recommendations that are easy to follow.",
+        "overview": "Ora explores how a practical local-first mobile app can reduce friction around fitness tracking while still supporting richer inputs like voice-assisted logging.",
         "what_we_built": [
-               "Product concept and interaction model for speech-first logging.",
-          "A recommendation framing focused on simple, actionable next steps.",
-          "A roadmap that prioritizes consistency over feature breadth."
+          "A local-first Flutter app concept around training, diet logging, and progress check-ins.",
+          "A product direction that emphasizes voice-first capture and optional cloud-assisted parsing.",
+          "A chapter project that connects app engineering with signal and ML-adjacent workflows."
         ],
         "stack": [
-          "App prototyping",
-          "Speech-to-text (planned)",
-          "Lightweight recommendation logic",
+          "Flutter",
+          "Local-first app architecture",
+          "Voice-assisted input workflows"
         ],
       }
     },
-
-    "sinbad-wearables": {
-      "title": "Sinbad — wearable capture & automation prototyping",
-      "description": `
-          Personal R&D on wearable capture workflows and automation, designed with privacy, consent, 
-          and device-policy compliance in mind. This prototype explores wearable capture workflows and 
-          automation for personal content creation, explicitly emphasizing responsible use and compliance with device policies.`,
-      "img": "/research/Sinbad.png",
-      "imgAlt": "Sinbad project logo.",
-      "meta": "IEEE SPS @ UF · wearables · tool",
+    "vie": {
+      "title": "Vie",
+      "summary": "A chapter-affiliated effort on biologically plausible video scene analysis systems that learn and reason from real-world dynamics, with experiment, dataset, and hardware documentation.",
+      "img": vieIcon,
+      "imgAlt": "Vie project icon.",
+      "meta": "Computer vision · scene analysis · research",
+      "tags": [
+        "Vision",
+        "Research",
+        "Dynamics"
+      ],
       "links": [
+        {
+          "label": "Open GitHub",
+          "href": "https://github.com/Vie-SPS/Vie"
+        }
       ],
       "details": {
-        "overview": "Sinbad is a sandbox for exploring what is possible with wearable devices: how capture, indexing, and lightweight automation could work end-to-end. The project is designed to be privacy-conscious and policy-compliant.",
+        "overview": "Vie is a computer vision research effort centered on scene analysis from real-world dynamics, with an emphasis on biologically plausible approaches and reproducible experimentation.",
         "what_we_built": [
-          "Workflow design for capture → selection → export.",
-          "Automation concepts for organizing and surfacing clips.",
-          "Guardrails: privacy, consent, and compliance as first-class design constraint"
+          "A project direction around video scene analysis, datasets, and experimental workflows.",
+          "Documentation spanning experiments, hardware considerations, and research context.",
+          "A chapter-facing research effort that helps students see how vision projects are organized end to end."
         ],
         "stack": [
-          "Wearable workflow prototyping",
-          "Automation scripting (concepts)",
-          "Human-in-the-loop review"
+          "Computer vision",
+          "Experiment documentation",
+          "Dataset and hardware workflows"
+        ],
+      }
+    },
+    "platos-cave": {
+      "title": "Plato's Cave",
+      "summary": "Tooling for literature review that turns papers into structured claims-and-evidence graphs so teams can read faster and compare work more systematically.",
+      "img": platoCaveImage,
+      "imgAlt": "Plato's Cave project graphic.",
+      "meta": "Research tooling · language + structure",
+      "tags": [
+        "Tooling",
+        "LLMs",
+        "Reproducibility"
+      ],
+      "links": [
+        {
+          "label": "Open GitHub",
+          "href": "https://github.com/matheusmaldaner/PlatosCave"
+        }
+      ],
+      "details": {
+        "overview": "Plato's Cave helps literature review move faster by converting papers into structured claims-and-evidence graphs that can be compared across a collection.",
+        "what_we_built": [
+          "A workflow for extracting structured nodes such as claims, evidence, and limitations from papers.",
+          "A tooling direction for comparing papers more systematically across a project or research thread.",
+          "A chapter project that makes research tooling itself a visible technical contribution."
+        ],
+        "stack": [
+          "Python",
+          "LLM-assisted extraction",
+          "Research tooling"
         ],
       }
     },
