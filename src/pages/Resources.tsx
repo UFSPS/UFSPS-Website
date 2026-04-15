@@ -7,6 +7,8 @@ import SwitchTab from "../components/SwitchTab.js";
 import WorkshopCard from '../components/Workshopcard.js';
 import { workshops } from '../data/workshops.js';
 
+import {FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from "react-icons/fa";
+
 const Resources = () => {
     const [selected, setSelected] = useState<'upcoming' | 'past'>('upcoming');
     const [showLeft, setShowLeft] = useState(false);
@@ -61,9 +63,10 @@ const Resources = () => {
 
             <div className="workshop-body-container">
                 {showLeft && (
-                    <button className="prev-button" onClick={handlePrev}>
-                        ←
-                    </button>
+                    // <button className="prev-button" onClick={handlePrev}>
+                    //     ←
+                    // </button>
+                    <FaRegArrowAltCircleLeft className="prev-button" onClick={handlePrev} />
                 )}
 
                 <div ref={scrollRef} className="workshop-cards-container">
@@ -79,12 +82,19 @@ const Resources = () => {
                             image={workshop.image}
                         />
                     ))}
+                    {filteredWorkshops.length === 0 && 
+                        <p>
+                             Work in progress, check back later!
+                        </p>
+                    
+                    }
                 </div>
 
                 {showRight && (
-                    <button className="next-button" onClick={handleNext}>
-                        →
-                    </button>
+                    // <button className="next-button" onClick={handleNext}>
+                    //     →
+                    // </button>
+                    <FaRegArrowAltCircleRight className="next-button" onClick={handleNext} />
                 )}
             </div>
         </PageContainer>
