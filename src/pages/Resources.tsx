@@ -63,9 +63,6 @@ const Resources = () => {
 
             <div className="workshop-body-container">
                 {showLeft && (
-                    // <button className="prev-button" onClick={handlePrev}>
-                    //     ←
-                    // </button>
                     <FaRegArrowAltCircleLeft className="prev-button" onClick={handlePrev} />
                 )}
 
@@ -91,9 +88,6 @@ const Resources = () => {
                 </div>
 
                 {showRight && (
-                    // <button className="next-button" onClick={handleNext}>
-                    //     →
-                    // </button>
                     <FaRegArrowAltCircleRight className="next-button" onClick={handleNext} />
                 )}
             </div>
