@@ -12,10 +12,15 @@ export const eboardProfiles: Record<string, Profile> =
         "linkedinLink": "https://www.linkedin.com/in/raul-valle1/"
     },
     "Vice President": {
-        "name": "Matheus Maldaner"
+        "name": "Matheus Kunzler Maldaner"
     },
     "Chief of Operations": {
         "name": "Tiffany Huang",
+        "githubLink": "https://github.com/narcistiq",
+        "linkedinLink": "https://www.linkedin.com/in/tiffanyhuang1010/"
+    },
+    "Chief of Education": {
+        "name": "Awwab Azam",
         "githubLink": "https://github.com/narcistiq",
         "linkedinLink": "https://www.linkedin.com/in/tiffanyhuang1010/"
     }

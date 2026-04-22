@@ -13,7 +13,7 @@ const Profile = ({name, position, githubLink, linkedinLink}: ProfileProps) => {
         <div className="exec-profile-container">
             <div className="profile-content-container">
                 <div className="profile-img">
-                    <img src={`../assets/profiles/${name}.png`} />
+                    <img src={`/profiles/${name}.png`} />
                 </div>
                 <div className="profile-info">
                     <div className="name-pos">
