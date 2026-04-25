@@ -23,5 +23,19 @@ export const eboardProfiles: Record<string, Profile> =
         name: "Awwab Azam",
         githubLink: "https://github.com/narcistiq",
         linkedinLink: "https://www.linkedin.com/in/tiffanyhuang1010/"
+    },
+     "Chief of Research": {
+        name: "Jack Payne",
+        githubLink: "https://github.com/JackPayne123",
+        linkedinLink: "https://www.linkedin.com/in/jack-payne-5968b41a5/"
+    },
+    "Chief of Networking": {
+        name: "Luke Slaughter",
+        linkedinLink: "https://www.linkedin.com/in/luke-slaughter/"
+    },
+    "Treasurer": {
+        name: "Divij Goyal",
+        githubLink: "https://github.com/DIVIJGOYAL7080",
+        linkedinLink: "https://www.linkedin.com/in/divijgoyal/"
     }
 }
