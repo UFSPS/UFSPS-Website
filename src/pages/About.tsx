@@ -43,8 +43,12 @@ const About = () => {
                         <div className="profiles-container">
                             {Object.entries(eboardProfiles).map(([position, profile]) => (
                                 <Profile 
+                                key={position}
                                 name={profile.name} 
                                 position={position} 
+                                term={profile.term}
+                                bio={profile.bio}
+                                image={profile.image}
                                 githubLink={profile.githubLink}
                                 linkedinLink={profile.linkedinLink} />
                             ))}

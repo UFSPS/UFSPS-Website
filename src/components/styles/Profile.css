@@ -1,8 +1,8 @@
 .exec-profile-container {
     display: flex;
     flex-direction: column;
-    height: 487px;
-    width: 294px;
+    min-height: 565px;
+    width: min(294px, 100%);
     padding: 3rem;
     border: 1px solid black;
     border-radius: 50px;
@@ -15,26 +15,26 @@
     gap: 1.875rem;
 }
 
-.profile-img {
+.profile-img-container {
     height: 200px;
     width: 200px;
+    overflow: hidden;
+
     background: gray;
     border: 1px solid black;
     border-radius: 50%;
-    overflow: hidden; 
 }
 
-.profile-img img {
-    width: 100%;
+.profile-img {
     height: 100%;
-    object-fit: cover; 
-    display: block; 
+    width: 100%;
+    object-fit: cover;
 }
 
 .profile-info {
     display: flex;
     flex-direction: column;
-    gap: 2.25rem;
+    gap: 1.5rem;
 }
 
 .name-pos {
@@ -55,6 +55,17 @@
     background-color: #fbfbfb;
 }
 
+.profile-term {
+    font-size: 0.95rem;
+    color: var(--gray);
+}
+
+.profile-bio {
+    font-size: 0.98rem;
+    color: var(--gray);
+    text-align: center;
+}
+
 .profile-social-links {
     display: flex;
     justify-content: center;
@@ -70,4 +81,17 @@
 
 .profile-social-links svg:hover {
     color: var(--green);
+}
+
+@media (max-width: 768px) {
+    .exec-profile-container {
+        padding: 2rem;
+        min-height: auto;
+    }
+
+    .profile-img-container {
+        height: 170px;
+        width: 170px;
+        align-self: center;
+    }
 }
