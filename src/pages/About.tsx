@@ -1,5 +1,6 @@
 import './styles/About.css';
 import { eboardProfiles } from '../data/eboard.js';
+import { chapterInfo } from '../data/chapter.js';
 import Navbar from '../components/Navbar.js';
 import PageContainer from '../components/PageContainer.js';
 import Profile from '../components/Profile.js';
@@ -53,6 +54,16 @@ const About = () => {
                                 linkedinLink={profile.linkedinLink} />
                             ))}
                         </div>
+                    </div>
+                </div>
+                    <div className="partners-section-container">
+                        <h2>Connected organizations</h2>
+                        <div className="partners-links-container">
+                            {chapterInfo.partnerLinks.map((partner) => (
+                                <a key={partner.href} href={partner.href} target="_blank" rel="noreferrer" className="partner-link-card">
+                                    {partner.label}
+                                </a>
+                            ))}
                     </div>
                 </div>
                 <Footer />
