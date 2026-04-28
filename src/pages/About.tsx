@@ -1,5 +1,6 @@
 import './styles/About.css';
 import { eboardProfiles } from '../data/eboard.js';
+import { chapterInfo } from '../data/chapter.js';
 import Navbar from '../components/Navbar.js';
 import PageContainer from '../components/PageContainer.js';
 import Profile from '../components/Profile.js';
@@ -21,15 +22,14 @@ const About = () => {
                         <div className="about-image-text-container">
                             <div className="about-text">
                                 <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Etiam tempus purus et nulla facilisis, eu fringilla leo 
-                                sagittis. Nam quis.
+                                IEEE SPS @ UF exists to make signal processing easier to enter and more exciting to practice. 
+                                The chapter bridges coursework, research, and public technical community with programming that is serious about content and generous about access.
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                Members can expect hands-on workshops, project-facing work, and communication channels that keep new members connected between events.
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempus purus et nulla facilisis, eu
+                                The aim is not only to host events. It is to build an environment where students can learn fast, ask better questions, and move into meaningful technical work.
                                 </p>
                             </div>
                             <div className="about-image">
@@ -43,12 +43,26 @@ const About = () => {
                         <div className="profiles-container">
                             {Object.entries(eboardProfiles).map(([position, profile]) => (
                                 <Profile 
+                                key={position}
                                 name={profile.name} 
                                 position={position} 
+                                term={profile.term}
+                                bio={profile.bio}
+                                image={profile.image}
                                 githubLink={profile.githubLink}
                                 linkedinLink={profile.linkedinLink} />
                             ))}
                         </div>
+                    </div>
+                </div>
+                    <div className="partners-section-container">
+                        <h2>Connected organizations</h2>
+                        <div className="partners-links-container">
+                            {chapterInfo.partnerLinks.map((partner) => (
+                                <a key={partner.href} href={partner.href} target="_blank" rel="noreferrer" className="partner-link-card">
+                                    {partner.label}
+                                </a>
+                            ))}
                     </div>
                 </div>
                 <Footer />
