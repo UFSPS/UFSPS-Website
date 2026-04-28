@@ -1,5 +1,5 @@
 {
-    "homepage": "https://ufsps.github.io/UFSPS-website",
+    "homepage": "https://ufsps.github.io/UFSPS-Website",
     "type": "module",
     "scripts": {
         "start": "vite",
