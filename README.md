@@ -2,8 +2,9 @@
 This repository is for the website of the UF IEEE Signal Processing Society. 
 ## Getting Started
 
-### Prerequesits
-- **[Node.js](https://nodejs.org/en/download)** (v14 or higher) and **npm**, which comes with Node.
+### Prerequisites
+- **[Node.js](https://nodejs.org/en/download)** 22 LTS or newer
+- **npm**, which comes with Node
 
 ### Cloning the Repository
 
