@@ -5,15 +5,15 @@
   justify-content: space-between;
   align-items: center;
   
-  padding: 1.5rem 10rem;
+  padding: 1.5rem clamp(1rem, 6vw, 10rem);
   background: white;
   transition: 0.2s ease;
+  z-index: 10;
 }
 
 .navbar.scrolled {
   background: var(--black) !important;
-  padding: 5px 150px;
-  z-index: 1;
+  padding: 5px clamp(1rem, 6vw, 150px);
 }
 
 .logo-section {
@@ -23,8 +23,8 @@
 }
 
 .logo {
-  width: 120px;
-  height: 77px;
+  width: clamp(82px, 12vw, 120px);
+  height: auto;
 }
 
 .navbar.scrolled .logo {
@@ -69,9 +69,37 @@
   gap: 40px;
 }
 
+.nav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--black);
+  cursor: pointer;
+}
+
+.nav-toggle svg {
+  width: 24px;
+  height: 24px;
+}
+
+.navbar.scrolled .nav-toggle {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
 @media (min-width: 768px) {
   .nav-links {
     display: flex;
+  }
+
+  .nav-toggle {
+    display: none;
   }
 }
 
@@ -140,4 +168,78 @@ a.active {
 
 a.active::after {
   width: 100%;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    padding: 0.875rem 1rem;
+    background: white !important;
+  }
+
+  .navbar.scrolled,
+  .navbar.menu-open {
+    background: var(--black) !important;
+  }
+
+  .logo-section {
+    gap: 8px;
+  }
+
+  .logo {
+    width: 78px;
+  }
+
+  .logo-div {
+    height: 42px;
+  }
+
+  .logo-text {
+    font-size: 0.88rem;
+    line-height: 1.15;
+    padding: 0;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    padding: 0.5rem 1rem 1rem;
+    background: var(--black);
+    box-shadow: 0 18px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a,
+  .navbar.scrolled .nav-links a {
+    color: white;
+    padding: 0.875rem 0;
+    font-size: 0.95rem;
+  }
+
+  .nav-links a:not(:last-child)::before {
+    display: none;
+  }
+
+  .nav-links a::after {
+    bottom: 0.55rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .logo-text {
+    display: none;
+  }
+
+  .logo-div {
+    display: none;
+  }
 }

@@ -234,6 +234,59 @@
   display: none;
 }
 
+@media (max-width: 768px) {
+  .workshop-card,
+  .workshop-card:first-child,
+  .workshop-card:not(:first-child):hover {
+    min-width: min(86vw, 420px);
+    height: auto;
+    min-height: 560px;
+    padding: 1.25rem;
+    scroll-snap-align: start;
+  }
+
+  .workshop-card:not(:first-child) {
+    margin-left: 0;
+  }
+
+  .workshop-card:not(:first-child):hover {
+    transform: none;
+  }
+
+  .workshop-card:first-child:has(~ .workshop-card:hover) .github-link,
+  .workshop-card:first-child:has(~ .workshop-card:hover) .workshop-description,
+  .workshop-card:first-child:has(~ .workshop-card:hover) .workshop-info,
+  .workshop-card:not(:first-child):not(:hover) .workshop-info,
+  .workshop-card:not(:first-child):not(:hover) .workshop-description {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .workshop-card:not(:first-child):not(:hover) h3,
+  .workshop-card:first-child:has(~ .workshop-card:hover) h3 {
+    writing-mode: horizontal-tb;
+    white-space: normal;
+    margin-top: auto;
+    align-self: flex-start;
+  }
+
+  .workshop-card:not(:first-child):not(:hover) .github-link {
+    display: block;
+  }
+
+  .workshop-card .workshop-description {
+    max-height: none;
+    flex: 0 1 auto;
+  }
+
+  .workshop-date-time {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+}
 
 
 

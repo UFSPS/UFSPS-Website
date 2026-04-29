@@ -2,6 +2,7 @@ import './styles/Navbar.css';
 import Logo from '../assets/logo/SPS_Logo.png';
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 
 interface NavbarProps {
     style?: React.CSSProperties
@@ -9,6 +10,8 @@ interface NavbarProps {
 
 const Navbar = ({style}: NavbarProps) => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
+
     useEffect(() => {
       
       const handleScroll = () => {
@@ -27,9 +30,9 @@ const Navbar = ({style}: NavbarProps) => {
   
 
     return (
-      <div className={ `navbar ${isScrolled ? 'scrolled' : ''}` } style={style}>
+      <div className={ `navbar ${isScrolled ? 'scrolled' : ''} ${mobileOpen ? 'menu-open' : ''}` } style={style}>
         
-        <Link to="/">
+        <Link to="/" onClick={() => setMobileOpen(false)}>
           <div className="logo-section">
             <img src={Logo} className="logo"/>
             <div className="logo-div"></div>
@@ -40,12 +43,22 @@ const Navbar = ({style}: NavbarProps) => {
             </p>
           </div>
         </Link>
+
+        <button
+          className="nav-toggle"
+          type="button"
+          aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((open) => !open)}
+        >
+          {mobileOpen ? <X /> : <Menu />}
+        </button>
         
-        <div className="nav-links">
-          <Link to="/">HOME</Link>
-          <NavLink to="/about">ABOUT</NavLink>
-          <NavLink to="/research">RESEARCH</NavLink>
-          <NavLink to="/resources">RESOURCES</NavLink>
+        <div className={`nav-links ${mobileOpen ? 'open' : ''}`}>
+          <Link to="/" onClick={() => setMobileOpen(false)}>HOME</Link>
+          <NavLink to="/about" onClick={() => setMobileOpen(false)}>ABOUT</NavLink>
+          <NavLink to="/research" onClick={() => setMobileOpen(false)}>RESEARCH</NavLink>
+          <NavLink to="/resources" onClick={() => setMobileOpen(false)}>RESOURCES</NavLink>
         </div>
       </div>
     );

@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     gap: clamp(1rem, 0.5rem + 1.5vh, 2.5rem);
-    margin-inline: 4em;
+    margin-inline: clamp(1rem, 5vw, 4em);
 }
 
 .workshop-body-container{
@@ -23,7 +23,8 @@
     width: 100%;
     display: flex;
     background: rgb(96, 93, 93);
-    overflow: scroll;
+    overflow-x: auto;
+    overflow-y: hidden;
     scroll-behavior: smooth;
     scrollbar-width: none;
 }
@@ -63,4 +64,33 @@
   background: #f7f7f7;
 }
 
+@media (max-width: 768px) {
+  .resources-wrapper {
+    gap: 2rem;
+  }
+
+  .workshop-title-container {
+    margin-inline: 1rem;
+  }
+
+  .workshop-title-container h1 {
+    font-size: 2.25rem;
+  }
+
+  .workshop-body-container {
+    min-height: 0;
+  }
+
+  .workshop-cards-container {
+    gap: 1rem;
+    padding: 0 1rem 1rem;
+    scroll-snap-type: x mandatory;
+    background: transparent;
+  }
+
+  .prev-button,
+  .next-button {
+    display: none;
+  }
+}
 
