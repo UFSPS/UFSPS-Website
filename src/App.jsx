@@ -3,11 +3,13 @@ import Frontpage from './pages/Frontpage';
 import About from './pages/About';
 import Research from './pages/Research';
 import Resources from './pages/Resources';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const App = () => {
   return (
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <Routes>
           <Route path="/" element={<Frontpage />} />
           <Route path="/about" element={<About />} />
