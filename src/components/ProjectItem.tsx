@@ -41,7 +41,7 @@ const ProjectItem = ({project}: {project: Project}) => {
                                 <h3>What we built</h3>
                                 <ul>
                                     {project.details.what_we_built.map((item) => (
-                                        <li>{item}</li>
+                                        <li key={item}>{item}</li>
                                     ))}
                                 </ul>
                             </div> 
@@ -49,7 +49,7 @@ const ProjectItem = ({project}: {project: Project}) => {
                                 <h3>Stack</h3>
                                 <ul>
                                     {project.details.stack.map((item) => (
-                                        <li>{item}</li>
+                                        <li key={item}>{item}</li>
                                     ))}
                                 </ul>
                             </div>
@@ -57,7 +57,7 @@ const ProjectItem = ({project}: {project: Project}) => {
                                 <h3>Links</h3>
                                 <ul>
                                     {project.links?.map((link) => (
-                                        <li>
+                                        <li key={link}>
                                             <a href={link}>{link}</a>
                                         </li>
                                     ))}

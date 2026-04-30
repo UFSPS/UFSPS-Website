@@ -51,6 +51,57 @@
     color: var(--black);
 }
 
+.research-content-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 3rem;
+}
+
+.research-philosophy-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    border-radius: 20px;
+    background: white;
+}
+
+.research-philosophy-panel h2 {
+    font-size: 2rem;
+}
+
+.research-philosophy-panel > p {
+    max-width: 900px;
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+.research-goals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.research-goals-grid div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 14px;
+    background: #f7f7f7;
+}
+
+.research-goals-grid h3 {
+    font-size: 1rem;
+}
+
+.research-goals-grid p {
+    color: var(--gray);
+    line-height: 1.45;
+}
+
 .research-proj-container {
     display: flex;
     flex-wrap: wrap;
@@ -66,6 +117,10 @@
     .research-main-cont {
         width: 100%;
         max-width: 760px;
+    }
+
+    .research-goals-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -90,6 +145,15 @@
     .research-main-cont {
         gap: 2.5rem;
         min-width: 0;
+    }
+
+    .research-philosophy-panel {
+        padding: 1.25rem;
+        border-radius: 16px;
+    }
+
+    .research-philosophy-panel h2 {
+        font-size: 1.5rem;
     }
 
     .research-proj-container {

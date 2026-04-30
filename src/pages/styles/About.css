@@ -84,6 +84,8 @@
     gap: 4.25rem;
 }
 
+.alumni-section-container,
+.affiliations-section-container,
 .partners-section-container {
     display: flex;
     flex-direction: column;
@@ -91,16 +93,59 @@
     margin-inline: 2.375rem;
 }
 
+.alumni-section-container h2,
+.affiliations-section-container h2,
 .partners-section-container h2 {
     font-size: 2rem;
 }
 
+.alumni-links-container,
+.affiliations-links-container,
 .partners-links-container {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
+.alumni-link-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    width: min(720px, 100%);
+    min-height: 4rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--gray);
+    border-radius: 16px;
+    background: #fbfbfb;
+}
+
+.alumni-link-row h3 {
+    font-size: 1rem;
+}
+
+.alumni-link-row p,
+.section-empty-state {
+    color: var(--gray);
+}
+
+.alumni-social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.alumni-social-links a {
+    color: var(--dark-green);
+    font-weight: 600;
+}
+
+.alumni-social-links a:hover {
+    color: var(--green);
+}
+
+.affiliation-link-card,
 .partner-link-card {
     display: inline-flex;
     align-items: center;
@@ -114,6 +159,7 @@
     transition: 0.2s ease;
 }
 
+.affiliation-link-card:hover,
 .partner-link-card:hover {
     border-color: var(--black);
     color: var(--green);
@@ -149,6 +195,8 @@
 
     .about-section-container,
     .board-section-container,
+    .alumni-section-container,
+    .affiliations-section-container,
     .partners-section-container {
         margin-inline: 1rem;
     }
@@ -186,6 +234,16 @@
         flex-direction: column;
     }
 
+    .alumni-link-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .alumni-social-links {
+        justify-content: flex-start;
+    }
+
+    .affiliation-link-card,
     .partner-link-card {
         width: 100%;
         justify-content: flex-start;

@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar.js";
 import SwitchTab from "../components/SwitchTab.js";
 import WorkshopCard from '../components/Workshopcard.js';
 import { workshops } from '../data/workshops.js';
+import { chapterInfo } from '../data/chapter.js';
 
 import {FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from "react-icons/fa";
 
@@ -60,6 +61,18 @@ const Resources = () => {
                 <h1>Workshops</h1>
                 <SwitchTab selected={selected} onSelect={setSelected} />
             </div>
+
+            <section className="resource-links-section">
+                <h2>Shared resources</h2>
+                <div className="resource-links-grid">
+                    {chapterInfo.resourceLinks.map((resource) => (
+                        <a key={resource.href} href={resource.href} target="_blank" rel="noreferrer" className="resource-link-card">
+                            <span>{resource.label}</span>
+                            <p>{resource.description}</p>
+                        </a>
+                    ))}
+                </div>
+            </section>
 
             <div className="workshop-body-container">
                 {showLeft && (

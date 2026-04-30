@@ -1,3 +1,27 @@
+export interface SocialLink {
+  label: string;
+  href: string;
+}
+
+export interface ExecutiveBoardAlumnus {
+  name: string;
+  role?: string;
+  term?: string;
+  socialLinks: SocialLink[];
+}
+
+export interface MemberAffiliation {
+  name: string;
+  type: 'company' | 'lab' | 'university' | 'organization';
+  href?: string;
+}
+
+export interface ResourceLink {
+  label: string;
+  href: string;
+  description: string;
+}
+
 export const chapterInfo = {
   name: 'IEEE Signal Processing Society at the University of Florida',
   shortName: 'IEEE SPS @ UF',
@@ -21,4 +45,18 @@ export const chapterInfo = {
     { label: 'University of Florida ECE', href: 'https://www.ece.ufl.edu/' },
     { label: 'UF Student Organizations', href: 'https://orgs.studentinvolvement.ufl.edu/' },
   ],
+  executiveBoardAlumni: [] as ExecutiveBoardAlumnus[],
+  memberAffiliations: [] as MemberAffiliation[],
+  resourceLinks: [
+    {
+      label: 'Workshop GitHub',
+      href: 'https://github.com/Jibby2k1/SPS_Curriculum?tab=readme-ov-file',
+      description: 'Browse workshop notes, code, and curriculum materials from the SPS workshop series.',
+    },
+    {
+      label: 'Gradus',
+      href: 'https://gradus.raulv.dev',
+      description: 'Open Gradus for structured learning resources and technical study workflows.',
+    },
+  ] as ResourceLink[],
 };

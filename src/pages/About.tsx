@@ -11,6 +11,9 @@ const imageModules = import.meta.glob("../assets/research_teams/*.png", { eager:
 const images = Object.values(imageModules).map((mod: any) => mod.default);
 
 const About = () => {
+    const hasAlumni = chapterInfo.executiveBoardAlumni.length > 0;
+    const hasAffiliations = chapterInfo.memberAffiliations.length > 0;
+
     return (
         <>
             <PageContainer className="wrapper">
@@ -54,15 +57,68 @@ const About = () => {
                             ))}
                         </div>
                     </div>
+
+                    <div className="alumni-section-container">
+                        <h2>Executive Board Alumni</h2>
+                        {hasAlumni ? (
+                            <div className="alumni-links-container">
+                                {chapterInfo.executiveBoardAlumni.map((alumnus) => (
+                                    <div key={alumnus.name} className="alumni-link-row">
+                                        <div>
+                                            <h3>{alumnus.name}</h3>
+                                            {(alumnus.role || alumnus.term) && (
+                                                <p>{[alumnus.role, alumnus.term].filter(Boolean).join(' · ')}</p>
+                                            )}
+                                        </div>
+                                        <div className="alumni-social-links">
+                                            {alumnus.socialLinks.map((link) => (
+                                                <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                                                    {link.label}
+                                                </a>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
+                            <p className="section-empty-state">
+                                Alumni references and socials will be added as our board history grows.
+                            </p>
+                        )}
+                    </div>
                 </div>
-                    <div className="partners-section-container">
-                        <h2>Connected organizations</h2>
-                        <div className="partners-links-container">
-                            {chapterInfo.partnerLinks.map((partner) => (
-                                <a key={partner.href} href={partner.href} target="_blank" rel="noreferrer" className="partner-link-card">
-                                    {partner.label}
-                                </a>
+
+                <div className="affiliations-section-container">
+                    <h2>Our members have worked with</h2>
+                    {hasAffiliations ? (
+                        <div className="affiliations-links-container">
+                            {chapterInfo.memberAffiliations.map((affiliation) => (
+                                affiliation.href ? (
+                                    <a key={affiliation.name} href={affiliation.href} target="_blank" rel="noreferrer" className="affiliation-link-card">
+                                        {affiliation.name}
+                                    </a>
+                                ) : (
+                                    <span key={affiliation.name} className="affiliation-link-card">
+                                        {affiliation.name}
+                                    </span>
+                                )
                             ))}
+                        </div>
+                    ) : (
+                        <p className="section-empty-state">
+                            Company, lab, and collaborator references will be added here as members opt in.
+                        </p>
+                    )}
+                </div>
+
+                <div className="partners-section-container">
+                    <h2>Connected organizations</h2>
+                    <div className="partners-links-container">
+                        {chapterInfo.partnerLinks.map((partner) => (
+                            <a key={partner.href} href={partner.href} target="_blank" rel="noreferrer" className="partner-link-card">
+                                {partner.label}
+                            </a>
+                        ))}
                     </div>
                 </div>
                 <Footer />
