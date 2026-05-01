@@ -27,22 +27,25 @@ const Carousel = ({ images }: ImageList) => {
     return (
     <>
       <div className="carousel-images">
-        <img key={currentIndex} loading="lazy" src={images[currentIndex]}/>
+        <img key={currentIndex} loading="lazy" src={images[currentIndex]} alt={`SPS project and event highlight ${currentIndex + 1}`}/>
         <div className="slide_direction">
-          <div className="left" onClick={handlePrevious}>
+          <button type="button" className="left" onClick={handlePrevious} aria-label="Previous image">
             <IoIosArrowBack />
-          </div>
-          <div className="right" onClick={handleNext}>
+          </button>
+          <button type="button" className="right" onClick={handleNext} aria-label="Next image">
             <IoIosArrowForward />
-          </div>
+          </button>
         </div>
       </div>
       <div className="carousel-indicator">
           {images.map((_, index) => (
-            <div
+            <button
+              type="button"
               key={index}
               className={`dot ${currentIndex === index ? "active-image" : ""}`}
               onClick={() => handleDotClick(index)}
+              aria-label={`Show image ${index + 1}`}
+              aria-current={currentIndex === index}
             />
           ))}
       </div>

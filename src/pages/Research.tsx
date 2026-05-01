@@ -1,5 +1,6 @@
 import './styles/Research.css';
-import { projects } from '../data/projects.js';
+import { Link } from 'react-router-dom';
+import { projectList } from '../data/projects.js';
 import PageContainer from '../components/PageContainer.js';
 import Navbar from '../components/Navbar.js';
 import ProjectItem from '../components/ProjectItem.js';
@@ -19,8 +20,12 @@ const Research = () => {
                             collect data, build demos, and make results reproducible.
                         </p>
                         <p style={{fontWeight: '600'}}>
-                            Want to contribute? Join our <a href="https://discord.gg/6GRymPjgKc" target="_blank">Discord!</a>
+                            Want to contribute? Join our <a href="https://discord.gg/6GRymPjgKc" target="_blank" rel="noopener noreferrer">Discord!</a>
                         </p>
+                        <div className="research-cta-row">
+                            <Link to="/research/status">View status dashboard</Link>
+                            <Link to="/research/philosophy">Read philosophy</Link>
+                        </div>
                     </div>
                 </div>
                 <div className="research-content-column">
@@ -47,8 +52,8 @@ const Research = () => {
                         </div>
                     </section>
                     <div className="research-proj-container">
-                        {Object.entries(projects).map(([id, item]) => (
-                            <ProjectItem key={id} project={item} />
+                        {projectList.map((item) => (
+                            <ProjectItem key={item.slug} project={item} />
                         ))}
                     </div>
                 </div>

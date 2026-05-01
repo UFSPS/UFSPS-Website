@@ -1,0 +1,43 @@
+.collaboration-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.collaboration-grid article {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: white;
+}
+
+.collaboration-grid article > span {
+  width: fit-content;
+  border-radius: 999px;
+  background: rgba(39, 147, 88, 0.12);
+  color: var(--dark-green);
+  padding: 0.35rem 0.7rem;
+  font-weight: 800;
+}
+
+.collaboration-grid p,
+.collaboration-grid li {
+  color: var(--gray);
+  line-height: 1.55;
+}
+
+.collaboration-grid ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding-left: 1.2rem;
+}
+
+@media (max-width: 780px) {
+  .collaboration-grid {
+    grid-template-columns: 1fr;
+  }
+}

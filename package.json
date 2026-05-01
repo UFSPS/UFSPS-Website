@@ -3,6 +3,7 @@
     "scripts": {
         "start": "vite",
         "dev": "vite",
+        "typecheck": "tsc --noEmit",
         "build": "vite build && node scripts/create-spa-fallback.mjs"
     },
     "dependencies": {

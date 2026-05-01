@@ -34,7 +34,7 @@ const Navbar = ({style}: NavbarProps) => {
         
         <Link to="/" onClick={() => setMobileOpen(false)}>
           <div className="logo-section">
-            <img src={Logo} className="logo"/>
+            <img src={Logo} className="logo" alt="UF IEEE SPS logo"/>
             <div className="logo-div"></div>
             <p className="logo-text">
               <span>University of Florida</span>
@@ -55,10 +55,13 @@ const Navbar = ({style}: NavbarProps) => {
         </button>
         
         <div className={`nav-links ${mobileOpen ? 'open' : ''}`}>
-          <Link to="/" onClick={() => setMobileOpen(false)}>HOME</Link>
-          <NavLink to="/about" onClick={() => setMobileOpen(false)}>ABOUT</NavLink>
-          <NavLink to="/research" onClick={() => setMobileOpen(false)}>RESEARCH</NavLink>
-          <NavLink to="/resources" onClick={() => setMobileOpen(false)}>RESOURCES</NavLink>
+          <Link to="/" onClick={() => setMobileOpen(false)} data-analytics-id="nav-home">HOME</Link>
+          <NavLink to="/about" onClick={() => setMobileOpen(false)} data-analytics-id="nav-about">ABOUT</NavLink>
+          <NavLink to="/research" onClick={() => setMobileOpen(false)} data-analytics-id="nav-research">RESEARCH</NavLink>
+          <NavLink to="/events" onClick={() => setMobileOpen(false)} data-analytics-id="nav-events">EVENTS</NavLink>
+          <NavLink to="/resources" onClick={() => setMobileOpen(false)} data-analytics-id="nav-resources">RESOURCES</NavLink>
+          <NavLink to="/join" onClick={() => setMobileOpen(false)} data-analytics-id="nav-join">JOIN</NavLink>
+          <NavLink to="/collaborate" onClick={() => setMobileOpen(false)} data-analytics-id="nav-collaborate">COLLABORATE</NavLink>
         </div>
       </div>
     );

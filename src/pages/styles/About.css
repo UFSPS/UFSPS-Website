@@ -145,6 +145,12 @@
     color: var(--green);
 }
 
+.about-network-link {
+    width: fit-content;
+    color: var(--dark-green);
+    font-weight: 800;
+}
+
 .affiliation-link-card,
 .partner-link-card {
     display: inline-flex;

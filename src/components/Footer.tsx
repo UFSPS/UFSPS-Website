@@ -7,11 +7,12 @@ const Footer = () => {
 
     interface NewTabProps {
       href: string;
+      label: string;
       children: React.ReactNode;
     }
-    const NewTab = ({href, children}: NewTabProps) => {
+    const NewTab = ({href, label, children}: NewTabProps) => {
       return (
-        <a href={href} target="_blank" rel="noopener noreferrer">
+        <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
           {children}
         </a>
       );
@@ -36,11 +37,11 @@ const Footer = () => {
                         Gainesville, Florida 32611-5585
                     </p>
                     <div className="footer-social-links">
-                        <NewTab href="https://www.instagram.com/uf.sps/"><SiInstagram /></NewTab>
-                        <NewTab href="https://discord.gg/6GRymPjgKc"><SiDiscord /></NewTab>
-                        <NewTab href="https://www.linkedin.com/company/ieee-signal-processing-society-uf/"><SiLinkedin /></NewTab>
-                        <NewTab href="https://x.com/uf_sps"><SiX /></NewTab>
-                        <NewTab href="https://https://linktr.ee/uf.sps"><SiLinktree /></NewTab>
+                        <NewTab label="Instagram" href="https://www.instagram.com/uf.sps/"><SiInstagram /></NewTab>
+                        <NewTab label="Discord" href="https://discord.gg/6GRymPjgKc"><SiDiscord /></NewTab>
+                        <NewTab label="LinkedIn" href="https://www.linkedin.com/company/ieee-signal-processing-society-uf/"><SiLinkedin /></NewTab>
+                        <NewTab label="X" href="https://x.com/uf_sps"><SiX /></NewTab>
+                        <NewTab label="Linktree" href="https://linktr.ee/uf.sps"><SiLinktree /></NewTab>
                     </div>
                 </div>
             

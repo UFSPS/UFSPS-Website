@@ -18,8 +18,9 @@
 .left,
 .right {
   color: transparent;
-  margin: 0 20px;
+  border: 0;
   border-radius: 50%;
+  background: transparent;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -57,10 +58,12 @@
   gap: 0.25em;
 }
 .dot {
+  border: 0;
   background-color: #333;
   width: 0.5em;
   height: 0.5em;
   border-radius: 50%;
+  cursor: pointer;
 }
 .active-image {
   background-color: var(--green);

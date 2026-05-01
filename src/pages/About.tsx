@@ -6,9 +6,15 @@ import PageContainer from '../components/PageContainer.js';
 import Profile from '../components/Profile.js';
 import Carousel from '../components/Carousel.js';
 import Footer from '../components/Footer.js';
+import { Link } from 'react-router-dom';
 
-const imageModules = import.meta.glob("../assets/research_teams/*.png", { eager: true });
-const images = Object.values(imageModules).map((mod: any) => mod.default);
+const images = [
+    '/research/Ergo_Icon_nobg.png',
+    '/research/Ora_Icon_nobg.png',
+    '/research/Vie_Icon_nobg.png',
+    '/research/Aude_Icon_nobg.png',
+    '/research/PlatoCave.png',
+];
 
 const About = () => {
     const hasAlumni = chapterInfo.executiveBoardAlumni.length > 0;
@@ -85,6 +91,7 @@ const About = () => {
                                 Alumni references and socials will be added as our board history grows.
                             </p>
                         )}
+                        <Link to="/network" className="about-network-link">Open member and alumni network</Link>
                     </div>
                 </div>
 

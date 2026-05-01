@@ -13,7 +13,7 @@ const Model = () => {
 
     // ── Renderer ──────────────────────────────────────────────
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(width, height);
     renderer.setClearColor(0x000000, 0); // transparent bg
     mount.appendChild(renderer.domElement);
@@ -71,6 +71,7 @@ const Model = () => {
     scene.add(points);
 
     // ── Animation loop ────────────────────────────────────────
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let animId: number;
     const animate = () => {
       animId = requestAnimationFrame(animate);
@@ -80,7 +81,11 @@ const Model = () => {
       points.rotation.x  = wire.rotation.x;
       renderer.render(scene, camera);
     };
-    animate();
+    if (reducedMotion) {
+      renderer.render(scene, camera);
+    } else {
+      animate();
+    }
 
     // ── Resize handler ────────────────────────────────────────
     const handleResize = () => {
@@ -94,7 +99,7 @@ const Model = () => {
 
     // ── Cleanup ───────────────────────────────────────────────
     return () => {
-      cancelAnimationFrame(animId);
+      if (animId) cancelAnimationFrame(animId);
       window.removeEventListener('resize', handleResize);
       mount.removeChild(renderer.domElement);
       renderer.dispose();

@@ -23,3 +23,48 @@ body {
   color: var(--black);
   overflow-x: hidden;
 }
+
+.project-hub-wrapper,
+.status-wrapper,
+.philosophy-wrapper,
+.events-wrapper,
+.join-wrapper,
+.network-wrapper,
+.collaborate-wrapper {
+  gap: 4rem;
+}
+
+.project-hub-main,
+.status-main,
+.philosophy-main,
+.events-main,
+.join-main,
+.network-main,
+.collaborate-main {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.section-kicker {
+  color: var(--green);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--logo-green);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}

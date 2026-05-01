@@ -10,6 +10,12 @@
     flex-direction: column;
     gap: clamp(1rem, 0.5rem + 1.5vh, 2.5rem);
     margin-inline: clamp(1rem, 5vw, 4em);
+    max-width: 880px;
+}
+
+.workshop-title-container p {
+    color: var(--gray);
+    line-height: 1.55;
 }
 
 .resource-links-section {
@@ -57,56 +63,41 @@
     line-height: 1.45;
 }
 
-.workshop-body-container{
+.resource-material-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.resource-material-card {
     display: flex;
-    flex: 1;
-    position: relative;
+    flex-direction: column;
+    gap: 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+    padding: 1.25rem;
+    background: white;
 }
 
-/* Allow container to grow vertically as needed */
-.workshop-cards-container {
-    width: 100%;
+.resource-material-card p {
+    color: var(--gray);
+    line-height: 1.5;
+}
+
+.resource-material-card div,
+.resource-topic-list {
     display: flex;
-    background: rgb(96, 93, 93);
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
+    flex-wrap: wrap;
+    gap: 0.6rem;
 }
 
-.prev-button,
-.next-button{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    opacity: 0.7;
-    cursor: pointer;
-    z-index: 1000;
-    color: white;
-}
-
-
-.prev-button { left: 10px; }
-.next-button { right: 10px; }
-
-.prev-button:hover,
-.next-button:hover {
- opacity: 0.8;
-}
-
-.workshop-cards-container > p {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: bold;
-  font-size: clamp(1rem, 0.8rem + 1vw, 1.5rem);
-}
-
-.workshop-cards-container:has(> p) {
-  background: #f7f7f7;
+.resource-material-card a,
+.resource-topic-list span {
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    border-radius: 999px;
+    padding: 0.45rem 0.7rem;
+    color: var(--black);
+    font-weight: 700;
 }
 
 @media (max-width: 768px) {
@@ -134,19 +125,7 @@
     font-size: 2.25rem;
   }
 
-  .workshop-body-container {
-    min-height: 0;
-  }
-
-  .workshop-cards-container {
-    gap: 1rem;
-    padding: 0 1rem 1rem;
-    scroll-snap-type: x mandatory;
-    background: transparent;
-  }
-
-  .prev-button,
-  .next-button {
-    display: none;
+  .resource-material-grid {
+    grid-template-columns: 1fr;
   }
 }

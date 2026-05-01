@@ -1,0 +1,65 @@
+.events-main,
+.join-main,
+.network-main,
+.collaborate-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.events-hero,
+.join-hero,
+.network-hero,
+.collaborate-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 880px;
+}
+
+.events-hero h1,
+.join-hero h1,
+.network-hero h1,
+.collaborate-hero h1 {
+  font-size: clamp(2.5rem, 7vw, 4.75rem);
+  line-height: 1.02;
+}
+
+.events-hero p,
+.join-hero p,
+.network-hero p,
+.collaborate-hero p {
+  color: var(--gray);
+  line-height: 1.65;
+}
+
+.events-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.events-filter button {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  background: white;
+  color: var(--black);
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.events-filter button.active {
+  background: var(--black);
+  color: white;
+}
+
+.events-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.events-empty {
+  color: var(--gray);
+}

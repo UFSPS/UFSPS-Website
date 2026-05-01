@@ -57,16 +57,64 @@
     background: var(--gray);
 }
 
+.proj-status-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-status,
+.project-health {
+    width: fit-content;
+    border-radius: 999px;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.status-active,
+.health-on-track {
+    background: rgba(39, 147, 88, 0.12);
+    color: var(--dark-green);
+}
+
+.status-planning,
+.health-watch {
+    background: rgba(0, 98, 155, 0.12);
+    color: var(--logo-blue);
+}
+
+.status-paused,
+.health-blocked {
+    background: rgba(120, 80, 40, 0.12);
+    color: #774400;
+}
+
+.status-completed {
+    background: rgba(34, 34, 34, 0.1);
+    color: var(--black);
+}
+
+.proj-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
 .proj-rdmore {
     display: flex;
     align-items: center;
     width: fit-content;
-    gap: 1rem;
+    gap: 0.75rem;
 
     padding: 0.75em 0 1em 0;
+    border: 0;
+    background: transparent;
     color: var(--dark-green);
     cursor: pointer;
-    
+    font: inherit;
     transition: 0.2s ease;
 }
 
@@ -74,13 +122,24 @@
     color: var(--green);
 }
 
-.proj-rdmore p {
+.proj-rdmore span {
     font-weight: 700;
 }
 
 .proj-rdmore svg {
     height:1.5em;
     width: 1.5em;
+}
+
+.proj-hub-link {
+    color: var(--black);
+    font-weight: 700;
+    border-bottom: 1px solid var(--black);
+}
+
+.proj-hub-link:hover {
+    color: var(--green);
+    border-bottom-color: var(--green);
 }
 
 .dlg {
@@ -131,13 +190,20 @@
     border-bottom: 1px solid var(--gray);
 }
 
-.dlg-title-container svg {
-    height: 2.25rem;
-    width: 2.25rem;
+.dlg-close-button {
+    display: flex;
+    border: 0;
+    background: transparent;
+    color: var(--black);
     cursor: pointer;
 }
 
-.dlg-title-container svg:hover {
+.dlg-close-button svg {
+    height: 2.25rem;
+    width: 2.25rem;
+}
+
+.dlg-close-button:hover {
     opacity: 75%;
 }
 
@@ -214,7 +280,7 @@
         font-size: 1rem;
     }
 
-    .dlg-title-container svg {
+    .dlg-close-button svg {
         flex-shrink: 0;
         height: 2rem;
         width: 2rem;
