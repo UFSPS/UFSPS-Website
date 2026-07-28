@@ -46,14 +46,17 @@ export const eboardProfiles: Profile[] =
         name: "Luana Kunzler Maldaner",
         term: "2026-2027",
         bio: "Shapes how the chapter presents its work, from event promotion to the visual and written voice that reaches students across campus.",
-        image: "/profiles/Luana Kunzler Maldaner.png"
+        image: "/profiles/Luana Kunzler Maldaner.png",
+        githubLink: "https://github.com/luanamaldaner",
+        linkedinLink: "https://www.linkedin.com/in/luanamaldaner/"
     },
     {
         position: "Chief of Education",
         name: "Gustavo Esteban Falcon",
         term: "2026-2027",
         bio: "Develops educational programming and learning pathways that help members build signal-processing fluency through approachable, technically serious workshops.",
-        image: "/profiles/Gustavo Esteban Falcon.png"
+        image: "/profiles/Gustavo Esteban Falcon.png",
+        githubLink: "https://github.com/GestebanFalcon"
     },
     {
         position: "Chief of Research",
