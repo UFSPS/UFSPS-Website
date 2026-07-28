@@ -16,6 +16,9 @@
 }
 
 .profile-img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 200px;
     width: 200px;
     overflow: hidden;
@@ -29,6 +32,13 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+.profile-img-initials {
+    font-size: 3.25rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #fbfbfb;
 }
 
 .profile-info {

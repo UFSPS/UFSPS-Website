@@ -6,17 +6,22 @@ interface ProfileProps {
     position?: string
     term?: string
     bio?: string
-    image?: string
+    image?: string | undefined
     githubLink?: string | undefined
-    linkedinLink?: string |undefined
+    linkedinLink?: string | undefined
 }
+
+const initials = (name?: string) =>
+    (name ?? '').split(' ').filter(Boolean).slice(0, 2).map((part) => part[0]).join('');
 
 const Profile = ({name, position, term, bio, image, githubLink, linkedinLink}: ProfileProps) => {
     return (
         <div className="exec-profile-container">
             <div className="profile-content-container">
                 <div className="profile-img-container">
-                    <img className="profile-img" src={image} alt={`${name} portrait`} loading="lazy" />
+                    {image
+                        ? <img className="profile-img" src={image} alt={`${name} portrait`} loading="lazy" />
+                        : <span className="profile-img-initials" aria-hidden="true">{initials(name)}</span>}
                 </div>
                 <div className="profile-info">
                     <div className="name-pos">

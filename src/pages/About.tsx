@@ -1,5 +1,5 @@
 import './styles/About.css';
-import { eboardProfiles } from '../data/eboard.js';
+import { eboardProfiles, pastEboardProfiles } from '../data/eboard.js';
 import { chapterInfo } from '../data/chapter.js';
 import Navbar from '../components/Navbar.js';
 import PageContainer from '../components/PageContainer.js';
@@ -50,11 +50,28 @@ const About = () => {
                     <div className="board-section-container">
                         <h1>Executive Board</h1>
                         <div className="profiles-container">
-                            {Object.entries(eboardProfiles).map(([position, profile]) => (
-                                <Profile 
-                                key={position}
-                                name={profile.name} 
-                                position={position} 
+                            {eboardProfiles.map((profile) => (
+                                <Profile
+                                key={profile.name}
+                                name={profile.name}
+                                position={profile.position}
+                                term={profile.term}
+                                bio={profile.bio}
+                                image={profile.image}
+                                githubLink={profile.githubLink}
+                                linkedinLink={profile.linkedinLink} />
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="board-section-container past-board-section-container">
+                        <h1>Past Executive Board</h1>
+                        <div className="profiles-container">
+                            {pastEboardProfiles.map((profile) => (
+                                <Profile
+                                key={profile.name}
+                                name={profile.name}
+                                position={profile.position}
                                 term={profile.term}
                                 bio={profile.bio}
                                 image={profile.image}
