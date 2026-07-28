@@ -33,13 +33,15 @@ export const eboardProfiles: Profile[] =
         name: "Eric Zhu",
         term: "2026-2027",
         bio: "Coordinates logistics and chapter operations so workshops, announcements, and community touchpoints stay consistent throughout the semester.",
-        image: "/profiles/Eric Zhu.png"
+        image: "/profiles/Eric Zhu.png",
+        linkedinLink: "https://www.linkedin.com/in/ezhu05/"
     },
     {
         position: "Co-Chief of Operations",
         name: "Veronica Igwe",
         term: "2026-2027",
-        bio: "Keeps chapter planning and day-to-day execution organized so members always know what is happening and how to take part."
+        bio: "Keeps chapter planning and day-to-day execution organized so members always know what is happening and how to take part.",
+        linkedinLink: "https://www.linkedin.com/in/veronica-igwe-7272b1337/"
     },
     {
         position: "Chief of Marketing",
@@ -63,7 +65,8 @@ export const eboardProfiles: Profile[] =
         name: "John Courtney",
         term: "2026-2027",
         bio: "Connects chapter activity to research-facing projects and helps shape opportunities for members who want to explore deeper technical work.",
-        image: "/profiles/John Courtney.png"
+        image: "/profiles/John Courtney.png",
+        linkedinLink: "https://www.linkedin.com/in/john-courtney-abc123/"
     },
     {
         position: "Co-Chief of Networking",
@@ -78,14 +81,16 @@ export const eboardProfiles: Profile[] =
         name: "Kacper Chojnowski",
         term: "2026-2027",
         bio: "Grows the chapter's external connections and helps members find collaborators, mentors, and industry contacts beyond the classroom.",
-        image: "/profiles/Kacper Chojnowski.png"
+        image: "/profiles/Kacper Chojnowski.png",
+        linkedinLink: "https://www.linkedin.com/in/kacperchojnowski/"
     },
     {
         position: "Treasurer",
         name: "Kenneth Fluitt",
         term: "2026-2027",
         bio: "Manages chapter finances and operational planning so events, resources, and chapter initiatives stay organized and sustainable.",
-        image: "/profiles/Kenneth Fluitt.png"
+        image: "/profiles/Kenneth Fluitt.png",
+        linkedinLink: "https://www.linkedin.com/in/kenneth-fluitt/"
     }
 ]
 
