@@ -28,3 +28,24 @@ Start the app locally in your project root
 npm start
 ```
 The app should be running at `http://localhost:5173`. If it is not available at port 5173, the port is already being used and Vite will automatically choose the next available port.
+
+## Build & Deploy
+
+```bash
+npm run typecheck   # tsc --noEmit
+npm run build       # vite build + SPA 404.html fallback for GitHub Pages
+```
+
+Pushes to `main` (and currently `setup-github-pages`) trigger the GitHub Pages
+deploy workflow; production is served at https://ieee-sps-uf.raulv.dev via
+`public/CNAME`. Set `VITE_BASE_PATH` when hosting under a sub-path.
+
+## Contributing content
+
+Site content lives in typed data modules under `src/data/` (events, projects,
+board, chapter info) — most updates don't require touching components. Design
+tokens and shared classes live in `src/App.css`.
+
+**[docs/OPEN_ITEMS.md](docs/OPEN_ITEMS.md)** tracks content that still needs
+input from board members (photos, link verification, Fall 2026 events, project
+status refreshes).
