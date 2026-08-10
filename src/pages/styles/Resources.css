@@ -1,131 +1,163 @@
-.resources-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(1.5rem, 1rem + 2vh, 3.375rem);
-    overflow: auto;
+/* /resources — lab-white redesign.
+   Motifs used (max 2): hairline dividers + index numbers. */
+
+.resources-page {
+    padding-block-end: clamp(3.5rem, 8vw, 6.5rem);
 }
 
-.workshop-title-container {
+/* Sections separated by hairline rules */
+
+.resources-section {
     display: flex;
     flex-direction: column;
-    gap: clamp(1rem, 0.5rem + 1.5vh, 2.5rem);
-    margin-inline: clamp(1rem, 5vw, 4em);
-    max-width: 880px;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+    border-bottom: 1px solid var(--line);
 }
 
-.workshop-title-container p {
-    color: var(--gray);
+.resources-section:last-of-type {
+    border-bottom: none;
+    padding-block-end: 0;
+}
+
+/* Shared resources: hairline link rows with mono arrow affordance */
+
+.resource-list {
+    list-style: none;
+    align-self: stretch;
+}
+
+.resource-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: baseline;
+    column-gap: 1.5rem;
+    padding: 1.1rem 0.25rem;
+    border-top: 1px solid var(--line);
+    border-radius: var(--radius);
+    color: var(--ink);
+    text-decoration: none;
+    transition: background-color var(--t-fast) var(--ease);
+}
+
+.resource-list li:last-child .resource-row {
+    border-bottom: 1px solid var(--line);
+}
+
+.resource-row:hover {
+    background: var(--accent-wash);
+}
+
+.resource-row-index {
+    color: var(--ink-3);
+}
+
+.resource-row-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.resource-row-label {
+    font-weight: 550;
+}
+
+.resource-row-desc {
+    color: var(--ink-2);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    max-width: var(--measure);
+}
+
+.resource-row-arrow {
+    color: var(--ink-3);
+    transition: color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+}
+
+.resource-row:hover .resource-row-arrow {
+    color: var(--accent);
+    transform: translateX(4px);
+}
+
+/* Workshop materials: archive rows, mono ISO dates */
+
+.workshop-list {
+    list-style: none;
+    align-self: stretch;
+}
+
+.workshop-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    column-gap: 1.5rem;
+    padding-block: 1.1rem;
+    border-top: 1px solid var(--line);
+}
+
+.workshop-list li:last-child {
+    border-bottom: 1px solid var(--line);
+}
+
+.workshop-row-date {
+    color: var(--ink-2);
+}
+
+.workshop-row-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.workshop-row-body p {
+    color: var(--ink-2);
+    font-size: 0.9375rem;
     line-height: 1.55;
 }
 
-.resource-links-section {
+.workshop-row-links {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-inline: clamp(1rem, 5vw, 4em);
+    gap: 1.25rem;
 }
 
-.resource-links-section h2 {
-    font-size: 1.75rem;
+.workshop-row-links a {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
 }
 
-.resource-links-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-}
+/* Topics: rectangular mono chips, no pills */
 
-.resource-link-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    min-height: 8rem;
-    padding: 1.25rem;
-    border: 1px solid var(--gray);
-    border-radius: 16px;
-    background: white;
-    color: var(--black);
-    transition: 0.2s ease;
-}
-
-.resource-link-card:hover {
-    border-color: var(--black);
-    transform: translateY(-2px);
-}
-
-.resource-link-card span {
-    color: var(--dark-green);
-    font-weight: 700;
-}
-
-.resource-link-card p {
-    color: var(--gray);
-    line-height: 1.45;
-}
-
-.resource-material-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-}
-
-.resource-material-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    border: 1px solid rgba(0, 0, 0, 0.16);
-    border-radius: 8px;
-    padding: 1.25rem;
-    background: white;
-}
-
-.resource-material-card p {
-    color: var(--gray);
-    line-height: 1.5;
-}
-
-.resource-material-card div,
-.resource-topic-list {
+.topic-list {
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
+    gap: 0.5rem;
 }
 
-.resource-material-card a,
-.resource-topic-list span {
-    border: 1px solid rgba(0, 0, 0, 0.18);
-    border-radius: 999px;
-    padding: 0.45rem 0.7rem;
-    color: var(--black);
-    font-weight: 700;
+.topic-item {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 0.35rem 0.65rem;
+    color: var(--ink-2);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
-@media (max-width: 768px) {
-  .resources-wrapper {
-    gap: 2rem;
-  }
+@media (max-width: 640px) {
+    .resource-row {
+        grid-template-columns: 1fr auto;
+    }
 
-  .workshop-title-container {
-    margin-inline: 1rem;
-  }
+    .resource-row-index {
+        display: none;
+    }
 
-  .resource-links-section {
-    margin-inline: 1rem;
-  }
-
-  .resource-links-section h2 {
-    font-size: 1.5rem;
-  }
-
-  .resource-links-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .workshop-title-container h1 {
-    font-size: 2.25rem;
-  }
-
-  .resource-material-grid {
-    grid-template-columns: 1fr;
-  }
+    .workshop-row {
+        grid-template-columns: 1fr;
+        row-gap: 0.4rem;
+    }
 }

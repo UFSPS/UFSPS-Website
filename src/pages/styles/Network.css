@@ -1,53 +1,130 @@
+/* /network — lab-white. Layout, header, and card shell come from App.css
+   shared classes (.container, .page-header, .kicker, .lede, .card, .mono,
+   .rule); only network-specific structure lives here. */
+
 .network-section {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.75rem;
 }
 
-.network-member-grid,
-.network-affiliation-grid {
+.network-member-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
-.network-member-grid article,
-.network-affiliation-grid span,
-.network-empty {
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  border-radius: 8px;
-  padding: 1.25rem;
-  background: white;
-}
-
-.network-member-grid article {
+.network-member-card {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.9rem;
 }
 
-.network-member-grid p,
-.network-empty {
-  color: var(--gray);
-  line-height: 1.55;
+.network-member-meta {
+  color: var(--ink-2);
+  max-width: none;
 }
 
-.network-member-grid article div {
+.network-focus-list {
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-.network-member-grid span {
-  border-radius: 999px;
-  background: #f4f4f4;
-  padding: 0.3rem 0.6rem;
-  color: var(--gray);
+.network-focus-list li {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-2);
+  background: var(--bg-inset);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.25rem 0.55rem;
+}
+
+.network-member-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  margin-top: auto;
+}
+
+.network-member-links a {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-2);
+  text-decoration-color: var(--line);
+}
+
+.network-member-links a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+.network-affiliation-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.network-affiliation-chip {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.45rem 0.8rem;
+}
+
+.network-affiliation-chip a {
+  color: inherit;
+  text-decoration-color: var(--line);
+}
+
+.network-affiliation-chip a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* Honest not-yet-populated state: mono instrumentation note on an inset
+   panel, inactive status square (--ink-3) per the status-indicator motif. */
+.network-empty {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+  background: var(--bg-inset);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  max-width: none;
+}
+
+.network-empty::before {
+  content: '';
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 1px;
+  background: var(--ink-3);
 }
 
 @media (max-width: 900px) {
-  .network-member-grid,
-  .network-affiliation-grid {
+  .network-member-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .network-member-grid {
     grid-template-columns: 1fr;
   }
 }

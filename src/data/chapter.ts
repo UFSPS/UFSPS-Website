@@ -3,13 +3,6 @@ export interface SocialLink {
   href: string;
 }
 
-export interface ExecutiveBoardAlumnus {
-  name: string;
-  role?: string;
-  term?: string;
-  socialLinks: SocialLink[];
-}
-
 export interface MemberAffiliation {
   name: string;
   type: 'company' | 'lab' | 'university' | 'organization';
@@ -45,12 +38,11 @@ export const chapterInfo = {
     { label: 'University of Florida ECE', href: 'https://www.ece.ufl.edu/' },
     { label: 'UF Student Organizations', href: 'https://orgs.studentinvolvement.ufl.edu/' },
   ],
-  executiveBoardAlumni: [] as ExecutiveBoardAlumnus[],
   memberAffiliations: [] as MemberAffiliation[],
   resourceLinks: [
     {
       label: 'Workshop GitHub',
-      href: 'https://github.com/Jibby2k1/SPS_Curriculum?tab=readme-ov-file',
+      href: 'https://github.com/Jibby2k1/SPS_Curriculum',
       description: 'Browse workshop notes, code, and curriculum materials from the SPS workshop series.',
     },
     {

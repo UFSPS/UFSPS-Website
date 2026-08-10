@@ -1,0 +1,12 @@
+.notfound-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding-block: clamp(5rem, 14vw, 10rem);
+  min-height: 60dvh;
+}
+
+.notfound-lede {
+  margin-block-end: 0.5rem;
+}

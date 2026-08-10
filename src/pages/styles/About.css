@@ -1,258 +1,87 @@
-.about-section-container h1,
-.board-section-container h1 {
-    font-size: 3rem;
-    line-height: 1.1;
-}
-
-.wrapper {
-    gap: 6.25rem;
-}
-
-.about-main-content-container {
+/* Section rhythm: shared .section supplies padding-block;
+   .about-section supplies the kicker → h2 → content stack. */
+.about-section {
     display: flex;
     flex-direction: column;
-    gap: 6rem;
 }
 
-.about-section-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.625rem;
-    margin-inline: 2.375rem;
+.about-section .kicker {
+    margin-bottom: 0.875rem;
 }
 
-.about-image-text-container {
-    display: flex;
+.about-section h2 {
+    margin-bottom: 2.25rem;
+}
+
+/* Intro: text + carousel two-column */
+.about-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
     align-items: center;
-    justify-content: space-between;
-    padding-inline: 7.125rem;
 }
 
-.about-text {
+.about-intro-text {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-
-    height: auto;
-    width: 550px;
-    padding: 0.625rem;
-
-    font-size: 1.125rem;
-    color: var(--gray);
+    gap: 1.25rem;
 }
 
-.about-image {
-    height: 356px;
-    width: 720px;
-
-    background: gray;
-    border-radius: 50px;
-    overflow: hidden;
-}
-
-.board-section-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8.5rem;
-    margin-inline: 2.375rem;
-}
-
-.board-section-container h1 {
-    position: relative;
-    display: inline-block;
-}
-
-.board-section-container h1::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2.25rem;
-    height: 5px;
-    width: 100%;
-
-    background: linear-gradient(90deg, var(--logo-blue) 0%, #DCEEC8 100%);
-    border-radius: 10px;
-    pointer-events: none;
-}
-
+/* Board grids */
 .profiles-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-self: center;
-    gap: 4.25rem;
-}
-
-.alumni-section-container,
-.affiliations-section-container,
-.partners-section-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-inline: 2.375rem;
-}
-
-.alumni-section-container h2,
-.affiliations-section-container h2,
-.partners-section-container h2 {
-    font-size: 2rem;
-}
-
-.alumni-links-container,
-.affiliations-links-container,
-.partners-links-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.alumni-link-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     gap: 1.5rem;
-    width: min(720px, 100%);
-    min-height: 4rem;
-    padding: 1rem 1.25rem;
-    border: 1px solid var(--gray);
-    border-radius: 16px;
-    background: #fbfbfb;
-}
-
-.alumni-link-row h3 {
-    font-size: 1rem;
-}
-
-.alumni-link-row p,
-.section-empty-state {
-    color: var(--gray);
-}
-
-.alumni-social-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 0.75rem;
-}
-
-.alumni-social-links a {
-    color: var(--dark-green);
-    font-weight: 600;
-}
-
-.alumni-social-links a:hover {
-    color: var(--green);
+    width: 100%;
 }
 
 .about-network-link {
     width: fit-content;
-    color: var(--dark-green);
-    font-weight: 800;
+    margin-top: 2rem;
+}
+
+/* Affiliations / partners */
+.affiliations-links-container,
+.partners-links-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
 }
 
 .affiliation-link-card,
 .partner-link-card {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    min-height: 3.5rem;
-    padding: 0 1.25rem;
-    border: 1px solid var(--gray);
-    border-radius: 50px;
-    background: #fbfbfb;
-    color: var(--black);
-    transition: 0.2s ease;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--bg-elevated);
+    color: var(--ink);
+    text-decoration: none;
+    transition:
+        border-color var(--t-fast) var(--ease),
+        color var(--t-fast) var(--ease);
 }
 
 .affiliation-link-card:hover,
 .partner-link-card:hover {
-    border-color: var(--black);
-    color: var(--green);
+    border-color: var(--line-strong);
+    color: var(--accent);
 }
 
-@media (max-width: 1100px) {
-    .about-image-text-container {
-        flex-direction: column;
-        align-items: flex-start;
-        padding-inline: 0;
-        gap: 2rem;
-    }
-
-    .about-text {
-        width: 100%;
-        max-width: none;
-    }
-
-    .about-image {
-        width: 100%;
-        height: auto;
-    }
+/* Empty states for sections awaiting opt-in data */
+.section-empty-state {
+    max-width: var(--measure);
+    padding: 1.25rem 1.5rem;
+    border: 1px dashed var(--line-strong);
+    border-radius: var(--radius);
+    background: var(--bg-inset);
+    color: var(--ink-2);
 }
 
-@media (max-width: 768px) {
-    .wrapper {
-        gap: 3rem;
-    }
-
-    .about-main-content-container {
-        gap: 4rem;
-    }
-
-    .about-section-container,
-    .board-section-container,
-    .alumni-section-container,
-    .affiliations-section-container,
-    .partners-section-container {
-        margin-inline: 1rem;
-    }
-
-    .about-section-container h1,
-    .board-section-container h1 {
-        font-size: 2.25rem;
-    }
-
-    .about-text {
-        padding: 0;
-        font-size: 1rem;
-        gap: 1.25rem;
-    }
-
-    .about-image {
-        aspect-ratio: 16 / 10;
-        border-radius: 20px;
-    }
-
-    .board-section-container {
-        gap: 4rem;
-    }
-
-    .board-section-container h1::after {
-        bottom: -1.25rem;
-    }
-
-    .profiles-container {
-        width: 100%;
-        gap: 1.5rem;
-    }
-
-    .partners-links-container {
-        flex-direction: column;
-    }
-
-    .alumni-link-row {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .alumni-social-links {
-        justify-content: flex-start;
-    }
-
-    .affiliation-link-card,
-    .partner-link-card {
-        width: 100%;
-        justify-content: flex-start;
-        border-radius: 12px;
+@media (max-width: 900px) {
+    .about-intro {
+        grid-template-columns: 1fr;
+        align-items: start;
     }
 }

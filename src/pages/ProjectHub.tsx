@@ -1,7 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
-import Navbar from '../components/Navbar.js';
-import Footer from '../components/Footer.js';
 import PageContainer from '../components/PageContainer.js';
+import { StatusPill } from '../components/ProjectItem.js';
 import { getProjectBySlug, projectList } from '../data/projects.js';
 import './styles/ProjectHub.css';
 
@@ -14,28 +13,28 @@ const ProjectHub = () => {
   if (!project) {
     return (
       <PageContainer className="project-hub-wrapper">
-        <Navbar />
-        <main className="project-not-found">
+        <main className="container project-not-found">
+          <p className="kicker">Research</p>
           <h1>Project not found</h1>
-          <p>This research hub does not exist yet.</p>
-          <Link to="/research">Back to research</Link>
+          <p className="lede">This research hub does not exist yet.</p>
+          <Link to="/research" className="project-hub-back">← Back to research</Link>
         </main>
-        <Footer />
       </PageContainer>
     );
   }
 
   const relatedProjects = projectList.filter((item) => item.slug !== project.slug).slice(0, 3);
+  const progress = Math.min(Math.max(project.progress, 0), 100);
 
   return (
     <PageContainer className="project-hub-wrapper">
-      <Navbar />
-      <main className="project-hub-main">
-        <section className="project-hub-hero">
+      <main className="container project-hub-main">
+        <header className="project-hub-hero">
           <div className="project-hub-copy">
-            <Link to="/research" className="project-hub-back">Research</Link>
+            <Link to="/research" className="project-hub-back">← Research</Link>
+            <p className="kicker">Research / {project.shortTitle ?? project.title}</p>
             <h1>{project.shortTitle ?? project.title}</h1>
-            <p>{project.description}</p>
+            <p className="lede">{project.description}</p>
             <div className="project-hub-tags">
               {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
             </div>
@@ -43,24 +42,28 @@ const ProjectHub = () => {
           <div className="project-hub-image">
             <img src={project.img} alt={project.imgAlt} />
           </div>
-        </section>
+        </header>
 
-        <section className="project-hub-status-grid">
+        <section className="project-hub-status-grid" aria-label="Project status">
           <div>
-            <span>Status</span>
-            <strong>{formatStatus(project.status)}</strong>
+            <span className="stat-label">Status</span>
+            <StatusPill kind="status" value={project.status} />
           </div>
           <div>
-            <span>Health</span>
-            <strong>{formatStatus(project.health)}</strong>
+            <span className="stat-label">Health</span>
+            <StatusPill kind="health" value={project.health} />
           </div>
           <div>
-            <span>Phase</span>
+            <span className="stat-label">Phase</span>
             <strong>{project.phase}</strong>
           </div>
           <div>
-            <span>Progress</span>
-            <strong>{project.progress}%</strong>
+            <span className="stat-label">Progress</span>
+            <strong className="stat-value">{progress}%</strong>
+          </div>
+          <div>
+            <span className="stat-label">Updated</span>
+            <strong className="stat-value">{project.lastUpdated}</strong>
           </div>
         </section>
 
@@ -101,16 +104,18 @@ const ProjectHub = () => {
               {project.details.stack.map((item) => <span key={item}>{item}</span>)}
             </div>
           </article>
-          <article>
-            <h2>Links</h2>
-            <div className="project-link-list">
-              {project.links?.map((link) => (
-                <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          </article>
+          {project.links && project.links.length > 0 && (
+            <article>
+              <h2>Links</h2>
+              <div className="project-link-list">
+                {project.links.map((link) => (
+                  <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
+                    {link.label} ↗
+                  </a>
+                ))}
+              </div>
+            </article>
+          )}
         </section>
 
         <section className="related-projects">
@@ -122,7 +127,6 @@ const ProjectHub = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </PageContainer>
   );
 };

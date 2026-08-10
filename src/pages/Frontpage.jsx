@@ -1,53 +1,32 @@
-import { ChevronsDown } from 'lucide-react';
 import './styles/Frontpage.css';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import Model from '../components/Model';
-import Image from '../assets/background.png';
+import { chapterInfo } from '../data/chapter';
+
+const discordHref = chapterInfo.socialLinks.find((link) => link.label === 'Discord')?.href;
 
 const Frontpage = () => {
     return (
-        <>  
-    
-            <Navbar style={{background: 'transparent'}}/>
-            <div className="model">
+        <main className="front">
+            <div className="front-backdrop bg-grid" aria-hidden="true"></div>
+            <div className="front-model">
                 <Model />
             </div>
-            <div className="section-container">
-                <main className="front-container">
-                    <div className="front-content">
-                    <h1>
-                        Signal<br />
-                        Processing<br />
-                        Society
-                    </h1>
-                    <p>
-                        For engineers, mathematicians, and scientists. We receive, analyze, process,
-                        and transmit signals. Everything in life can be represented by a signal. Explore
-                        reality through the digital interface.
-                    </p>
-                    <p>
-                        Welcome to the Signal Processing Society.
-                    </p>
-
-                    {/* Discord button */}
-                    <a href="https://discord.gg/6GRymPjgKc">
-                        <button className="front-button">
-                            Join Discord
-                        </button>
+            <div className="front-hero container">
+                <span className="kicker">01 / UF · IEEE SPS</span>
+                <h1>Everything in life can be represented by a signal.</h1>
+                <p className="lede">
+                    For engineers, mathematicians, and scientists — we receive, analyze,
+                    process, and transmit signals, exploring reality through the digital
+                    interface.
+                </p>
+                <p>Welcome to the IEEE Signal Processing Society at the University of Florida.</p>
+                {discordHref && (
+                    <a className="btn front-cta" href={discordHref}>
+                        Join Discord <span aria-hidden="true">→</span>
                     </a>
-                    </div>
-                </main>
-            
-                {/* Note: Optional in case we want to implement a calendar
-                <div className="front-scroll">
-                    <ChevronsDown size={32} color="#9ca3af" strokeWidth={1} />
-                    <span>scroll down for calendar</span>
-                </div>
-                */}
+                )}
             </div>
-            <Footer />
-        </>
+        </main>
     );
 };
 

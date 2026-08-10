@@ -10,7 +10,7 @@ export interface JoinPath {
 
 export interface CollaborationOption {
   title: string;
-  audience: 'Companies' | 'Labs' | 'Faculty' | 'Student Organizations' | 'Community';
+  audience: 'Companies' | 'Labs' | 'Faculty' | 'Student Organizations';
   description: string;
   examples: string[];
   contactHref: string;
@@ -26,6 +26,14 @@ export interface NetworkMember {
   consent: boolean;
 }
 
+/* Canonical Discord invite lives in chapter.ts socialLinks — derive it here so
+   the URL exists in exactly one place; fall back to other chapterInfo contacts
+   rather than a hardcoded copy of the invite. */
+const discordHref =
+  chapterInfo.socialLinks.find((link) => link.label === 'Discord')?.href ??
+  chapterInfo.socialLinks.find((link) => link.label === 'Linktree')?.href ??
+  `mailto:${chapterInfo.email}`;
+
 export const joinPaths: JoinPath[] = [
   {
     title: 'Join the community',
@@ -36,7 +44,7 @@ export const joinPaths: JoinPath[] = [
       'Ask for the next beginner-friendly event if you are unsure where to start.',
     ],
     ctaLabel: 'Join Discord',
-    href: chapterInfo.socialLinks.find((link) => link.label === 'Discord')?.href ?? 'https://discord.gg/6GRymPjgKc',
+    href: discordHref,
   },
   {
     title: 'Contribute to research',

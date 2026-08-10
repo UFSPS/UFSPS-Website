@@ -16,29 +16,25 @@ const initials = (name?: string) =>
 
 const Profile = ({name, position, term, bio, image, githubLink, linkedinLink}: ProfileProps) => {
     return (
-        <div className="exec-profile-container">
-            <div className="profile-content-container">
-                <div className="profile-img-container">
-                    {image
-                        ? <img className="profile-img" src={image} alt={`${name} portrait`} loading="lazy" />
-                        : <span className="profile-img-initials" aria-hidden="true">{initials(name)}</span>}
-                </div>
-                <div className="profile-info">
-                    <div className="name-pos">
-                        <h3>{name}</h3>
-                        <div className="pos">
-                            <p>{position}</p>
-                        </div>
-                        {term && <p className="profile-term">{term}</p>}
-                    </div>
-                    {bio && <p className="profile-bio">{bio}</p>}
+        <article className="exec-profile-container">
+            <div className="profile-img-container">
+                {image
+                    ? <img className="profile-img" src={image} alt={`${name} portrait`} loading="lazy" />
+                    : <span className="profile-img-initials" aria-hidden="true">{initials(name)}</span>}
+            </div>
+            <div className="profile-info">
+                <h3>{name}</h3>
+                {position && <p className="profile-position">{position}</p>}
+                {term && <p className="profile-term">{term}</p>}
+                {bio && <p className="profile-bio">{bio}</p>}
+                {(githubLink || linkedinLink) && (
                     <div className="profile-social-links">
                         {githubLink && <a href={githubLink} target="_blank" rel="noreferrer" aria-label={`${name} GitHub`}><FaGithub /></a>}
                         {linkedinLink && <a href={linkedinLink} target="_blank" rel="noreferrer" aria-label={`${name} LinkedIn`}><FaLinkedin /></a>}
                     </div>
-                </div>
+                )}
             </div>
-        </div>
+        </article>
     );
 };
 

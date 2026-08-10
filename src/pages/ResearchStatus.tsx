@@ -1,64 +1,80 @@
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar.js';
-import Footer from '../components/Footer.js';
 import PageContainer from '../components/PageContainer.js';
+import { StatusPill } from '../components/ProjectItem.js';
 import { projectList } from '../data/projects.js';
 import './styles/ResearchStatus.css';
 
-const formatStatus = (value: string) => value.replace('-', ' ');
+const clampProgress = (value: number) => Math.min(Math.max(value, 0), 100);
 
 const ResearchStatus = () => {
   const activeCount = projectList.filter((project) => project.status === 'active').length;
-  const watchCount = projectList.filter((project) => project.health !== 'on-track').length;
+  const watchCount = projectList.filter((project) => project.health === 'watch').length;
+  const blockedCount = projectList.filter((project) => project.health === 'blocked').length;
   const averageProgress = Math.round(projectList.reduce((sum, project) => sum + project.progress, 0) / projectList.length);
 
   return (
     <PageContainer className="status-wrapper">
-      <Navbar />
-      <main className="status-main">
-        <section className="status-hero">
-          <div>
-            <p className="section-kicker">Static project dashboard</p>
-            <h1>Research status</h1>
-            <p>
-              A concise view of active SPS research work. Status is curated in the repo so prospective
-              contributors can see where each project stands before joining a call.
-            </p>
-          </div>
-          <Link to="/research" className="status-hero-link">Back to research</Link>
-        </section>
+      <main className="container status-main">
+        <header className="page-header">
+          <p className="kicker">Project dashboard</p>
+          <h1>Research status</h1>
+          <p className="lede">
+            A concise view of active SPS research work. Status is curated in the repo so prospective
+            contributors can see where each project stands before joining a call.
+          </p>
+          <Link to="/research" className="status-back">← Back to research</Link>
+        </header>
 
-        <section className="status-summary-grid">
+        <section className="status-summary" aria-label="Summary">
           <div><span>Projects</span><strong>{projectList.length}</strong></div>
           <div><span>Active</span><strong>{activeCount}</strong></div>
-          <div><span>Watch items</span><strong>{watchCount}</strong></div>
+          <div><span>Watch</span><strong>{watchCount}</strong></div>
+          <div><span>Blocked</span><strong>{blockedCount}</strong></div>
           <div><span>Avg. progress</span><strong>{averageProgress}%</strong></div>
         </section>
 
-        <section className="status-project-list">
-          {projectList.map((project) => (
-            <article key={project.slug} className="status-project-card">
-              <div className="status-project-heading">
-                <div>
-                  <h2>{project.shortTitle ?? project.title}</h2>
-                  <p>{project.phase}</p>
+        <section className="status-project-list" aria-label="Projects">
+          {projectList.map((project) => {
+            const title = project.shortTitle ?? project.title;
+            const progress = clampProgress(project.progress);
+            return (
+              <article key={project.slug} className="status-project">
+                <div className="status-project-heading">
+                  <div>
+                    <h2>{title}</h2>
+                    <p className="status-phase">{project.phase}</p>
+                  </div>
+                  <Link to={`/research/${project.slug}`} className="status-hub-link">Open hub →</Link>
                 </div>
-                <Link to={`/research/${project.slug}`}>Open hub</Link>
-              </div>
-              <div className="status-meta-row">
-                <span>{formatStatus(project.status)}</span>
-                <span>{formatStatus(project.health)}</span>
-                <span>Updated {project.lastUpdated}</span>
-              </div>
-              <div className="status-progress" aria-label={`${project.shortTitle ?? project.title} progress ${project.progress}%`}>
-                <div style={{ width: `${Math.min(Math.max(project.progress, 0), 100)}%` }} />
-              </div>
-              {project.nextMilestone && <p className="status-next">Next: {project.nextMilestone}</p>}
-            </article>
-          ))}
+                <div className="status-meta-row">
+                  <StatusPill kind="status" value={project.status} />
+                  <StatusPill kind="health" value={project.health} />
+                  <span className="status-updated">Updated {project.lastUpdated}</span>
+                </div>
+                <div className="status-progress-row">
+                  <div
+                    className="status-progress"
+                    role="progressbar"
+                    aria-valuenow={progress}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
+                    aria-label={`${title} progress`}
+                  >
+                    <div className="status-progress-fill" style={{ width: `${progress}%` }} />
+                  </div>
+                  <span className="status-progress-value">{progress}%</span>
+                </div>
+                {project.nextMilestone && (
+                  <p className="status-next">
+                    <span className="status-next-label">Next</span>
+                    {project.nextMilestone}
+                  </p>
+                )}
+              </article>
+            );
+          })}
         </section>
       </main>
-      <Footer />
     </PageContainer>
   );
 };

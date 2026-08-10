@@ -1,60 +1,89 @@
+/* ============================================================
+   Project card — spec §6 card + §5 corner-tick / status motifs.
+   All values come from App.css tokens.
+   ============================================================ */
+
 .proj-wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: min(26rem, 100%);
-    gap: 1rem;
-    background: white;
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    transition: border-color var(--t-fast) var(--ease);
+}
 
-    border: solid 1px black;
-    border-radius: 20px;
+.proj-wrapper:hover {
+    border-color: var(--line-strong);
+}
+
+/* Corner ticks: 10px L-brackets, --line-strong at rest, --accent on hover */
+.proj-wrapper::before,
+.proj-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 0 solid var(--line-strong);
+    pointer-events: none;
+    transition: border-color var(--t-fast) var(--ease);
+}
+
+.proj-wrapper::before {
+    top: -1px;
+    left: -1px;
+    border-top-width: 1px;
+    border-left-width: 1px;
+}
+
+.proj-wrapper::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+}
+
+.proj-wrapper:hover::before,
+.proj-wrapper:hover::after {
+    border-color: var(--accent);
 }
 
 .proj-img-container {
     height: 230px;
     width: 100%;
-    background: linear-gradient(90deg, rgba(0, 98, 155, 0.5), rgba(220, 238, 200, 0.5));
-    overflow: hidden;
-    border-radius: 19px 19px 0 0;
-    
+    background: var(--bg-inset);
+    border-bottom: 1px solid var(--line);
 }
 
 .proj-img-container img {
     height: 100%;
     width: 100%;
     object-fit: contain;
+    padding: 1rem;
 }
 
 .proj-title-container {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    padding-inline: 1rem;
+    padding: 1.5rem;
 }
 
 .proj-title {
-    position: relative;
     display: flex;
     flex-direction: column;
     gap: 0.625rem;
-    
 }
 
 .proj-title h3 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
 }
 
-.proj-title p {
-    font-weight: 300;
-    color: var(--gray);
-}
-
-.proj-title::after {
-    content: '';
-    position: absolute;
-    height: 0.5px;
-    width: 100%;
-    bottom: -1rem;
-    background: var(--gray);
+.proj-meta {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--ink-3);
 }
 
 .proj-status-row {
@@ -63,195 +92,229 @@
     gap: 0.5rem;
 }
 
-.project-status,
-.project-health {
+/* ------------------------------------------------------------
+   Status/health pills — shared taxonomy rendering (also used by
+   /research/status and /research/:slug via the StatusPill export)
+   ------------------------------------------------------------ */
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
     width: fit-content;
-    border-radius: 999px;
-    padding: 0.25rem 0.65rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: capitalize;
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--radius);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
-.status-active,
-.health-on-track {
-    background: rgba(39, 147, 88, 0.12);
-    color: var(--dark-green);
+/* 7px square indicator (spec §5) */
+.status-pill::before {
+    content: '';
+    flex: none;
+    width: 7px;
+    height: 7px;
+    border-radius: 1px;
 }
 
-.status-planning,
-.health-watch {
-    background: rgba(0, 98, 155, 0.12);
-    color: var(--logo-blue);
+/* good states */
+.status-pill.status-active,
+.status-pill.health-on-track {
+    background: var(--accent-wash);
+    color: var(--accent);
 }
 
-.status-paused,
-.health-blocked {
-    background: rgba(120, 80, 40, 0.12);
-    color: #774400;
+.status-pill.status-active::before,
+.status-pill.health-on-track::before {
+    background: var(--accent-bright);
 }
 
-.status-completed {
-    background: rgba(34, 34, 34, 0.1);
-    color: var(--black);
+/* neutral states */
+.status-pill.status-planning,
+.status-pill.status-paused,
+.status-pill.status-completed,
+.status-pill.health-watch {
+    background: var(--bg-inset);
+    color: var(--ink-2);
 }
+
+.status-pill.status-planning::before,
+.status-pill.status-paused::before,
+.status-pill.status-completed::before,
+.status-pill.health-watch::before {
+    background: var(--ink-3);
+}
+
+/* blocked: same neutral surface, full-ink emphasis */
+.status-pill.health-blocked {
+    background: var(--bg-inset);
+    color: var(--ink);
+}
+
+.status-pill.health-blocked::before {
+    background: var(--ink);
+}
+
+/* ------------------------------------------------------------
+   Card actions
+   ------------------------------------------------------------ */
 
 .proj-actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
     flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
 }
 
 .proj-rdmore {
-    display: flex;
-    align-items: center;
-    width: fit-content;
-    gap: 0.75rem;
-
-    padding: 0.75em 0 1em 0;
-    border: 0;
-    background: transparent;
-    color: var(--dark-green);
-    cursor: pointer;
-    font: inherit;
-    transition: 0.2s ease;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-2);
+    transition: color var(--t-fast) var(--ease);
 }
 
 .proj-rdmore:hover {
-    color: var(--green);
-}
-
-.proj-rdmore span {
-    font-weight: 700;
-}
-
-.proj-rdmore svg {
-    height:1.5em;
-    width: 1.5em;
+    color: var(--ink);
 }
 
 .proj-hub-link {
-    color: var(--black);
-    font-weight: 700;
-    border-bottom: 1px solid var(--black);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-decoration: none;
+    transition: color var(--t-fast) var(--ease);
 }
 
 .proj-hub-link:hover {
-    color: var(--green);
-    border-bottom-color: var(--green);
+    color: var(--ink);
 }
+
+/* ------------------------------------------------------------
+   Quick View dialog
+   ------------------------------------------------------------ */
 
 .dlg {
     position: relative;
-    inset: 0;
     z-index: 10;
 }
 
 .proj-dlg-container {
     position: fixed;
+    inset: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
-    inset: 0;
-
     padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
-}
-
-.proj-dlg-container h3 {
-    font-size: 1rem;
+    background: var(--bg-veil);
+    backdrop-filter: blur(6px);
 }
 
 .proj-dlg-panel {
-    position: relative;
-
-    border-radius: 20px;
-    max-width: min(54vw, 920px);
-    height: 80vh;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-
+    max-width: 720px;
+    max-height: 85vh;
+    max-height: min(85dvh, 48rem);
+    background: var(--bg-elevated);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
     overflow: hidden;
-    border: 1px solid var(--gray);
-    background: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .dlg-title-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 1rem 1rem 1.25rem;
-    
-    font-size: 1.25rem;
-    border-bottom: 1px solid var(--gray);
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    font-size: 1.15rem;
+    font-weight: 550;
+    letter-spacing: -0.01em;
+    border-bottom: 1px solid var(--line);
 }
 
 .dlg-close-button {
     display: flex;
-    border: 0;
-    background: transparent;
-    color: var(--black);
-    cursor: pointer;
-}
-
-.dlg-close-button svg {
-    height: 2.25rem;
-    width: 2.25rem;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    padding: 0.4rem 0.55rem;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    line-height: 1;
+    color: var(--ink-2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    transition: color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
 }
 
 .dlg-close-button:hover {
-    opacity: 75%;
+    color: var(--ink);
+    border-color: var(--line-strong);
 }
 
 .dlg-desc {
     display: flex;
     flex-direction: column;
-    max-width: 100%;
-    gap: 1rem;
-    padding: 1rem;
-
+    gap: 1.25rem;
+    min-height: 0;
+    padding: 1.5rem;
     overflow-y: auto;
-    height: calc(80vh - 5.75rem);
-    line-height: 1.4;
+    overscroll-behavior: contain;
 }
 
-.dlg-ov {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+/* Section labels inside the dialog: mono micro-labels (spec §3) */
+.dlg-desc h3 {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-3);
 }
 
+.dlg-desc p,
+.dlg-desc li {
+    color: var(--ink-2);
+}
+
+.dlg-ov,
 .dlg-whatblt,
-.dlg-desc {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.dlg-whatblt ul,
-.dlg-desc ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2em;
-    padding-left: 4rem;
-    padding-bottom: 0.5em;
-}
-
+.dlg-stack,
 .dlg-links {
     display: flex;
     flex-direction: column;
-    gap: 0.2em;
-    margin-top: 1em;
+    gap: 0.5rem;
+}
+
+.dlg-desc ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding-left: 1.25rem;
 }
 
 .dlg-links ul {
-    padding: 0;
     list-style: none;
-    color: var(--dark-green);
+    padding: 0;
+}
+
+.dlg-links a {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--accent);
 }
 
 @media (max-width: 768px) {
@@ -268,31 +331,17 @@
         padding: 0.75rem;
     }
 
-    .proj-dlg-panel {
-        max-width: 100%;
-        height: min(86svh, 720px);
-        border-radius: 16px;
-    }
-
     .dlg-title-container {
-        gap: 1rem;
-        padding: 1rem;
+        padding: 1rem 1.25rem;
         font-size: 1rem;
     }
 
-    .dlg-close-button svg {
-        flex-shrink: 0;
-        height: 2rem;
-        width: 2rem;
-    }
-
     .dlg-desc {
-        height: calc(min(86svh, 720px) - 4.5rem);
+        padding: 1.25rem;
     }
 
-    .dlg-whatblt ul,
     .dlg-desc ul {
-        padding-left: 1.25rem;
+        padding-left: 1.1rem;
     }
 
     .dlg-links a {

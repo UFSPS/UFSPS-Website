@@ -13,7 +13,6 @@ export interface Project {
     phase: string
     lastUpdated: string
     nextMilestone?: string
-    owners: Array<string>
     links?: Array<ProjectLink>
     details: ProjectDetails
 }
@@ -61,7 +60,6 @@ export const projectList: Project[] = [
       "phase": "Structured extraction workflow",
       "lastUpdated": "2026-04-30",
       "nextMilestone": "Package a reproducible demo corpus for new contributors.",
-      "owners": ["SPS research contributors"],
       "links": [
         { "label": "GitHub", "href": "https://github.com/matheusmaldaner/PlatosCave", "type": "github" },
       ],
@@ -109,7 +107,6 @@ export const projectList: Project[] = [
       "phase": "Acquisition and experiment design",
       "lastUpdated": "2026-04-30",
       "nextMilestone": "Validate the acquisition path with repeatable pilot recordings.",
-      "owners": ["SPS biosignals team"],
       "links": [
         { "label": "GitHub", "href": "https://github.com/Jibby2k1/Ergo", "type": "github" },
       ],
@@ -156,7 +153,6 @@ export const projectList: Project[] = [
       "phase": "Product and data model design",
       "lastUpdated": "2026-04-30",
       "nextMilestone": "Ship a minimal voice-to-structured-log prototype.",
-      "owners": ["SPS applied ML contributors"],
       "links": [
         { "label": "GitHub", "href": "https://github.com/Jibby2k1/Ora", "type": "github" },
       ],
@@ -203,7 +199,6 @@ export const projectList: Project[] = [
       "phase": "Dataset and demo pipeline",
       "lastUpdated": "2026-04-30",
       "nextMilestone": "Connect annotation outputs to a lightweight real-time demo.",
-      "owners": ["SPS perception team"],
       "links": [
         { "label": "GitHub", "href": "https://github.com/Jibby2k1/Vie", "type": "github" },
       ],
@@ -250,7 +245,6 @@ export const projectList: Project[] = [
       "phase": "Capture protocol and baselines",
       "lastUpdated": "2026-04-30",
       "nextMilestone": "Define synchronized capture experiments and baseline metrics.",
-      "owners": ["SPS audio team"],
       "links": [
         { "label": "GitHub", "href": "https://github.com/Jibby2k1/Aude", "type": "github" },
       ],

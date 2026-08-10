@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ieee-sps-uf.raulv.dev/sitemap.xml

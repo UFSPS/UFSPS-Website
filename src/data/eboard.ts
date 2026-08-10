@@ -65,8 +65,7 @@ export const eboardProfiles: Profile[] =
         name: "John Courtney",
         term: "2026-2027",
         bio: "Connects chapter activity to research-facing projects and helps shape opportunities for members who want to explore deeper technical work.",
-        image: "/profiles/John Courtney.png",
-        linkedinLink: "https://www.linkedin.com/in/john-courtney-abc123/"
+        image: "/profiles/John Courtney.png"
     },
     {
         position: "Co-Chief of Networking",

@@ -1,10 +1,12 @@
+/* EventCard — lab-white hairline card (spec §6) */
+
 .event-card {
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  border-radius: 8px;
-  background: white;
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
 }
 
 .event-card > img {
@@ -12,56 +14,103 @@
   height: 100%;
   min-height: 220px;
   object-fit: cover;
+  background: var(--bg-inset);
+  border-right: 1px solid var(--line);
 }
 
 .event-card-body {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 1.25rem;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1.75rem;
 }
 
-.event-card-meta,
-.event-card-details,
-.event-tag-row,
+/* Mono instrumentation row: status square + labels (spec §5) */
+.event-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-2);
+}
+
+.event-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.event-state::before {
+  content: '';
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 1px;
+  background: var(--ink-3);
+}
+
+.event-state--upcoming::before {
+  background: var(--accent-bright);
+}
+
+.event-flag {
+  color: var(--accent);
+}
+
+/* ISO date · time · venue */
+.event-card-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.6em;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink);
+  max-width: none;
+}
+
+.event-card-details span + span::before {
+  content: '·';
+  color: var(--ink-3);
+  margin-right: 0.6em;
+}
+
+.event-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink-3);
+}
+
 .event-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  margin-top: auto;
+  padding-top: 0.35rem;
 }
 
-.event-card-meta span,
-.event-tag-row span {
-  border-radius: 999px;
-  padding: 0.3rem 0.65rem;
-  background: #f4f4f4;
-  color: var(--gray);
-  font-size: 0.82rem;
-  text-transform: capitalize;
+.event-actions .event-link {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-2);
 }
 
-.event-card h2 {
-  font-size: 1.45rem;
-}
-
-.event-card p,
-.event-card-details {
-  color: var(--gray);
-  line-height: 1.5;
-}
-
-.event-actions a,
-.event-actions span {
-  border: 1px solid var(--black);
-  border-radius: 8px;
-  padding: 0.65rem 0.9rem;
-  color: var(--black);
-  font-weight: 800;
-}
-
-.event-actions a:first-child {
-  background: var(--black);
-  color: white;
+.event-closed {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink-2);
 }
 
 @media (max-width: 720px) {
@@ -70,7 +119,13 @@
   }
 
   .event-card > img {
-    min-height: 180px;
-    max-height: 240px;
+    min-height: 0;
+    height: 200px;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .event-card-body {
+    padding: 1.25rem;
   }
 }

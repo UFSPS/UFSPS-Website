@@ -1,51 +1,48 @@
-.philosophy-main {
+/* /research/philosophy — lab-white. All values come from App.css tokens. */
+
+.philosophy-cta-row {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.philosophy-hero {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  max-width: 860px;
-}
-
-.philosophy-hero h1 {
-  font-size: clamp(2.6rem, 7vw, 5rem);
-  line-height: 1.02;
-}
-
-.philosophy-hero p,
-.philosophy-grid p {
-  color: var(--gray);
-  line-height: 1.65;
-}
-
-.philosophy-hero a {
-  width: fit-content;
-  color: var(--dark-green);
-  font-weight: 800;
-}
-
-.philosophy-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.philosophy-grid article {
-  display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 0.75rem;
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  border-radius: 8px;
-  padding: 1.5rem;
-  background: white;
+}
+
+/* Mono-indexed pillar sections, separated by hairline rules. */
+
+.philosophy-pillars {
+  padding-block-end: clamp(3.5rem, 8vw, 6.5rem);
+}
+
+.pillar-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 1.5rem;
+  align-items: start;
+  padding-block: clamp(2rem, 4vw, 2.75rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.pillar-section:last-child {
+  border-bottom: none;
+}
+
+.pillar-section h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.pillar-section-index {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--accent);
 }
 
 @media (max-width: 720px) {
-  .philosophy-grid {
-    grid-template-columns: 1fr;
+  .pillar-section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
   }
 }

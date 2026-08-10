@@ -43,7 +43,7 @@ export interface EventItem {
   rsvp: EventRsvp;
 }
 
-const workshopRepo = 'https://github.com/Jibby2k1/SPS_Curriculum?tab=readme-ov-file';
+const workshopRepo = 'https://github.com/Jibby2k1/SPS_Curriculum';
 const discord = 'https://discord.gg/6GRymPjgKc';
 
 export const events: EventItem[] = [
@@ -51,7 +51,7 @@ export const events: EventItem[] = [
     id: 'spring-2026-project-onboarding',
     slug: 'spring-2026-project-onboarding',
     type: 'meeting',
-    status: 'tentative',
+    status: 'scheduled',
     title: 'Research Project Onboarding',
     summary: 'Meet the active SPS project tracks and pick a contribution path.',
     description: 'A contributor-facing onboarding session for students interested in Ergo, Ora, Vie, Aude, Plato’s Cave, or future SPS research projects.',
@@ -65,7 +65,7 @@ export const events: EventItem[] = [
     image: images[0]!,
     tags: ['research', 'onboarding', 'projects'],
     links: { details: discord },
-    rsvp: { enabled: true, provider: 'discord', url: discord },
+    rsvp: { enabled: false, provider: 'discord', closedMessage: 'This event has passed.' },
   },
   {
     id: 'fall-2026-signal-processing-bootcamp',
