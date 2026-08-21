@@ -49,6 +49,19 @@
   text-wrap: balance;
 }
 
+/* Legibility halo, not an elevation shadow: a glow in the page's own
+   background color keeps the globe's dark strokes reading as *behind*
+   the copy when the rotation sweeps them across the text zone. */
+.front-hero .kicker,
+.front-hero h1,
+.front-hero p {
+  text-shadow:
+    0 0 2px var(--bg),
+    0 0 6px var(--bg),
+    0 0 12px var(--bg);
+}
+
 .front-cta {
   margin-top: 0.75rem;
+  background: var(--bg); /* solid ground so arcs don't pass through the label */
 }
