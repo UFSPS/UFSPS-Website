@@ -46,7 +46,30 @@ export interface EventItem {
 const workshopRepo = 'https://github.com/Jibby2k1/SPS_Curriculum';
 const discord = 'https://discord.gg/6GRymPjgKc';
 
+const gbm1Fall2026Flyer = new URL('../assets/events/GBM1_Fall2026.png', import.meta.url).href;
+
 export const events: EventItem[] = [
+  {
+    id: 'fall-2026-gbm-1',
+    slug: 'fall-2026-gbm-1',
+    type: 'meeting',
+    status: 'scheduled',
+    title: '1st General Body Meeting',
+    summary:
+      'Kick off the Fall semester with guest speaker Goktug T. Cinar of the OpenAI Forecasting Team. RSVP by Aug 25.',
+    description:
+      'Join us for an engaging talk on relevant topics in signal processing and beyond. Guest speaker Goktug T. Cinar, CNEL alumnus and member of the OpenAI Forecasting Team, covers research, forecasting, AI careers, and the path from UF to industry. RSVP by August 25 so we can allocate space for those interested.',
+    startsAt: '2026-09-01T17:00:00-04:00',
+    timezone: 'America/New_York',
+    location: {
+      label: 'UF Artificial Intelligence and Informatics Research Institute',
+      address: '432 Newell Drive, Gainesville, FL 32611',
+    },
+    image: gbm1Fall2026Flyer,
+    tags: ['gbm', 'guest speaker', 'careers'],
+    links: { details: discord },
+    rsvp: { enabled: true, provider: 'google-form', url: 'https://forms.gle/9eSW2uHwLP5EYdiH9' },
+  },
   {
     id: 'spring-2026-project-onboarding',
     slug: 'spring-2026-project-onboarding',
